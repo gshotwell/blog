@@ -1,0 +1,27 @@
+baseurl = "/"
+relativeurls = true
+languageCode = "en-us"
+title = "Gordon Shotwell"
+theme = "hyde-y"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+
+    
+[params]
+    # You can use markdown here.
+    highlight = "solarized_light"
+    brand = "Gordon Shotwell"
+    topline = "Law and Data Science"
+    sidebar = "left"
+    github = "https://github.com/GShotwell"
+    linkedin = "https://ca.linkedin.com/in/gshotwell"
+    twitter = "https://github.com/GShotwell"
+
+
+
+  
