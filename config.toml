@@ -1,5 +1,5 @@
 baseurl = "/"
-publishDir: "/public"
+publishDir: "docs"
 relativeurls = true
 languageCode = "en-us"
 title = "Gordon Shotwell"
