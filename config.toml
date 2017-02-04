@@ -19,9 +19,9 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
     brand = "Gordon Shotwell"
     topline = "Law and Data Science"
     sidebar = "left"
-    github = "https://github.com/GShotwell"
-    linkedin = "https://ca.linkedin.com/in/gshotwell"
-    twitter = "https://github.com/GShotwell"
+    github = "GShotwell"
+    linkedin = "gshotwell"
+    twitter = "@gshotwell"
 
 
 
