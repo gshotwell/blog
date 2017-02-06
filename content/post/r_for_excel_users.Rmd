@@ -41,7 +41,7 @@ At the beginning, when you are trying to accomplish simple things like balancing
 For a lot of us, the pain of learning to program feels like the pain of failure. When the program gives you an incomprehensible error message it feels like its telling you that you're stupid and lack programming aptitude. But after programming for a while you learn that nobody really understands those errors, and everybody feels like an imposter when their program fails. The pain you feel is not the pain of failure, it's just the pain of learning. 
 
 ![](/img/learning_not_failing.gif)
- 
+  
 
 ## Why is learning new things so hard?!
 
