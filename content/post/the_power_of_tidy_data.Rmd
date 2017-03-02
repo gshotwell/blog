@@ -1,0 +1,105 @@
+---
+title: "The Power of Tidy Data"
+date: "2017-02-16T21:48:51-07:00"
+---
+
+### Tidy Data
+
+Tidy data has become the dominant way of thinking about problems in R. The idea behind tidy data is to develop an [ecosystem](http://tidyverse.org/) of R packages which all work around a similar kind of data structure. That way you can easily compose many different tools together to accomplish very complex tasks in an iterative, easy to understand fashion. There are lots of excellent presentations about why this is a great approach but the one I would recommend if you are new to this area is Hadley Wickham's [keynote](https://www.rstudio.com/resources/videos/data-science-in-the-tidyverse/) from the 2017 rstudio conference. 
+
+One problem with data analysis is that you often need to make critical decisions before you really understand the problem. Since data analysis is always somewhat exploratory you can often make some bad decisions in the early stages of your analysis which can cause lots of problems later on. Maybe at some point you thought that storing your data in a nested list was a good idea, but curse yourself when you try to draw a graph with that data. Because you don't know the optimal form for your data when you start working with it, you can end up is some ugly places. The great thing about Tidy Data is that it gives you a really good set of first steps which will rarely lead you astray. No matter where your analysis goes, a nice tidy dataset will be your arrow against misfortune. 
+
+The first articulation of tidy data which I read was from this [Hadley Wickham paper](http://vita.had.co.nz/papers/tidy-data.pdf). A tidy dataset is one in which: 
+
+1. Each variable forms a column.
+2. Each observation forms a row.
+3. Each type of observational unit forms a table.
+
+I would add a fourth consideration: 
+
+4. The information is expressed as simply as practicable.
+
+This fourth consideration is really just a restatement of the other three, but it is still a very helpful way of thinking about your data which often reveals subtle problems. For instance you can ask whether you are duplicating information in your data sets and whether removing that duplication simplifies the data. Another common simplification is referring to information consistently for instance by changing all of the `Mon`'s to `Monday`'s.
+
+Whenever I start a new data analysis I look at my data and ask whether it's tidy, and if it's not, I do the work splitting up strings, reshaping tables, and joining data sets together to get it into a tidy form. This often feels like a waste of time because you are not immediately providing analytical value, but it almost always pays off in the long run. 
+
+Tidying data is powerful both because it allows you to use all the great tidyverse packages, but also because it forces you to ask important questions about your data. To get each column to represent a variable you need to know what the variables are. Maybe the unit of observation is not obvious and you need more information about how the data is collected. Maybe you don't really know how observations can go missing or how missing data is treated. Asking these questions right at the beginning of an analysis helps to clarify what you are trying to do and save time and mistakes down the road. 
+
+### Convertr Example
+
+I wanted to provide an example of how data tidying can lead to faster, simpler code. My first foray into R package development was a unit converter called [convertr](https://github.com/ropenscilabs/convertr) the idea behind this package was to allow users to convert between as many units as possible, and as a result I needed to pull together lots of different data sources into a common data structure. I needed all of the scientific units from one place, all of the engineering units from another, all of the medieval English units from another place etc. The first question then was, how do you store all of this data? What form should it take? One natural option is a conversion matrix: 
+
+
+```{r Load Convertr Data, message=FALSE, warning=FALSE}
+library(convertr)
+library(tidyverse)
+
+load("conversion_table.rda")
+
+example_units <- c("firkin", "ton (water)", "shotUS", "pony", "cu yd", "load", 
+"cm3", "m3", "kilderkin", "flozUK")
+
+example_df <- data_frame( unit = rep(example_units, 10),
+                          to   = rep(example_units, each = 10))
+example_df$factor <- map2_dbl(example_df$unit, example_df$to, ~convert(1, .x, .y))
+example_df <- example_df %>% 
+  mutate(factor = round(factor, 4)) %>% 
+  spread(to, factor, NA)
+
+DT::datatable(example_df, rownames = FALSE)
+
+```
+
+This table is great for printing out and looking up units by hand. If you wanted to convert firkins to kilderkins all you do is look up firkins in the column name and kilderkin in the row name and look for the conversion factor stored in the cell value. While intuitive, this dataset is not tidy because the observations do not form a row, and the variables are not stored in columns. For this problem the two variable are probably the unit that we are converting from, the unit we are converting to, and the conversion factor, so we want to transform this from its current wide format to a long format with only three columns. This is what the `tidyr` package is for. 
+
+```{r}
+example_df <- example_df %>% 
+  rename(from_unit = unit) %>% 
+  gather(to_unit, factor, -from_unit)
+
+DT::datatable(example_df, rownames = FALSE)
+
+```
+
+This data is a little tidier but there's still a ways to go. Now we have the variables in the column names, but each row is not an observation we can express the information more simply. The first thing you notice is that we have each conversion factor stored twice. We have one factor for converting cubic yards to cubic meters spoons, and one for converting cubic meters to cubic yards. Since unit conversion is symmetrical, we can use the one factor for both of those operations. 
+
+```{r}
+example_df$key <- map2(example_df$from_unit, example_df$to_unit, ~(c(.x, .y))) %>% 
+  map(~.[order(.)]) %>% 
+  map_chr(~paste(., collapse = " "))
+
+example_df %>% 
+  group_by(key) %>% 
+  filter(row_number() == 1) %>% 
+  ungroup() %>% 
+  select(-key) %>% 
+  DT::datatable()
+```
+
+
+
+We've moved from a list of a hundred factors to one with just 55. Each column represents a variable and each row represents an observation. This probably meets the basic definition of a tidy dataset but the information can still be expressed more simply. 
+
+How I usually think about this criteria is just to ask "If I were entering this data by hand, how could I save effort?" In this case that was easy because I was actually entering the data by hand, but it's a useful heuristic in lots of cases. Another good question is "if I were storing this data in a database, how might I save storage space?" which pushes you to think about what information you care about, and the best way to store that information. In this case we can remember that every unit has an System Internationale (SI) unit which it can be converted to. This means that we can always convert two units by converting through the SI unit. If we wanted to convert firkins to kilderkins we could first convert firkins to cubic meters and then cubic meters to kildekins. 
+
+```{r}
+example_df %>%
+  group_by(from_unit) %>% 
+  select(-to_unit) %>% 
+  filter(row_number() == 1) %>% 
+  mutate(base_unit = "m3") %>% 
+  mutate(factor = map2_dbl(from_unit, base_unit, ~convert(1, .x, .y))) %>% 
+  select(from_unit, base_unit, factor) %>% 
+  DT::datatable(rownames = FALSE)
+```
+
+Through this process we've gone from a matrix with 1000 cells, to a long dataframe with 100 rows, to one with 55 rows, and finally one with just 10 rows. Additionally we can figure whether two units can be converted to one another by just checking whether they have the same base unit.
+
+In addition to creating an efficient data storage mechanism, this process creates clairity about how to solve the unit conversion  problem. We know that we basically need two functions, one to convert units to their SI counterparts, and another one to convert from the base unit to the target unit. 
+
+This has been my experience with data tidying. Almost every time I tidy data I learn something crucial about how the data should be expressed, and about the problem which I'm trying to solve. This knowledge is invaluable throughout the data analysis process, and cleaning up the dataset is the best way to acquire it. 
+
+
+
+
+
