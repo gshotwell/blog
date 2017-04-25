@@ -23,7 +23,7 @@ This fourth consideration is really just a restatement of the other three, but i
 
 Whenever I start a new data analysis I look at my data and ask whether it's tidy, and if it's not, I do the work splitting up strings, reshaping tables, and joining data sets together to get it into a tidy form. This often feels like a waste of time because you are not immediately providing analytical value, but it almost always pays off in the long run. 
 
-Tidying data is powerful both because it allows you to use all the great tidyverse packages, but also because it forces you to ask important questions about your data. To get each column to represent a variable you need to know what the variables are. Maybe the unit of observation is not obvious and you need more information about how the data is collected. Maybe you don't really know how observations can go missing or how missing data is treated. Asking these questions right at the beginning of an analysis helps to clarify what you are trying to do and save time and mistakes down the road. 
+Tidying data is powerful both because it allows you to use all the great tidyverse packages, but also because it forces you to ask important questions about your data. To get each column to represent a variable you need to know what the variables are. Maybe the unit of observation is not obvious and you need more information about how the data is collected. Maybe you don't really know how observations can go missing or how missing data is treated. Asking these questions right at the beginning of an analysis helps to clairify what you are trying to do and save time and mistakes down the road. 
 
 ### Convertr Example
 
