@@ -1,0 +1,31 @@
+---
+title: "A General Theory of Alternative Medicine"
+author: "Gordon Shotwell"
+date: '2017-04-26'
+output: html_document
+---
+
+I have a strange relationship to alternative medicine. On the one hand, I've worked in clinical settings and as a medical malpractice lawyer and so have seen first hand the damage that bad clinical evidence can do to patients. On the other I just love health fads. I go to a traditional chinese doctor, eat all kinds of super foods, and do things like fast or swim in extremely cold water for my health. For a long time I thought these two factors were kind of opposed to one another, but lately I've been thinking about them as a coherent approach to health promotion. 
+
+### Why you should absolutely gamble with your health
+
+People sometimes use the term 'gambling' to mean "take unnecessary and stupid risks", and so it makes sense to not gamble with your health. But that's actually just the definition of gambling poorly. A good poker player or stock trader doesn't take unneccessary risks, but understands that they are acting under imperfect information and so every decision they make will generate some risk. All you can do is utilize all of your sources of information to make sure that you're taking the best gamble available to you. 
+
+### Understanding Clinical Trials
+
+Clinical trials are the 'gold standard' of medical practice. In an ideal world every decision we make would be informed by a well designed placebo controlled study, but that sadly is not now and never will be the case. There are a few large biases in clinical trial desigg:
+
+1) Money
+ 
+
+
+
+
+
+
+
+
+
+
+
+

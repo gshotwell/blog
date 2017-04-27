@@ -4,11 +4,12 @@ relativeurls = true
 languageCode = "en-us"
 title = "Gordon Shotwell"
 theme = "hyde-y"
-googleAnalytics = ""
+googleAnalytics = "UA-98228149-1"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+rss = true
 
-[[menu.main]]
+[about]
     name = "About"
     url = "/about/"
 
