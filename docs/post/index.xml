@@ -6,8 +6,90 @@
     <description>Recent content in Posts on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Apr 2017 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 03 May 2017 21:48:51 -0700</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why you should work remotely, even if you&#39;re not remote</title>
+      <link>/post/remote_work/</link>
+      <pubDate>Wed, 03 May 2017 21:48:51 -0700</pubDate>
+      
+      <guid>/post/remote_work/</guid>
+      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+
+/BLOGDOWN-BODY-BEFORE --&gt;
+
+&lt;p&gt;My last job was as a data scientist at Upworthy, which is a 100% remote company. Prior to starting the position I was worried about whether I could be happy and productive on a remote team. I wondered how project planning would work, whether it would be terribly lonely, and how communication would function when things got hectic. What I discovered is that the company was one of the more efficient and friendly places that I’ve worked, and I think the changes that they have made to accommodate remote work deserve much of the credit.&lt;/p&gt;
+&lt;p&gt;Most companies who hire remote employees do so to take advantage of cheaper labour markets. If you are a Silicon Valley tech company and are able to hire remotely you will be able to hire from areas which are not experiencing a labour shortage and as a result you will able to hire better people for less money. The thing which prevents companies from taking advantage of this arbitrage opportunity is that they are afraid that remote work will disrupt their workflow. How will they organize projects across multiple time zones? How will we come up with ideas if we have no watercoolers? I think that most of the changes required to accomodate remote employees are actually independent goods which every company should adopt. And since I learned all this at Upworthy, I’m going to present these benefits as a listical with cute animal pictures.&lt;/p&gt;
+&lt;div id=&#34;four-ways-that-remote-work-helps-your-company&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Four Ways that Remote Work Helps Your Company&lt;/h2&gt;
+&lt;div id=&#34;results-orientation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1) Results orientation&lt;/h3&gt;
+&lt;p&gt;Results oriented work environments are those which only care about employee &lt;em&gt;output&lt;/em&gt; and do not care about their effort. In these environments it doesn’t matter if an employee leaves early or checks Facebook at work so long as their results are good. This makes a lot of sense because ultimately the company as a whole is judged on its results, and so an employees work should be judged relative to how it contributes to those results. The problem is that defining results for an employee is a hard job, and it’s much easier to judge people based on their effort. Most companies which say they are results focused still use this heuristic.&lt;/p&gt;
+&lt;p&gt;Remote work makes results orientation mandatory. The simple fact that you can’t tell if or when your remote employees are at their desk means that managers have no choice but to evaluate employees based on their work product. As a result employees have incentives to make their work more efficient, for instance by taking short naps after lunch. &lt;img src=&#34;../img/cadence_gordon.jpg&#34; id=&#34;id&#34; class=&#34;class&#34; width=&#34;300&#34; height=&#34;200&#34; /&gt; &lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;intentional-communication&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;2) Intentional communication&lt;/h3&gt;
+&lt;p&gt;When you work with a remote team, you have to be intentional about your communication. If you are having a bad day, or have run into a block of some kind you have you proactively tell other people about it. Nobody is going to walk by your desk and notice why you are frustrated, and so you have to be intentional about asking for help, and connecting with your colleagues. My team at Upworthy did this in part by scheduling weekly 1 on 1 video calls between different engineers. These were a half hour long, and the only requirement was that you not talk about work. We also did things like daily slack check-ins, and making sure to start meetings by spending a bit of time asking how everyone was doing. There’s an assumption that this kind of informal communication happens automatically at in-person offices, but I don’t think that’s actually true. It might be true that some employees are making some connections, but most employees don’t actually end up connecting with a wide slice of their colleagues. This kind of intentional communication is connection and emotional safety. People develop better relationships with one another, and so they are more likely to ask for help or raise a dissenting view. Because remote work brings the problem of disconnection into sharper focus, it provides an incentive to build structures which help people connect.&lt;/p&gt;
+&lt;p&gt;Here is an example of my dog Cadence engaging in intentional communication through a digital platform.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/n8vhraccEnc&#34; frameborder=&#34;0&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;continuous-documentation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;3) Continuous documentation&lt;/h3&gt;
+&lt;p&gt;Remote work environments promote asynchronous communication. You spend more time communicating through email, Slack, or other written media than through conversation. Even video conferences involve a substantial amount of written communication. For instance at Upworthy we would frequently keep collaborative meetings notes in a Dropbox Paper document, or create Jira tickets as tasks were being assigned during the meeting. This is in contrast to in-person work environments where a lot of the work assignment takes place through verbal communication either at a meeting or through your boss dropping by your desk to ask you to do something. These synchronous bits of communication then need to be documented if anyone’s going to keep track of them.&lt;/p&gt;
+&lt;p&gt;The great thing about remote communication is that teams are constantly producing written artifacts which are easy to turn into documentation. For instance you never forget what exactly your boss asked you to do because work assignments almost always include a written description. It’s also easy to move from a brainstorming document used at a meeting, to a working document discussing a system, to a polished bit of documentation about that system. Because everyone works in text all the time, there’s a lower cost to creating documentation.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;../img/cadence_glasses.jpg&#34; id=&#34;id&#34; class=&#34;class&#34; width=&#34;300&#34; height=&#34;200&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;support-for-diversity&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;4) Support for diversity&lt;/h3&gt;
+&lt;p&gt;Almost every tech company has a major diversity problem. This is bad both from a basic ethical perspective but also because it causes team to become myopic and blind to perspectives other than their own. Structuring your company to promote remote work is, in my opinion, the single biggest action that you can take to promote diversity. There are two main ways that it does this:&lt;/p&gt;
+&lt;div id=&#34;remote-work-accomodates-diverse-workplace-requirements&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Remote work accomodates diverse workplace requirements&lt;/h4&gt;
+&lt;p&gt;Workplaces are path dependent places. You start your company with a few employees, and then make decisions about how that workplace develops physically and socially based on those employees. These decisions in turn attract employees who like those work environments and the cycle continues. For instance, it’s very likely that your open-concept start-up office with a climbing wall and beer in the fridge is tailored to support the work of able-bodied young men happy. Probably you won’t make the investments to support the work of, say, a blind engineer who needs to code by voice, and so you will never hire that engineer.&lt;/p&gt;
+&lt;p&gt;The same thing is true for geography. A small to mid-sized company tends to pick office locations based on where their current employees want to work, and so tend to hire people from particular neighborhoods because that office location is convenient to those neighborhoods. This embeds a fair amount of socioeconomic and ethnic bias in your workplace because neighborhoods tend to be ethically and socio-economically segregated.&lt;/p&gt;
+&lt;p&gt;This is a kind of catch 22 for workplace accommodation, you don’t know what change if none of your employees need accommodation, but you won’t be able to hire employees who need accommodation if you haven’t made those changes.&lt;/p&gt;
+&lt;p&gt;A simple solution is to just let an employee determine their own work environment. If someone has a particular workplace need it’s very likely that their home already meets that need. If they need a quiet environment to code by voice, they will be able to find or create that environment if you let them work remotely. If they need to be close to their children or ailing parents, they will be able to do that. Similarly your company can hire from communities which are geographically removed from your current work neighborhoods which increases diversity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;reducing-bias&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Reducing bias&lt;/h4&gt;
+&lt;p&gt;Before getting into this I should say that I have almost no personal experience with bias in the workplace. That said, I’m lawyer with some experience in human rights litigation and can speak from that perspective. The thing you notice again and again with human rights disputes is that bias flourishes in areas with poor evidence. It’s hard to prove workplace discrimination because this discrimination often happens informally and usually without witnesses. Claimants have a hard time reporting a discriminatory conduct because they are justifiably worried that they won’t be believed without some kind of smoking gun bit of evidence. Since the assholes of the world are well aware of this fact, they tend to do their harassing in circumstances where it will be hard to prove the conduct. Because remote work funnels more communication through channels which leave a paper trail, it reduces the amount communication which is amendable to this kind of discriminatory conduct. If someone harasses their female coworker through Slack or email, it’s very easy for that coworker to forward that communication on to human resources or a labour lawyer. It’s also easier to correct people for inadvertantly saying or doing something discriminatory because you have a record to look back on to identify what exactly was wrong with their behavior.&lt;/p&gt;
+&lt;p&gt;You can probably think of other ways that remote work helps with bias. For instance results orientation might lead to more evidence-based promotion decisions, women might be better able to better integrate their professional life with gendered non-professional work like child care, or text-based communication might ameliorate implicit bias. I have a suspicion that these factors are valid, but have neither data nor experience to support that suspicion so will leave it at that.&lt;/p&gt;
+&lt;p&gt;Accommodating diversity extends beyond people who you typically think of as requiring accommodation. Almost everybody’s work-life could be improved if that work fit their life circumstances a bit better. For instance, I have a tiny dog who will only go to the vet if she’s carried in a satchel. Remote work accommodates that particular life circumstance:&lt;/p&gt;
+&lt;blockquote class=&#34;instagram-media&#34; data-instgrm-captioned data-instgrm-version=&#34;7&#34; style=&#34; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&#34;&gt;
+&lt;div style=&#34;padding:8px;&#34;&gt;
+&lt;div style=&#34; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&#34;&gt;
+&lt;div style=&#34; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&#34;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p style=&#34; margin:8px 0 0 0; padding:0 4px;&#34;&gt;
+&lt;a href=&#34;https://www.instagram.com/p/BQBQXctl6SI/&#34; style=&#34; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&#34; target=&#34;_blank&#34;&gt;Doesn&#39;t know she&#39;s going to the vet&lt;/a&gt;
+&lt;/p&gt;
+&lt;p style=&#34; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&#34;&gt;
+A post shared by Gordon Shotwell (&lt;span class=&#34;citation&#34;&gt;@shotwellgordon&lt;/span&gt;) on &lt;time style=&#34; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&#34; datetime=&#34;2017-02-02T18:40:48+00:00&#34;&gt;Feb 2, 2017 at 10:40am PST&lt;/time&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;script async defer src=&#34;//platform.instagram.com/en_US/embeds.js&#34;&gt;&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;!-- BLOGDOWN-HEAD
+
+
+
+
+/BLOGDOWN-HEAD --&gt;
+</description>
+    </item>
     
     <item>
       <title>Data Visualization and UI design</title>
