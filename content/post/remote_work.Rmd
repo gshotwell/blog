@@ -42,7 +42,7 @@ The great thing about remote communication is that teams are constantly producin
 
 ###4) Support for diversity
 
-Almost every tech company has a major diversity problem. This is bad both from a basic ethical perspective but also because it causes teams to become myopic and blind to perspectives other than their own. Structuring your company to promote remote work is, in my opinion, the single biggest action that you can take to promote diversity. There are two main ways that it does this: 
+Almost every tech company has a major diversity problem. This is bad both from a basic ethical perspective but also because it causes teams to ignore perspectives other than their own. Structuring your company to promote remote work is, in my opinion, the single biggest action that you can take to promote diversity. There are two main ways that it does this: 
 
 #### Remote work accommodates diverse workplace requirements
 
