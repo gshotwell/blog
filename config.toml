@@ -41,7 +41,6 @@ disqusShortname = "shotwell-1"
 [params]
     highlight = "solarized_light"
     brand = "Gordon Shotwell"
-    topline = "Law and Data Science"
     sidebar = "left"
     github = "GShotwell"
     linkedin = "gshotwell"
