@@ -1,21 +1,44 @@
-baseurl = "/"
-publishDir= "docs"
-relativeurls = true
-languageCode = "en-us"
+# hostname (and path) to the root eg. http://spf13.com/
+baseurl = "http://shotwell.ca/blog"
+
+# Site title
 title = "Gordon Shotwell"
+
+# Copyright
+copyright = "(c) 2017 yourname."
+
+# Language
+languageCode = "en-EN"
+
+# "yaml", "toml", "json"
+metaDataFormat = "yaml"
+
+# theme to use (located in /themes/THEMENAME/)
 theme = "hyde-y"
+
+# pagination
+paginate = 10
+paginatePath = "page"
+
+# Enable Disqus integration
 disqusShortname = "shotwell-1"
-ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
-rss = true
-copyright = "(c) 2017 Gordon Shotwell."
 
-[about]
-    name = "About"
-    url = "/about/"
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+    code = "/:slug/"
 
-    
+[taxonomies]
+    tag = "tags"
+    topic = "topics"
+
+[author]
+    name = "Gordon Shotwell"
+    email = "g.e.shotwell@gmail.com"
+
+#
+# All parameters below here are optional and can be mixed and matched.
+#
 [params]
-    # You can use markdown here.
     highlight = "solarized_light"
     brand = "Gordon Shotwell"
     topline = "Law and Data Science"
@@ -24,7 +47,3 @@ copyright = "(c) 2017 Gordon Shotwell."
     linkedin = "gshotwell"
     twitter = "@gshotwell"
     googleAnalytics = "UA-98228149-1"
-
-
-
-  
