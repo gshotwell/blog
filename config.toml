@@ -4,8 +4,7 @@ relativeurls = true
 languageCode = "en-us"
 title = "Gordon Shotwell"
 theme = "hyde-y"
-googleAnalytics = "UA-98228149-1"
-disqusShortname = ""
+disqusShortname = "shotwell-1"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 rss = true
 
@@ -23,6 +22,7 @@ rss = true
     github = "GShotwell"
     linkedin = "gshotwell"
     twitter = "@gshotwell"
+    googleAnalytics = "UA-98228149-1"
 
 
 
