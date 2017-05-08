@@ -1,5 +1,7 @@
 # hostname (and path) to the root eg. http://spf13.com/
 baseurl = "http://shotwell.ca/blog"
+publishDir= "docs"
+relativeurls = true
 
 # Site title
 title = "Gordon Shotwell"
