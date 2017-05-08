@@ -1,22 +1,17 @@
-# hostname (and path) to the root eg. http://spf13.com/
-baseurl = "http://shotwell.ca/blog"
+baseurl = "/"
 publishDir= "docs"
 relativeurls = true
-
-# Site title
+languageCode = "en-us"
 title = "Gordon Shotwell"
+theme = "hyde-y"
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+
 
 # Copyright
 copyright = "(c) 2017 yourname."
 
-# Language
-languageCode = "en-EN"
-
 # "yaml", "toml", "json"
 metaDataFormat = "yaml"
-
-# theme to use (located in /themes/THEMENAME/)
-theme = "hyde-y"
 
 # pagination
 paginate = 10

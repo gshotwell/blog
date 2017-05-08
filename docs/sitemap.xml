@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://shotwell.ca/blog/2017/05/03/why-you-should-work-remotely-even-if-youre-not-remote/</loc>
+    <loc>/2017/05/03/why-you-should-work-remotely-even-if-youre-not-remote/</loc>
     <lastmod>2017-05-03T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://shotwell.ca/blog/2017/04/13/data-visualization-and-ui-design/</loc>
+    <loc>/2017/04/13/data-visualization-and-ui-design/</loc>
     <lastmod>2017-04-13T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://shotwell.ca/blog/2017/02/16/the-power-of-tidy-data/</loc>
+    <loc>/2017/02/16/the-power-of-tidy-data/</loc>
     <lastmod>2017-02-16T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://shotwell.ca/blog/2017/02/02/r-for-excel-users/</loc>
+    <loc>/2017/02/02/r-for-excel-users/</loc>
     <lastmod>2017-02-02T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://shotwell.ca/blog/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2017-02-01T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://shotwell.ca/blog/</loc>
+    <loc>/</loc>
     <lastmod>2017-05-03T21:48:51-07:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shotwell.ca/blog/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2017-05-03T21:48:51-07:00</lastmod>
     <priority>0</priority>
   </url>
