@@ -51,7 +51,7 @@
     },
     "datePublished": "2017-02-02",
     "description": "",
-    "wordCount":  2695 
+    "wordCount":  2685 
   }
 </script>
 
@@ -179,7 +179,7 @@
 
   
   &middot; Read in about 13 min
-  &middot; (2695 Words)
+  &middot; (2685 Words)
   <br>
   
 
@@ -261,9 +261,8 @@
 <h3>Example: Joining two tables together</h3>
 <p>I thought I’d illustrate these principles by working through the example of joining two tables together in Excel and R. Let’s say that we had two data tables, one with some information about cars and another with the colour of those cars, and we want to join the two of them together. For the purpose of this exercise, we’re going to assume that the number of cylinders in a car determines its colour.</p>
 <pre class="r"><code>library(dplyr)
-library(knitr)</code></pre>
-<pre><code>## Warning: package &#39;knitr&#39; was built under R version 3.4.1</code></pre>
-<pre class="r"><code>cars &lt;- mtcars
+library(knitr)
+cars &lt;- mtcars
 colours &lt;- data_frame(
   cyl = unique(cars$cyl),
   colour = c(&quot;Blue&quot;, &quot;Green&quot;, &quot;Eggplant&quot;)
@@ -763,7 +762,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
   
 <div class="container copyright">
   
-  &copy; 2017 yourname.
+  &copy; 2017 Gordon Shotwell.
 
 
 </div>
