@@ -31,7 +31,13 @@ in an ad-hoc way whether that therapy worked or didn’t work.
 
 ### The problem with alternative medicine
 
-Alterna
+ 
+
+The main problem with alternative medicine, or really any kind of anecdotal
+evidence is confirmation bias. Confirmation bias occurs whenever you tend to
+collect or record evidence in a way which biases your sample to the success
+cases. For instance if you evaluate the success of your product only by
+interviewing the
 
  
 
