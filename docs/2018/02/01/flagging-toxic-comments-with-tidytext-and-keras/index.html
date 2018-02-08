@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Flagging toxic comments with Tidytext and Keras  &middot; Gordon Shotwell</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="Flagging toxic comments with Tidytext and Keras  &middot; Gordon Shotwell ">
+<meta property="og:site_name" content="Gordon Shotwell"/>
+<meta property="og:url" content="/2018/02/01/flagging-toxic-comments-with-tidytext-and-keras/" />
+<meta property="og:locale" content="en-us">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-02-01T00:00:00Z" />
+<meta property="og:article:modified_time" content="2018-02-01T00:00:00Z" />
+
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@@gshotwell" />
+<meta name="twitter:creator" content="@@gshotwell" />
+<meta name="twitter:title" content="Flagging toxic comments with Tidytext and Keras" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="/2018/02/01/flagging-toxic-comments-with-tidytext-and-keras/" />
+<meta name="twitter:domain" content="/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Flagging toxic comments with Tidytext and Keras",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2018-02-01",
+    "description": "",
+    "wordCount":  2891 
+  }
+</script>
+
+
+
+<link rel="canonical" href="../../../../2018/02/01/flagging-toxic-comments-with-tidytext-and-keras/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../../touch-icon-144-precomposed.png">
+<link href="../../../../favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../../../../css/font-awesome.min.css">
+<link rel="stylesheet" href="../../../../css/style.css">
+<link rel="stylesheet" href="../../../../css/highlight/solarized_light.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-98228149-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="../../../../">
+  Gordon Shotwell
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+
+  
+<a href="../../../../about">About</a>
+
+<a href="../../../../post" title="Show list of posts">Posts</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:g.e.shotwell@gmail.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/GShotwell">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+<a id="contact-link-linkedin" class="contact_link" href="https://www.linkedin.com/in/gshotwell">
+  <span class="fa fa-linkedin-square"></span><span>linkedin</span></a>
+
+
+
+
+
+
+
+<a id="contact-link-twitter" class="contact_link" href="https://twitter.com/@gshotwell">
+  <span class="fa fa-twitter-square"></span><span>twitter</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Flagging toxic comments with Tidytext and Keras
+</h1>
+
+  <div class="metas">
+<time datetime="2018-02-01">1 Feb, 2018</time>
+
+
+  
+    &middot; by Gordon Shotwell
+  
+  &middot; Read in about 14 min
+  &middot; (2891 Words)
+  <br>
+  
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p>I recently took a look at a <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data">Kaggle Competition</a> about automatically labeling toxic comments on Wikipedia. I thought it would be a good opportunity to showcase how well the <code>tidytext</code> and <code>keras</code> R interfaces work together. This data includes a lot of really troubling language, including racial slurs, misogynistic language, and homophobic content and so I decided to not include most of the exploratory data analysis because this is a family blog.</p>
+<p>The task here is to try to determine how likely a string is to have a particular set of labels. We can take a look at the data</p>
+<pre class="r"><code>library(tidyverse)
+library(tidytext)
+train &lt;- read_csv(&quot;train.csv&quot;)
+train$id &lt;- as.factor(train$id)</code></pre>
+<pre class="r"><code>train$comment_text[1:5]</code></pre>
+<pre><code>## [1] &quot;Explanation\nWhy the edits made under my username Hardcore Metallica Fan were reverted? They weren&#39;t vandalisms, just closure on some GAs after I voted at New York Dolls FAC. And please don&#39;t remove the template from the talk page since I&#39;m retired now.89.205.38.27&quot;                                                                                                                                                                                                                                                                                                                                                                               
+## [2] &quot;D&#39;aww! He matches this background colour I&#39;m seemingly stuck with. Thanks.  (talk) 21:51, January 11, 2016 (UTC)&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+## [3] &quot;Hey man, I&#39;m really not trying to edit war. It&#39;s just that this guy is constantly removing relevant information and talking to me through edits instead of my talk page. He seems to care more about the formatting than the actual info.&quot;                                                                                                                                                                                                                                                                                                                                                                                                               
+## [4] &quot;\&quot;\nMore\nI can&#39;t make any real suggestions on improvement - I wondered if the section statistics should be later on, or a subsection of \&quot;\&quot;types of accidents\&quot;\&quot;  -I think the references may need tidying so that they are all in the exact same format ie date format etc. I can do that later on, if no-one else does first - if you have any preferences for formatting style on references or want to do it yourself please let me know.\n\nThere appears to be a backlog on articles for review so I guess there may be a delay until a reviewer turns up. It&#39;s listed in the relevant form eg Wikipedia:Good_article_nominations#Transport  \&quot;&quot;
+## [5] &quot;You, sir, are my hero. Any chance you remember what page that&#39;s on?&quot;</code></pre>
+<p>This is a multi-label classification problem. Each string can have up to six labels, and there is some likelihood that labels are correlated with one another. For instance, if a string is <code>severe_toxic</code> then we would think that it will also be <code>toxic</code>. The only information we have about the comments is the text itself, and it looks like the text includes some uninformative characters like time-stamps and formatting characters.</p>
+<pre class="r"><code>labels &lt;- train %&gt;% select(id, toxic:identity_hate) 
+labels  %&gt;%
+    gather(label, value, -id) %&gt;% 
+    group_by(label) %&gt;% 
+    summarize(n_labeled = sum(value)) %&gt;% 
+    mutate(percent_labeled = n_labeled / nrow(train)) %&gt;% 
+    arrange(desc(percent_labeled))</code></pre>
+<pre><code>## # A tibble: 6 x 3
+##           label n_labeled percent_labeled
+##           &lt;chr&gt;     &lt;int&gt;           &lt;dbl&gt;
+## 1         toxic     15294     0.095844483
+## 2       obscene      8449     0.052948217
+## 3        insult      7877     0.049363606
+## 4  severe_toxic      1595     0.009995551
+## 5 identity_hate      1405     0.008804858
+## 6        threat       478     0.002995532</code></pre>
+<pre class="r"><code>labels %&gt;% select(-id) %&gt;%  cor(use = &quot;complete.obs&quot;)</code></pre>
+<pre><code>##                   toxic severe_toxic   obscene    threat    insult
+## toxic         1.0000000    0.3086191 0.6765145 0.1570584 0.6475181
+## severe_toxic  0.3086191    1.0000000 0.4030145 0.1236013 0.3758072
+## obscene       0.6765145    0.4030145 1.0000000 0.1411790 0.7412724
+## threat        0.1570584    0.1236013 0.1411790 1.0000000 0.1500224
+## insult        0.6475181    0.3758072 0.7412724 0.1500224 1.0000000
+## identity_hate 0.2660094    0.2016002 0.2868669 0.1151283 0.3377363
+##               identity_hate
+## toxic             0.2660094
+## severe_toxic      0.2016002
+## obscene           0.2868669
+## threat            0.1151283
+## insult            0.3377363
+## identity_hate     1.0000000</code></pre>
+<p>A couple of things stand out here. First most if the labels are fairly uncommon, and some like the <code>threat</code> label are extremely rare. This is going to make our modelling efforts more difficult because we might not have enough data to apply some kinds of classifiers. Second, the labels are well correlated with one another which indicates that we probably want to model these labels together in some way.</p>
+<section id="text-preparation" class="level2">
+<h2>Text preparation</h2>
+<p>The first step for looking at the actual text is to split up the strings into words and then remove stop words. Stop words like “the” and “a” are unlikely to provide much information about the toxicity of the comment, so we can take them out.</p>
+<pre class="r"><code>txt &lt;- train %&gt;% 
+    select(id, comment_text) %&gt;% 
+    unnest_tokens(word, comment_text, ) %&gt;% 
+    anti_join(stop_words, by = &quot;word&quot;) 
+
+txt &lt;- labels %&gt;% 
+    left_join(txt, by = &quot;id&quot;)
+
+#filter out numbers and punctuation
+txt$word &lt;- str_replace_all(txt$word, &quot;[:punct:]&quot;, &quot;&quot;) %&gt;% 
+    str_replace_all(&quot;[:digit:]&quot;, &quot;&quot;)
+txt_freq &lt;- txt %&gt;% 
+    group_by(word) %&gt;% 
+    tally(sort = TRUE) 
+head(txt_freq)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##        word      n
+##       &lt;chr&gt;  &lt;int&gt;
+## 1           142747
+## 2   article  55934
+## 3      page  46207
+## 4 wikipedia  36666
+## 5      talk  32578
+## 6      edit  18242</code></pre>
+<p>Somewhat unsurprisingly, the most common words are related to Wikipedia editing, such as “page”, “word”, “article” etc. When you take a look at the individual labels, you can see that their top words are quite a bit more offensive.</p>
+<p>The last thing I want to do in terms of data preparation is to stem the words, that is, replace the various forms of a word with one token (for example, “win”, “winning”, and “winner” are all replaced with the single stem “win”). The assumption behind this process is that all of those words have more or less the same meaning, so we can replace them with a single token without losing much information. This serves as a type of dimensionality reduction for text classification problems because you just have one variable for the word-stem instead of several for each individual word.</p>
+<pre class="r"><code>pre_stem &lt;- length(unique(txt$word))
+txt$word &lt;- SnowballC::wordStem(txt$word) 
+stem_diff &lt;- pre_stem - length(unique(txt$word))</code></pre>
+<p>By stemming the text we’ve reduced the number of dimensions by about 4000.</p>
+</section>
+<section id="classifying-the-text" class="level2">
+<h2>Classifying the text</h2>
+<p>We have two basic options for classifying multi-label data: we can either use a classifier like a neural network, which can naturally classify records into more than one category, or we can turn the multi-label classification problem into a discrete classification problem. For instance, we could create a new factor variable with one category for each possible combination of labels:</p>
+<pre class="r"><code>label_cat &lt;- train %&gt;% 
+    select(id, toxic:identity_hate) %&gt;% 
+    gather(label, value, -id) %&gt;%
+    filter(value == 1) %&gt;% 
+    group_by(id) %&gt;% 
+    summarize(label_cat = paste(label, collapse = &quot;|&quot;)) 
+
+label_cat %&gt;% 
+    group_by(label_cat) %&gt;% 
+    tally() %&gt;% 
+    arrange(n)</code></pre>
+<pre><code>## # A tibble: 40 x 2
+##                                   label_cat     n
+##                                       &lt;chr&gt; &lt;int&gt;
+##  1  toxic|severe_toxic|threat|identity_hate     1
+##  2         toxic|severe_toxic|threat|insult     1
+##  3                           obscene|threat     2
+##  4                    obscene|threat|insult     2
+##  5                    obscene|identity_hate     3
+##  6                            threat|insult     3
+##  7         toxic|severe_toxic|identity_hate     3
+##  8        toxic|threat|insult|identity_hate     3
+##  9        toxic|severe_toxic|obscene|threat     4
+## 10 toxic|severe_toxic|obscene|identity_hate     6
+## # ... with 30 more rows</code></pre>
+<p>This technique might work for this kind of problem because the number of labels is relatively small. But since the number of categories in the new variable is the factorial of the number of labels, it can quickly become unmanageable as the number of labels increases. The bigger issue for this approach is that the data we’re working with doesn’t have that many labeled entries, and so some of the interacted categories have only one or two observations. For instance, any algorithm that was trying to learn to identify the <code>obscene|threat</code> label would be doing so based on just 2 observation. That’s just not enough information to make a reliable prediction.</p>
+<p>Another approach is to fit a distinct classifier to each label, and then generate the predicted labels independently of one another. This is a good approach because it’s fairly simple and will probably work better for the sparse data; however, the problem with this approach is that we’re assuming that the labels are independent of one another when in fact we know that they’re probably highly correlated.</p>
+<p>To train these classifiers we need to create a bag-of-words data frame that has the distinct words in the columns and the number of occurrences of each stemmed word in the cells. We can also reserve 30% of the data at this point as a test set. Some experimentation revealed that my laptop isn’t quite up to this problem so I’m going to filter the data down to the most common words to send through the classifier. One important step here is that I’m selecting the 250 most common words for each label to ensure that we get some identifying words for each category.</p>
+<pre class="r"><code>txt &lt;- left_join(txt, labels, by = &quot;id&quot;)
+
+common_words &lt;- txt %&gt;% 
+    ungroup() %&gt;% 
+    gather(label, value, -id, -word) %&gt;% 
+    filter(value == 1) %&gt;% 
+    filter(word != &quot;id&quot;) %&gt;% 
+    filter( nchar(word) &gt; 1 &amp; nchar(word &lt; 40)) %&gt;% 
+    group_by(label, word) %&gt;% 
+    summarize(n = n()) %&gt;% 
+    arrange(desc(n)) %&gt;% 
+    top_n(250) %&gt;% 
+    pull(word) %&gt;% 
+    unique()</code></pre>
+<pre><code>## Selecting by n</code></pre>
+<pre class="r"><code>tf_df &lt;- txt %&gt;%  
+    ungroup() %&gt;% 
+    select(id, word) %&gt;% 
+    filter(word %in% common_words) %&gt;% 
+    group_by(id, word) %&gt;% 
+    tally() %&gt;% 
+    spread(word, n, fill = 0) 
+
+response &lt;- labels %&gt;% 
+    filter(id %in% tf_df$id)
+
+train_idx &lt;- sample(c(TRUE, FALSE), nrow(tf_df), replace = TRUE,  c(0.7, 0.3))
+x_train &lt;- tf_df[train_idx, common_words]
+x_test  &lt;- tf_df[!train_idx, common_words]
+
+y_train &lt;- response[train_idx, ]
+y_test  &lt;- response[!train_idx, ]</code></pre>
+</section>
+<section id="building-the-classifier" class="level2">
+<h2>Building the classifier</h2>
+<p>I’m going to use a logistic regression model with a Lasso penalty mainly because I have a suspicion that the true model is sparse – that most of these words are probably not relevant to whether the text should be labeled one way or another. If that’s the case, we want to have a model that does some feature selection to identify which words are important. The Lasso penalty tends to push some of the coefficients to zero, which eliminates irrelevant words from the model.</p>
+<pre class="r"><code>library(glmnet)
+x_train &lt;- Matrix(as.matrix(x_train), sparse = TRUE)
+models &lt;- y_train %&gt;% 
+    ungroup() %&gt;% 
+    select(-id) %&gt;% 
+    map(~cv.glmnet(x_train, ., 
+        nfolds = 5, 
+        family = &quot;binomial&quot;, 
+        type.measure = &quot;auc&quot;, 
+        parallel = TRUE,
+        maxit = 1e4))</code></pre>
+<p>We now have a list of models, one for each of the response variables. We can look at a couple of the AUC plots to see how the model fits.</p>
+<pre class="r"><code>walk(c(&quot;toxic&quot;, &quot;insult&quot;, &quot;threat&quot;), ~{
+    plot(models[[.]])
+    title(.)})</code></pre>
+<p><img src="../../../../post/toxic_files/figure-html/plot%20models-1.png" width="672" /><img src="../../../../post/toxic_files/figure-html/plot%20models-2.png" width="672" /><img src="../../../../post/toxic_files/figure-html/plot%20models-3.png" width="672" /></p>
+<p>These plots aren’t exactly what we were hoping for. Our model is doing a fairly good job identifying the <code>toxic</code> and <code>insult</code> labels, but failed to converge for the <code>threat</code> label. This is especially disappointing because fitting all these models took forever, and we ended up with something that isn’t at all useful for making predictions.</p>
+<p>I have four main ideas for what to do at this point:</p>
+<ol type="1">
+<li><p><em>Try to solve an easier problem</em>. The model is having trouble identifying the rare categories, and we could probably do a better job if we rolled these categories up into larger groups, for instance by combining <code>identity_hate</code>, <code>threat</code> and <code>severe_toxic</code>. Maybe if we started from that easy problem a solution to the harder problem would become apparent</p></li>
+<li><p><em>Fiddle with the existing model</em> I made a lot of concessions due to the time I had to work on this and my available computing power, but we could probably get a better model by doing things like including more words in the model, increasing the number of <code>glmnet</code> iterations, or using something other than raw word counts for our predictor variables. For instance we could scale the word occurrences using term frequency</p></li>
+<li><p><em>Investigate contextual models</em> The model we’re using here is just based on word frequency, which doesn’t include information about how words are connected to one another. With all language, and especially hate speech, context is very important information that we should probably consider. For instance, the word “cow” could be innocuous in one context but highly offensive in another. To include this information we could do something as simple as counting n-grams instead of words, but probably some kind of neural network is the best way to capture that kind of contextual information.</p></li>
+<li><p><em>Try a classifier chain</em> A classifier chain is just like the approach I took here, except that you include the output of one model as a predictor of a subsequent model. This is a good option here because some of our outcome variables are correlated, so if a string is likely to be toxic it is more likely that it is severely toxic. Unfortunately the labels I’m having trouble with aren’t that well correlated with other models so maybe a classifier chain wouldn’t help that much with those categories.</p></li>
+</ol>
+</section>
+<section id="neural-networks-to-the-rescue" class="level2">
+<h2>Neural Networks to the rescue</h2>
+<p>I’ve always had quite a lot of imposter syndrome about statistical methods. I studied philosophy and law in school which didn’t include things like vector calculus or probability. I feel especially nervous around neural networks because they are surrounded by equal proportions of hype, integrals, and unfriendly mathematicians. Despite this I think I’m going to try option #3 and see how deep learning does on this problem. There are two main reasons I think this approach is the most promising.</p>
+<p>First, neural networks can naturally output multi-label classifiers. I had to do a lot of gymnastics to try to get a set of binary classifiers to output overlapping labels, but all you have to do to get multi-label classification out of a neural network is to add nodes to the output layer. This is also great because neural networks learn all the labels at once rather than piecemeal.</p>
+<p>Second, neural networks are really good at learning from context. For instance, if you want to create a binary classifier which considers the interaction of several words, you typically have to create a new variable to include in the model. Neural networks can build up these interactions on their own without requiring the analyst to recode the data ahead of time. The way I think about this is that you need to explicitly test your suspicions in a traditional classifier, but neural networks can generate their own suspicions.</p>
+<p>To start with I’m going to consider a few more words, the top 500 from each label instead of the top 250.</p>
+<pre class="r"><code>common_words &lt;- txt %&gt;% 
+    ungroup() %&gt;% 
+    gather(label, value, -id, -word) %&gt;% 
+    filter(value == 1) %&gt;% 
+    filter(word != &quot;id&quot;) %&gt;% 
+    filter( nchar(word) &gt; 1 &amp; nchar(word &lt; 40)) %&gt;% 
+    group_by(label, word) %&gt;% 
+    summarize(n = n()) %&gt;% 
+    arrange(desc(n)) %&gt;% 
+    top_n(500) %&gt;% 
+    pull(word) %&gt;% 
+    unique()</code></pre>
+<pre><code>## Selecting by n</code></pre>
+<p>Next we need to encode this data in a way that the network can understand. I’m going to use a one-hot matrix where each row is an observation, and each column is a word. The entries of the matrix are <code>1</code> if the observed string has that word, and <code>0</code> otherwise. Keras has some great tools for generating these matrices in a more efficient manner, but I’m going to use <code>tidyr</code> because it’s a bit more transparent.</p>
+<pre class="r"><code>x &lt;- txt %&gt;% 
+    select(id, word) %&gt;% 
+    filter(word %in% common_words) %&gt;% 
+    group_by(id, word) %&gt;% 
+    summarize(one_hot = 1) %&gt;%
+    spread(word, one_hot, fill = 0)</code></pre>
+<p>We can create our test and training sets for both the one-hot matrix, and the matrix of labels. The output matrix has the same number of rows as our observation, and one column per possible label.</p>
+<pre class="r"><code>test_idx &lt;- sample(c(TRUE, FALSE), nrow(x), replace = TRUE, c(.7, .3))
+
+x_train &lt;- x[test_idx, ] %&gt;% 
+    ungroup() %&gt;% 
+    select(-id) %&gt;% 
+    as.matrix()
+y_train &lt;- labels %&gt;% 
+    filter(id %in% x$id) %&gt;% 
+    select(-id) %&gt;% 
+    .[test_idx,] %&gt;% 
+    as.matrix()
+
+x_test &lt;- x[!test_idx, ] %&gt;% 
+    ungroup() %&gt;% 
+    select(-id) %&gt;% 
+    as.matrix()
+y_test &lt;- labels %&gt;% 
+    filter(id %in% x$id) %&gt;% 
+    select(-id) %&gt;% 
+    .[!test_idx,] %&gt;% 
+    as.matrix()</code></pre>
+<p>Now we’re ready to construct the network. I’m using the wonderful new Keras package from RStudio, and mostly default values for the training parameters.</p>
+<pre class="r"><code>library(keras)
+tox_mod &lt;- keras_model_sequential() %&gt;% 
+    layer_dense(units = 16, activation = &quot;relu&quot;, input_shape = ncol(x_train)) %&gt;% 
+    layer_dropout(.3) %&gt;% 
+    layer_dense(units = 16, activation = &quot;relu&quot;) %&gt;%
+    layer_dropout(.2) %&gt;% 
+    layer_dense(units = 16, activation = &quot;relu&quot;) %&gt;% 
+    layer_dense(units = ncol(y_train), activation = &quot;sigmoid&quot;)
+
+val_indices &lt;- sample(1:nrow(x_train), 20000)
+
+x_val &lt;- x_train[val_indices,]
+partial_x_train &lt;- x_train[-val_indices,]
+
+y_val &lt;- y_train[val_indices,]
+partial_y_train &lt;- y_train[-val_indices,]
+
+tox_mod %&gt;% compile(
+  optimizer = &quot;rmsprop&quot;,
+  loss = &quot;binary_crossentropy&quot;,
+  metrics = c(&quot;accuracy&quot;)
+)
+
+history &lt;- tox_mod %&gt;% fit(
+  partial_x_train,
+  partial_y_train,
+  epochs = 20,
+  batch_size = 512,
+  validation_data = list(x_val, y_val)
+)
+plot(history)</code></pre>
+<p><img src="../../../../post/toxic_files/figure-html/neural%20network-1.png" width="672" /></p>
+<p>This plot shows that the model is getting better each epoch and doesn’t appear to be over-fitting. It also more or less plateaus after about the fifth epoch, so we could cut off training there if we were worried about computation resources. Importantly, I’m actually getting something which can make predictions which is a big step up from my first attempt.</p>
+<p>Finally we can output some predictions to check the model against the hold out test. The Kaggle competition asked for a mean log-loss score which we can compute easily using <code>purrr</code> and the <code>MLmetrics</code> package.</p>
+<pre class="r"><code>preds &lt;- tox_mod %&gt;% 
+    predict(x_test) %&gt;% 
+    as.data.frame()
+y_test &lt;- as.data.frame(y_test)
+purrr::map2_dbl(preds, y_test, ~MLmetrics::LogLoss(.x,.y)) %&gt;% 
+    mean()</code></pre>
+<pre><code>## [1] 0.0732083</code></pre>
+<p>The leader board on the Kaggle competition tells me that the best mean log-loss score is <code>0.052</code> and while that’s quite a bit lower than my score the fact that it’s in the same ballpark is encouraging. The network I used here is very simple with only two hidden layers with 16 nodes, but it performs quite well. The next steps for this problem would be to add some complexity to the model by adding layers or nodes.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>The big thing I learned through this process is not to be afraid of state-of-the-art techniques. A lot of the time these techniques were developed because traditional approaches were hard to apply to certain problems. In other words, they were created to make those problems <em>simpler</em> rather than more complicated. In this case the approach I was comfortable with (Lasso regression) was kind of tricky to the multi-label classification problem and a neural network both performed better, and was actually easier to understand.</p>
+</section>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="../../../../2017/08/29/advice-for-non-traditional-data-scientists/" title="Advice for non-traditional data scientists">
+      Previous
+    </a>
+    
+
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//shotwell-1.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2017 Gordon Shotwell.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//shotwell-1.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="../../../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

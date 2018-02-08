@@ -1,0 +1,239 @@
+---
+title: "Zapier Homework"
+author: "Gordon Shotwell"
+output:
+  html_document:
+    df_print: paged
+---
+
+A note to the reader: this data includes a lot of really troubling language, including racial slurs, misogynistic language, and homophobic content. This is a feature of the problem, but I wanted to note it as some of that language has necessarily made its way into this report. 
+
+The task here is to try to determine how likely a string is to have a particular label. The first step is to read in the dataset and see what it looks like. 
+
+```{r Data import, echo = FALSE}
+library(tidyverse)
+library(tidytext)
+train <- read_csv("train.csv")
+```
+```{r}
+DT::datatable(train[1:10, ])
+```
+
+This is a multi-label classification problem. Each string can have up to six labels, and there is some likelihood that labels are correlated with one another. For instance, if a string is `severe_toxic` then it is likely that it will also be `toxic`. The only information we have about the comments is the text itself, and it looks like the text includes some uninformative characters like time-stamps and formatting characters. 
+
+```{r label EDA}
+labels <- train %>% select(toxic:identity_hate) 
+labels  %>%
+    gather(label, value) %>% 
+    group_by(label) %>% 
+    summarize(n_labeled = sum(value)) %>% 
+    mutate(percent_labeled = n_labeled / nrow(train)) 
+
+#check if "toxic" perfectly overlaps with the other labels, it doesn't
+labeled_non_toxic <- labels %>% 
+    filter(toxic == 0) %>% 
+    gather(label, value) %>% 
+    pull(value) %>% 
+    sum()
+```
+
+```{r check correlation}
+cor(labels, use = "complete.obs")
+```
+
+The reason I wanted to look at how the labels were assigned was to see if I could remove any categories without losing information. For instance, if `toxic` was just a stand-in for one of the other labels, we could drop `toxic` for the modelling portion and apply that label programatically after the fact. 
+
+
+## Text preparation
+The first step for looking at the actual text is to split up the strings into words and then remove stop words. Stop words like "the" and "a" are unlikely to provide much information about the toxicity of the comment, so we can take them out. 
+
+```{r text processing}
+
+txt <- train %>% 
+    select(id, comment_text) %>% 
+    unnest_tokens(word, comment_text, ) %>% 
+    anti_join(stop_words, by = "word") 
+
+#filter out numbers and punctuation
+txt$word <- str_replace_all(txt$word, "[:punct:]", "") %>% 
+    str_replace_all("[:digit:]", "")
+txt_freq <- txt %>% 
+    group_by(word) %>% 
+    tally(sort = TRUE) 
+head(txt_freq)
+```
+
+Somewhat unsurprisingly, the most common words are related to Wikipedia editing, such as "page", "word", "article" etc. The next step is to review our labels to see which words come up relatively more frequently in the labeled strings than in the non-labeled strings. 
+
+```{r Labeled word frequencies}
+
+labels <- train %>% 
+    select(id, toxic:identity_hate) %>% 
+    gather(label, value, -id) %>% 
+    group_by(id) %>% 
+    mutate(unlabeled = ifelse(sum(value) == 0, 1, 0)) %>% 
+    ungroup() %>% 
+    spread(label, value)
+
+txt <- labels %>% 
+    left_join(txt, by = "id")
+
+topic_word_count <- txt %>% 
+    gather(label, value, -id, -word) %>% 
+    filter(value == 1) %>% 
+    group_by(label, word) %>% 
+    tally(sort = TRUE) 
+    
+ plot_df <- topic_word_count %>% 
+    filter(word != "") %>% 
+    filter(row_number() %in% 1:10) %>% 
+    ungroup() %>% 
+         arrange(label, desc(n)) %>% 
+    mutate(order = n():1)
+
+
+ggplot(plot_df, aes(order, n))+
+    geom_col() +
+    facet_wrap(~label, scales = "free") + 
+    scale_x_continuous(
+        breaks = plot_df$order,
+        labels = plot_df$word,
+        expand = c(0,0)) + 
+    coord_flip()
+
+```
+
+Aside from giving us a picture of all the bad language in this dataset, this plot gives us a rough sense of how well the different labels are separated. In particular, it looks like the `unlabeled` category is more distinct from any of the labels than the named labels are from one another. For example, the `toxic` and `severe_toxic` categories share many of the same top words. This means that a classifier is probably going to have an easier time distinguishing between labeled/unlabeled than it is distinguishing between the labels. If I were doing this analysis for a business user, I would go back to them at this point to better understand why they were trying to classify comments in the first place; if they were mostly interested in flagging inappropriate comments rather than understanding _why_ those comments were inappropriate, I might suggest exploring the binomial classifier. Since this isn't what the Kaggle problem asked for, I'll go on with the multi-label classifier. 
+
+The last thing I want to do in terms of data preparation is to stem the words, that is, replace the various forms of a word with one token (for example, "win", "winning", and "winner" are all replaced with the single stem "win"). The assumption behind this process is that all of those words have more or less the same meaning, so we can replace them with a single token without losing much information. This serves as a type of dimensionality reduction for text classification problems. 
+
+```{r Stem the data}
+pre_stem <- length(unique(txt$word))
+txt$word <- SnowballC::wordStem(txt$word) 
+stem_diff <- pre_stem - length(unique(txt$word))
+
+```
+
+By stemming the text we've reduced the number of dimensions by about 4000. 
+
+## Classifying the text
+
+There's almost certainly more EDA and data cleaning that could be done on this dataset, but this process has allowed us to identify and correct a number of problems with the data, and to generally understand where the classifier is going to have trouble. 
+
+We have two basic options for classifying multi-label data: we can either use a classifier like a neural network, which can naturally classify records into more than one category, or we can turn the multi-label classification problem into a discrete classification problem. For instance, we could create a new factor variable with one category for each possible combination of labels:
+
+```{r supercategory data prep}
+label_cat <- labels %>% 
+    gather(label, value, -id) %>%
+    filter(value == 1) %>% 
+    group_by(id) %>% 
+    summarize(label_cat = paste(label, collapse = "|")) 
+
+label_cat %>% 
+    group_by(label_cat) %>% 
+    tally(sort = TRUE)
+
+```
+
+This technique might work for this kind of problem because the number of labels is relatively small. But since the number of categories in the new variable is the factorial of the number of labels, it can quickly become unmanageable as the number of labels increases. The bigger issue for this approach is that the data we're working with doesn't have that many labeled entries, and so some of the interacted categories have only one or two observations. For instance, any algorithm that was trying to learn to identify the `obscene|threat` label would be doing so based on a single observation. That's just not enough information to make a reliable inference. 
+
+The approach I'm going to take is to fit a distinct classifier to each label, and then generate the predicted labels independently of one another. This is a good approach because it's fairly simple and will probably work better for the sparse data; however, the problem with this approach is that we're assuming that the labels are independent of one another when in fact we know that they're probably highly correlated. 
+
+To train these classifiers we need to create a bag-of-words data frame that has the distinct words in the columns and the number of occurrences of each stemmed word in the cells. We can also reserve 30% of the data at this point as a test set. Some experimentation revealed that my laptop isn't quite up to this problem so I'm going to filter the data down to the most common words to send through the classifier. One important step here is that I'm selecting the 250 most common words for each label to ensure that we get some identifying words for each category. 
+
+```{r bag of words}
+rm(txt_freq, train, topic_word_count, plot_df)
+
+common_words <- txt %>% 
+    ungroup() %>% 
+    gather(label, value, -id, -word) %>% 
+    filter(value == 1) %>% 
+    filter(word != "id") %>% 
+    filter( nchar(word) > 1 & nchar(word < 40)) %>% 
+    group_by(label, word) %>% 
+    summarize(n = n()) %>% 
+    arrange(desc(n)) %>% 
+    top_n(250) %>% 
+    pull(word) %>% 
+    unique()
+
+tf_df <- txt %>%  
+    ungroup() %>% 
+    select(id, word) %>% 
+    filter(word %in% common_words) %>% 
+    group_by(id, word) %>% 
+    tally() %>% 
+    spread(word, n, fill = 0) 
+
+response <- labels %>% 
+    select(-unlabeled) %>% 
+    filter(id %in% tf_df$id)
+
+all(response$id == tf_df$id) #check to see I need to join the two
+
+train_idx <- sample(c(TRUE, FALSE), nrow(tf_df), replace = TRUE,  c(0.7, 0.3))
+x_train <- tf_df[train_idx, common_words]
+x_test  <- tf_df[!train_idx, common_words]
+
+y_train <- response[train_idx, ]
+y_test  <- response[!train_idx, ]
+rm(txt, tf_df, labels, label_cat)
+save.image(file = "env.RDATA")
+```
+
+## Building the classifier
+
+I'm going to use a logistic regression model with a LASSO penalty. I have a couple of reasons for choosing this model: 
+1) I have a suspicion that the true model is sparse -- that most of these words are probably not relevant to whether the text should be labeled one way or another. If that's the case, we want to have a model that does some feature selection to identify which words are important. The Lasso penalty tends to push some of the coefficients to zero, which eliminates irrelevant words from the model.
+2) The low number of observations for certain labels lead to a danger of over-fitting and `glmnet` provides some good cross-validation functionality.
+3) The `glmnet` package is pretty quick and I don't have a lot of time to fit the model. 
+
+```{r load saved models, echo = FALSE}
+library(glmnet)
+models <- readRDS("models.rds")
+```
+
+```{r warning=FALSE, eval = FALSE}
+library(glmnet)
+x_train <- Matrix(as.matrix(x_train), sparse = TRUE)
+models <- y_train %>% 
+    ungroup() %>% 
+    select(-id) %>% 
+    map(~cv.glmnet(x_train, ., 
+        nfolds = 5, 
+        family = "binomial", 
+        type.measure = "auc", 
+        parallel = TRUE,
+        maxit = 1e4))
+```
+
+We now have a list of models, one for each of the response variables. We can look at the AUC plots to see how the model fits. 
+
+```{r plot models}
+walk2(models, names(models), ~{
+    plot(.x)
+    title(.y)})
+```
+
+These plots aren't exactly what we were hoping for. Our model is doing a fairly good job identifying the `toxic` and `insult` labels, but failed to converge for most response variables and more values of lamda.
+
+Looking at the coefficients for one of the models which converged reveals some other problems: 
+
+```{r}
+toxic_coef <- models$toxic %>% 
+    coef() %>% 
+    as.matrix()
+toxic_coef <- data_frame(var = row.names(toxic_coef), coef = toxic_coef[,1])
+DT::datatable(toxic_coef[toxic_coef$coef != 0, ])
+```
+
+This makes some sense, in that the words whose presence contribute to toxicity tend to be swear words or those commonly used in insults. And words that are common to the unlabled category receive negative betas. However, some racial slurs which we would expect to be associated with toxicity didn't make it into the model. This suggests that maybe the true model isn't sparse, and we should experiment with different types of regularization. 
+
+## Next Steps
+
+I'm running out of time so I'm going to have to leave this without a satisfactory solution, but my next steps would be the following: 
+
+1) *Understand the business problem*. The model is having trouble identifying the rare categories, and we could probably do a better job if we rolled these categories up into larger groups, for instance by combining `identity_hate`, `threat` and `severe_toxic`. To do this I would need a better understanding of how the data were coded, and what value we were getting from the prediction.
+2) *Fiddle with the existing model* I made a lot of concessions due to the time I had to work on this and my available computing power, but we could probably get a better model by doing things like including more words in the model, increasing the number of `glmnet` iterations, or using something other than raw word counts for our predictor variables. 
+3) *Investigate contextual models* The model we're using here is just based on word frequency, which doesn't include information about how words are connected to one another. With all language, and especially hate speech, context is very important information that we should probably consider. For instance, the word "cow" could be innocuous in one context but highly offensive in another. To include this information we could do something as simple as counting n-grams instead of words, but probably some kind of recurrent neural network is the best way to really capture that kind of contextual information.
+4) *Try a classifier chain* A classifier chain is just like the approach I took here, except that you include the output of one model as a predictor of a subsequent model. This is a good option here because some of our outcome variables are correlated, so if a string is likely to be toxic it is more likely that it is severely toxic. 

@@ -53,8 +53,8 @@ DT::datatable(example_df, rownames = FALSE)
 This table is great for printing out and looking up units by hand. If you wanted to convert firkins to kilderkins all you do is look up firkins in the column name and kilderkin in the row name and look for the conversion factor stored in the cell value. While intuitive, this dataset is not tidy because the observations do not form a row, and the variables are not stored in columns. For this problem the two variable are probably the unit that we are converting from, the unit we are converting to, and the conversion factor, so we want to transform this from its current wide format to a long format with only three columns. This is what the `tidyr` package is for. 
 
 ```{r}
+names(example_df)[1] <- "from_unit"
 example_df <- example_df %>% 
-  rename(from_unit = unit) %>% 
   gather(to_unit, factor, -from_unit)
 
 DT::datatable(example_df, rownames = FALSE)
