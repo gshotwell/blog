@@ -11,25 +11,25 @@ date: "2017-02-16T21:48:51-07:00"
 <script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
 
 
-<div id="tidy-data" class="section level3">
+<section id="tidy-data" class="level3">
 <h3>Tidy Data</h3>
 <p>Tidy data has become the dominant way of thinking about problems in R. The idea behind tidy data is to develop an <a href="http://tidyverse.org/">ecosystem</a> of R packages which all work around a similar kind of data structure. That way you can easily compose many different tools together to accomplish very complex tasks in an iterative, easy to understand fashion. There are lots of excellent presentations about why this is a great approach but the one I would recommend if you are new to this area is Hadley Wickham’s <a href="https://www.rstudio.com/resources/videos/data-science-in-the-tidyverse/">keynote</a> from the 2017 rstudio conference.</p>
 <p>One problem with data analysis is that you often need to make critical decisions before you really understand the problem. Since data analysis is always somewhat exploratory you can often make some bad decisions in the early stages of your analysis which can cause lots of problems later on. Maybe at some point you thought that storing your data in a nested list was a good idea, but curse yourself when you try to draw a graph with that data. Because you don’t know the optimal form for your data when you start working with it, you can end up is some ugly places. The great thing about Tidy Data is that it gives you a really good set of first steps which will rarely lead you astray. No matter where your analysis goes, a nice tidy dataset will be your arrow against misfortune.</p>
 <p>The first articulation of tidy data which I read was from this <a href="http://vita.had.co.nz/papers/tidy-data.pdf">Hadley Wickham paper</a>. A tidy dataset is one in which:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Each variable forms a column.</li>
 <li>Each observation forms a row.</li>
 <li>Each type of observational unit forms a table.</li>
 </ol>
 <p>I would add a fourth consideration:</p>
-<ol start="4" style="list-style-type: decimal">
+<ol start="4" type="1">
 <li>The information is expressed as simply as practicable.</li>
 </ol>
 <p>This fourth consideration is really just a restatement of the other three, but it is still a very helpful way of thinking about your data which often reveals subtle problems. For instance you can ask whether you are duplicating information in your data sets and whether removing that duplication simplifies the data. Another common simplification is referring to information consistently for instance by changing all of the <code>Mon</code>’s to <code>Monday</code>’s.</p>
 <p>Whenever I start a new data analysis I look at my data and ask whether it’s tidy, and if it’s not, I do the work splitting up strings, reshaping tables, and joining data sets together to get it into a tidy form. This often feels like a waste of time because you are not immediately providing analytical value, but it almost always pays off in the long run.</p>
 <p>Tidying data is powerful both because it allows you to use all the great tidyverse packages, but also because it forces you to ask important questions about your data. To get each column to represent a variable you need to know what the variables are. Maybe the unit of observation is not obvious and you need more information about how the data is collected. Maybe you don’t really know how observations can go missing or how missing data is treated. Asking these questions right at the beginning of an analysis helps to clairify what you are trying to do and save time and mistakes down the road.</p>
-</div>
-<div id="convertr-example" class="section level3">
+</section>
+<section id="convertr-example" class="level3">
 <h3>Convertr Example</h3>
 <p>I wanted to provide an example of how data tidying can lead to faster, simpler code. My first foray into R package development was a unit converter called <a href="https://github.com/ropenscilabs/convertr">convertr</a> the idea behind this package was to allow users to convert between as many units as possible, and as a result I needed to pull together lots of different data sources into a common data structure. I needed all of the scientific units from one place, all of the engineering units from another, all of the medieval English units from another place etc. The first question then was, how do you store all of this data? What form should it take? One natural option is a conversion matrix:</p>
 <pre class="r"><code>library(convertr)
@@ -51,8 +51,8 @@ DT::datatable(example_df, rownames = FALSE)</code></pre>
 <div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["cm3","cu yd","firkin","flozUK","kilderkin","load","m3","pony","shotUS","ton (water)"],[1,764555,40914.8,28.4,81829.6,1415840,1000000,22.2,44,1018320],[0,1,0.0535,0,0.107,1.8518,1.308,0,0.0001,1.3319],[0,18.6865,1,0.0007,2,34.6046,24.441,0.0005,0.0011,24.8888],[0.0352,26920.9507,1440.662,1,2881.3239,49853.5211,35211.2676,0.7817,1.5493,35856.338],[0,9.3433,0.5,0.0003,1,17.3023,12.2205,0.0003,0.0005,12.4444],[0,0.54,0.0289,0,0.0578,1,0.7063,0,0,0.7192],[0,0.7646,0.0409,0,0.0818,1.4158,1,0,0,1.0183],[0.045,34439.4144,1843.009,1.2793,3686.018,63776.5766,45045.045,1,1.982,45870.2703],[0.0227,17376.25,929.8818,0.6455,1859.7636,32178.1818,22727.2727,0.5045,1,23143.6364],[0,0.7508,0.0402,0,0.0804,1.3904,0.982,0,0,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>unit<\/th>\n      <th>cm3<\/th>\n      <th>cu yd<\/th>\n      <th>firkin<\/th>\n      <th>flozUK<\/th>\n      <th>kilderkin<\/th>\n      <th>load<\/th>\n      <th>m3<\/th>\n      <th>pony<\/th>\n      <th>shotUS<\/th>\n      <th>ton (water)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>This table is great for printing out and looking up units by hand. If you wanted to convert firkins to kilderkins all you do is look up firkins in the column name and kilderkin in the row name and look for the conversion factor stored in the cell value. While intuitive, this dataset is not tidy because the observations do not form a row, and the variables are not stored in columns. For this problem the two variable are probably the unit that we are converting from, the unit we are converting to, and the conversion factor, so we want to transform this from its current wide format to a long format with only three columns. This is what the <code>tidyr</code> package is for.</p>
-<pre class="r"><code>example_df &lt;- example_df %&gt;% 
-  rename(from_unit = unit) %&gt;% 
+<pre class="r"><code>names(example_df)[1] &lt;- &quot;from_unit&quot;
+example_df &lt;- example_df %&gt;% 
   gather(to_unit, factor, -from_unit)
 
 DT::datatable(example_df, rownames = FALSE)</code></pre>
@@ -86,4 +86,4 @@ example_df %&gt;%
 <p>Through this process we’ve gone from a matrix with 1000 cells, to a long dataframe with 100 rows, to one with 55 rows, and finally one with just 10 rows. Additionally we can figure whether two units can be converted to one another by just checking whether they have the same base unit.</p>
 <p>In addition to creating an efficient data storage mechanism, this process creates clairity about how to solve the unit conversion problem. We know that we basically need two functions, one to convert units to their SI counterparts, and another one to convert from the base unit to the target unit.</p>
 <p>This has been my experience with data tidying. Almost every time I tidy data I learn something crucial about how the data should be expressed, and about the problem which I’m trying to solve. This knowledge is invaluable throughout the data analysis process, and cleaning up the dataset is the best way to acquire it.</p>
-</div>
+</section>

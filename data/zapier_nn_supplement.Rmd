@@ -21,7 +21,7 @@ train <- read_csv("train.csv")
 train$id <- as.factor(train$id)
 ```
 
-```{r, data cleaning}
+```{r, data cleaning, cache = TRUE}
 txt <- train %>% 
     select(id, comment_text) %>% 
     unnest_tokens(word, comment_text, ) %>% 
@@ -59,8 +59,7 @@ common_words <- txt %>%
 
 Next we need to encode this data in a way that the network can understand. I'm going to use a one-hot matrix where each row is an observation, and each column is a word. The entries of the matrix are `1` if the observed string has that word, and `0` otherwise. 
 
-```{r one hot}
-
+```{r one hot, cache = TRUE}
 x <- txt %>% 
     select(id, word) %>% 
     filter(word %in% common_words) %>% 
@@ -73,7 +72,7 @@ x <- txt %>%
 
 We can create our test and training sets using this one-hot matrix, and the matrix of labels which is already in the right form. The output matrix has the same number of rows as our observation, and one column per possible label. 
 
-```{r test and train}
+```{r test and train, cache = TRUE}
 test_idx <- sample(c(TRUE, FALSE), nrow(x), replace = TRUE, c(.7, .3))
 
 x_train <- x[test_idx, ] %>% 
@@ -99,7 +98,7 @@ y_test <- labels %>%
 
 Now we're ready to construct the network. I'm using the wonderful new Keras package from RStudio, and mostly default values for the training parameters. 
 
-```{r neural network, message=FALSE, warning=FALSE}
+```{r neural network, message=FALSE, warning=FALSE, cache = TRUE}
 
 tox_mod <- keras_model_sequential() %>% 
     layer_dense(units = 16, activation = "relu", input_shape = ncol(x_train)) %>% 
@@ -137,7 +136,7 @@ This plot shows that the model is getting better each epoch and doesn't appear t
 
 Finally we can output some predictions to check the model: 
 
-```{r prediction}
+```{r prediction, cache = TRUE}
 preds <- tox_mod %>% 
     predict(x_test) %>% 
     as.data.frame()
@@ -146,6 +145,6 @@ map2_dbl(preds, y_test, ~MLmetrics::LogLoss(.x,.y)) %>%
     mean()
 ```
 
-The leader board on the Kaggle competition tells me that the best mean log-loss score is `0.52` and while that's quite a bit lower than my score the fact that it's in the same ballpark is encouraging. 
+The leader board on the Kaggle competition tells me that the best mean log-loss score is `0.052` and while that's quite a bit lower than my score the fact that it's in the same ballpark is encouraging. 
 
 

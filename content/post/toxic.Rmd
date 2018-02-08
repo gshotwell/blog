@@ -5,17 +5,18 @@ date: '2018-02-01'
 output: html_document
 ---
 
-I recently took a look at a ![Kaggle Competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) to label toxic comments on Wikipedia. And I thought it would be a good opportunity to showcase how well the `tidytext` and `keras` R interfaces work together. This data includes a lot of really troubling language, including racial slurs, misogynistic language, and homophobic content. As a result of this I decided to not include most of the exploratory data analysis because this here is a family blog. 
+I recently took a look at a [Kaggle Competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) about automatically labeling toxic comments on Wikipedia. I thought it would be a good opportunity to showcase how well the `tidytext` and `keras` R interfaces work together. This data includes a lot of really troubling language, including racial slurs, misogynistic language, and homophobic content and so I decided to not include most of the exploratory data analysis because this is a family blog. 
 
 The task here is to try to determine how likely a string is to have a particular set of labels. We can take a look at the data
 
-```{r Data import, echo = FALSE}
+```{r Data import, message = FALSE}
 library(tidyverse)
 library(tidytext)
 train <- read_csv("train.csv")
+train$id <- as.factor(train$id)
 ```
-```{r}
-DT::datatable(train[1:5, ])
+```{r, warning = FALSE}
+train$comment_text[1:5]
 ```
 
 This is a multi-label classification problem. Each string can have up to six labels, and there is some likelihood that labels are correlated with one another. For instance, if a string is `severe_toxic` then we would think that it will also be `toxic`. The only information we have about the comments is the text itself, and it looks like the text includes some uninformative characters like time-stamps and formatting characters. 
@@ -34,8 +35,7 @@ labels  %>%
 labels %>% select(-id) %>%  cor(use = "complete.obs")
 ```
 
-A couple of things stand out here. First most if the labels are fairly uncommon, and some like the `threat` labelare extremely rare. This is going to make our modelling efforts more difficult because we might not have enough data to apply some kinds of classifiers. Second, the labels are well correlated with one another which indicates that we probably want to model these labels together in some way. 
-
+A couple of things stand out here. First most if the labels are fairly uncommon, and some like the `threat` label are extremely rare. This is going to make our modelling efforts more difficult because we might not have enough data to apply some kinds of classifiers. Second, the labels are well correlated with one another which indicates that we probably want to model these labels together in some way. 
 
 ## Text preparation
 The first step for looking at the actual text is to split up the strings into words and then remove stop words. Stop words like "the" and "a" are unlikely to provide much information about the toxicity of the comment, so we can take them out. 
@@ -46,6 +46,9 @@ txt <- train %>%
     unnest_tokens(word, comment_text, ) %>% 
     anti_join(stop_words, by = "word") 
 
+txt <- labels %>% 
+    left_join(txt, by = "id")
+
 #filter out numbers and punctuation
 txt$word <- str_replace_all(txt$word, "[:punct:]", "") %>% 
     str_replace_all("[:digit:]", "")
@@ -55,7 +58,7 @@ txt_freq <- txt %>%
 head(txt_freq)
 ```
 
-Somewhat unsurprisingly, the most common words are related to Wikipedia editing, such as "page", "word", "article" etc. When you take a look at the individual categories, you can see that their top words are quite a bit more offensive.
+Somewhat unsurprisingly, the most common words are related to Wikipedia editing, such as "page", "word", "article" etc. When you take a look at the individual labels, you can see that their top words are quite a bit more offensive.
 
 The last thing I want to do in terms of data preparation is to stem the words, that is, replace the various forms of a word with one token (for example, "win", "winning", and "winner" are all replaced with the single stem "win"). The assumption behind this process is that all of those words have more or less the same meaning, so we can replace them with a single token without losing much information. This serves as a type of dimensionality reduction for text classification problems because you just have one variable for the word-stem instead of several for each individual word. 
 
@@ -63,7 +66,6 @@ The last thing I want to do in terms of data preparation is to stem the words, t
 pre_stem <- length(unique(txt$word))
 txt$word <- SnowballC::wordStem(txt$word) 
 stem_diff <- pre_stem - length(unique(txt$word))
-
 ```
 
 By stemming the text we've reduced the number of dimensions by about 4000. 
@@ -87,7 +89,7 @@ label_cat %>%
 
 ```
 
-This technique might work for this kind of problem because the number of labels is relatively small. But since the number of categories in the new variable is the factorial of the number of labels, it can quickly become unmanageable as the number of labels increases. The bigger issue for this approach is that the data we're working with doesn't have that many labeled entries, and so some of the interacted categories have only one or two observations. For instance, any algorithm that was trying to learn to identify the `obscene|threat` label would be doing so based on just 2 observation. That's just not enough information to make a reliable inference. 
+This technique might work for this kind of problem because the number of labels is relatively small. But since the number of categories in the new variable is the factorial of the number of labels, it can quickly become unmanageable as the number of labels increases. The bigger issue for this approach is that the data we're working with doesn't have that many labeled entries, and so some of the interacted categories have only one or two observations. For instance, any algorithm that was trying to learn to identify the `obscene|threat` label would be doing so based on just 2 observation. That's just not enough information to make a reliable prediction. 
 
 Another approach is to fit a distinct classifier to each label, and then generate the predicted labels independently of one another. This is a good approach because it's fairly simple and will probably work better for the sparse data; however, the problem with this approach is that we're assuming that the labels are independent of one another when in fact we know that they're probably highly correlated. 
 
@@ -130,10 +132,9 @@ y_test  <- response[!train_idx, ]
 
 ## Building the classifier
 
-I'm going to use a logistic regression model with a LASSO penalty mainly because I have a suspicion that the true model is sparse -- that most of these words are probably not relevant to whether the text should be labeled one way or another. If that's the case, we want to have a model that does some feature selection to identify which words are important. The Lasso penalty tends to push some of the coefficients to zero, which eliminates irrelevant words from the model.
+I'm going to use a logistic regression model with a Lasso penalty mainly because I have a suspicion that the true model is sparse -- that most of these words are probably not relevant to whether the text should be labeled one way or another. If that's the case, we want to have a model that does some feature selection to identify which words are important. The Lasso penalty tends to push some of the coefficients to zero, which eliminates irrelevant words from the model.
 
-
-```{r load saved models, echo = FALSE}
+```{r load saved models, echo = FALSE, message = FALSE}
 library(glmnet)
 models <- readRDS("models.rds")
 ```
@@ -160,27 +161,53 @@ walk(c("toxic", "insult", "threat"), ~{
     title(.)})
 ```
 
-These plots aren't exactly what we were hoping for. Our model is doing a fairly good job identifying the `toxic` and `insult` labels, but failed to converge for most response variables and more values of lamda. This is especially disappointing because fitting those models took forever, and we ended up with something that isn't at all useful for making predictions. 
+These plots aren't exactly what we were hoping for. Our model is doing a fairly good job identifying the `toxic` and `insult` labels, but failed to converge for the `threat` label. This is especially disappointing because fitting all these models took forever, and we ended up with something that isn't at all useful for making predictions. 
 
 I have four main ideas for what to do at this point:
 
 1) *Try to solve an easier problem*. The model is having trouble identifying the rare categories, and we could probably do a better job if we rolled these categories up into larger groups, for instance by combining `identity_hate`, `threat` and `severe_toxic`. Maybe if we started from that easy problem a solution to the harder problem would become apparent
-2) *Fiddle with the existing model* I made a lot of concessions due to the time I had to work on this and my available computing power, but we could probably get a better model by doing things like including more words in the model, increasing the number of `glmnet` iterations, or using something other than raw word counts for our predictor variables. For instance we could scale the word occurences using term frequency
+
+2) *Fiddle with the existing model* I made a lot of concessions due to the time I had to work on this and my available computing power, but we could probably get a better model by doing things like including more words in the model, increasing the number of `glmnet` iterations, or using something other than raw word counts for our predictor variables. For instance we could scale the word occurrences using term frequency
+
 3) *Investigate contextual models* The model we're using here is just based on word frequency, which doesn't include information about how words are connected to one another. With all language, and especially hate speech, context is very important information that we should probably consider. For instance, the word "cow" could be innocuous in one context but highly offensive in another. To include this information we could do something as simple as counting n-grams instead of words, but probably some kind of neural network is the best way to capture that kind of contextual information.
+
 4) *Try a classifier chain* A classifier chain is just like the approach I took here, except that you include the output of one model as a predictor of a subsequent model. This is a good option here because some of our outcome variables are correlated, so if a string is likely to be toxic it is more likely that it is severely toxic. Unfortunately the labels I'm having trouble with aren't that well correlated with other models so maybe a classifier chain wouldn't help that much with those categories. 
 
 ## Neural Networks to the rescue
 
-I've always had quite a lot of imposter syndrome about statistical methods. I studied philosophy and law in school and somewhat unsurprisingly vector calculus and probability didn't come up a lot in those disciplens. I feel especially nervous around neural networks because they are surrounded by an equal amount of hype, integrals, and unfriendly mathematicians. Despite this I think I'm going to try option #3 and see how deep learning does on this problem. There are two main reasons I think this model is the most promising.
+I've always had quite a lot of imposter syndrome about statistical methods. I studied philosophy and law in school which didn't include things like vector calculus or probability. I feel especially nervous around neural networks because they are surrounded by equal proportions of hype, integrals, and unfriendly mathematicians. Despite this I think I'm going to try option #3 and see how deep learning does on this problem. There are two main reasons I think this approach is the most promising.
 
-First, neural networks can naturally output multi-label classifiers. I had to do a lot of gymnastics to try to get a set of binary classifiers to output overlapping labels, but all you have to do to get multi-label classification out of a neural network is to add nodes to the output layer. This is also great because it means that the data we have can produce a model which can estimate label combinations which are missing from the data.
+First, neural networks can naturally output multi-label classifiers. I had to do a lot of gymnastics to try to get a set of binary classifiers to output overlapping labels, but all you have to do to get multi-label classification out of a neural network is to add nodes to the output layer. This is also great because neural networks learn all the labels at once rather than piecemeal. 
 
-Second, neural networks are really good at learning from context. For instance, if you want to create a binary classifier which considers the interaction of several words you typically have to create a new variable to include in the model. Neural networks can build up these interactions on their own without requiring the analyst to recode their data ahead of time. The way I think about this is that you need to explicitely test your suspicions in a traditional classifier, but neurual networks can generate their own suspicions.
+Second, neural networks are really good at learning from context. For instance, if you want to create a binary classifier which considers the interaction of several words, you typically have to create a new variable to include in the model. Neural networks can build up these interactions on their own without requiring the analyst to recode the data ahead of time. The way I think about this is that you need to explicitly test your suspicions in a traditional classifier, but neural networks can generate their own suspicions.
 
 To start with I'm going to consider a few more words, the top 500 from each label instead of the top 250. 
 
-```{r message=FALSE, warning=FALSE}
-library(keras)
+```{r, res, echo=FALSE}
+#re-doing the pre-processing
+rm(list = setdiff(ls(), "train"))
+txt <- train %>% 
+    select(id, comment_text) %>% 
+    unnest_tokens(word, comment_text, ) %>% 
+    anti_join(stop_words, by = "word") 
+
+txt$word <- str_replace_all(txt$word, "[:punct:]", "") %>% 
+    str_replace_all("[:digit:]", "")
+
+labels <- train %>% 
+    select(id, toxic:identity_hate) %>% 
+    gather(label, value, -id) %>% 
+    group_by(id) %>% 
+    mutate(unlabeled = ifelse(sum(value) == 0, 1, 0)) %>% 
+    ungroup() %>% 
+    spread(label, value)
+
+txt <- labels %>% 
+    left_join(txt, by = "id")
+
+txt$word <- SnowballC::wordStem(txt$word) 
+```
+```{r}
 common_words <- txt %>% 
     ungroup() %>% 
     gather(label, value, -id, -word) %>% 
@@ -195,7 +222,7 @@ common_words <- txt %>%
     unique()
 ```
 
-Next we need to encode this data in a way that the network can understand. I'm going to use a one-hot matrix where each row is an observation, and each column is a word. The entries of the matrix are `1` if the observed string has that word, and `0` otherwise. There's probably a special purpose function to do this for me, but I can also get there with tidyr.
+Next we need to encode this data in a way that the network can understand. I'm going to use a one-hot matrix where each row is an observation, and each column is a word. The entries of the matrix are `1` if the observed string has that word, and `0` otherwise. Keras has some great tools for generating these matrices in a more efficient manner, but I'm going to use `tidyr` because it's a bit more transparent. 
 
 ```{r one hot}
 
@@ -203,13 +230,11 @@ x <- txt %>%
     select(id, word) %>% 
     filter(word %in% common_words) %>% 
     group_by(id, word) %>% 
-    tally() %>% 
-    select(-n) %>% 
-    mutate(one_hot = 1) %>%
+    summarize(one_hot = 1) %>%
     spread(word, one_hot, fill = 0)
 ```
 
-We can create our test and training sets for both the one-hot matrix, and the matrix of labels which is already in the right form. The output matrix has the same number of rows as our observation, and one column per possible label. 
+We can create our test and training sets for both the one-hot matrix, and the matrix of labels. The output matrix has the same number of rows as our observation, and one column per possible label. 
 
 ```{r test and train}
 test_idx <- sample(c(TRUE, FALSE), nrow(x), replace = TRUE, c(.7, .3))
@@ -233,14 +258,12 @@ y_test <- labels %>%
     select(-id) %>% 
     .[!test_idx,] %>% 
     as.matrix()
-save(x_test, x_train, y_test, y_train, file = "nn_datasets.rda")
 ```
 
 Now we're ready to construct the network. I'm using the wonderful new Keras package from RStudio, and mostly default values for the training parameters. 
 
 ```{r neural network, message=FALSE, warning=FALSE}
 library(keras)
-load("nn_datasets.rda")
 tox_mod <- keras_model_sequential() %>% 
     layer_dense(units = 16, activation = "relu", input_shape = ncol(x_train)) %>% 
     layer_dropout(.3) %>% 
@@ -273,9 +296,9 @@ history <- tox_mod %>% fit(
 plot(history)
 ```
 
-This plot shows that the model is getting better each epoch and doesn't appear to be overfitting. It also more or less plateaus after about the fifth epoch, so we could cut off training there if we were worried about computation resources. 
+This plot shows that the model is getting better each epoch and doesn't appear to be over-fitting. It also more or less plateaus after about the fifth epoch, so we could cut off training there if we were worried about computation resources. Importantly, I'm actually getting something which can make predictions which is a big step up from my first attempt.
 
-Finally we can output some predictions to check the model: 
+Finally we can output some predictions to check the model against the hold out test. The Kaggle competition asked for a mean log-loss score which we can compute easily using `purrr` and the `MLmetrics` package. 
 
 ```{r prediction}
 preds <- tox_mod %>% 
@@ -286,4 +309,8 @@ purrr::map2_dbl(preds, y_test, ~MLmetrics::LogLoss(.x,.y)) %>%
     mean()
 ```
 
-The leader board on the Kaggle competition tells me that the best mean log-loss score is `0.52` and while that's quite a bit lower than my score the fact that it's in the same ballpark is encouraging. 
+The leader board on the Kaggle competition tells me that the best mean log-loss score is `0.052` and while that's quite a bit lower than my score the fact that it's in the same ballpark is encouraging. The network I used here is very simple with only two hidden layers with 16 nodes, but it performs quite well. The next steps for this problem would be to add some complexity to the model by adding layers or nodes. 
+
+# Conclusion
+
+The big thing I learned through this process is not to be afraid of state-of-the-art techniques. A lot of the time these techniques were developed because traditional approaches were hard to apply to certain problems. In other words, they were created to make those problems _simpler_ rather than more complicated. In this case the approach I was comfortable with (Lasso regression) was kind of tricky to the multi-label classification problem and a neural network both performed better, and was actually easier to understand. 
