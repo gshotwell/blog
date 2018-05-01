@@ -22,26 +22,26 @@ date: '2017-04-13T21:48:51-07:00'
 <p><img src="/img/US.png" /></p>
 <p>This is a kind of interesting idea for a chart. The main map is a projection of the three small maps aimed at showing how the three factors interact. For instance if an area is high in reading and writing but low in income, it will be orange because it’s a mixture of pink and yellow. However, the overall effect is immensely confusing because it’s not clear what we’re supposed to be looking at. Because the reader’s scarce attention isn’t directed, it’s frustrating to try to understand the chart.</p>
 <p>In the UI space, this principle often takes the form of controlling a user’s decisions. For instance if the user is in a place where it doesn’t make sense for them to push the save button, then don’t show them the save button. By reducing the number of options, you can guarantee that the user will not make mistakes. Usually a good warning sign that your UI is breaking this rule is when you start thinking about adding some text to explain what the user should do. If you have to explain, you probably have a design problem.</p>
-<section id="shambhala-app-home-screen" class="level3">
+<div id="shambhala-app-home-screen" class="section level3">
 <h3>Shambhala App Home Screen</h3>
 <p><img src="/img/main_old.gif" /></p>
 <p>The initial version of the app had a black and white video of a flag playing behind the main menu. I personally liked the look of this screen quite a lot because it had a nice texture to it, and visually highlighted the history and tradition of the Shambhala community. This was also pretty much the only part of the app which was universally loved by our user testers so it was hard to say goodbye to.</p>
 <p>The problem with the screen is that it has a very poor information-to-ink ratio. Most of the ‘ink’, or visual bandwidth, is taken up by the flag flapping in the background. It’s a moving, interesting image, and so it occupies a lot of the user’s attention. However, it provides no informational content beyond setting the context for the application. Since the video doesn’t really tell the user very much about what they should do or what they are doing, the attention they spend on it is somewhat wasted. The video was the design equivalent of empty calories: it tastes good but doesn’t provide much nutrition.</p>
 <p>After taking out the video, I still wanted to maintain that kind of textured look, and thought that a brocade image might make a nice background. Brocade is used as framing for Buddhist paintings in India and Tibet, and so also has a a traditional feel. After trying a few different options we came up with one which provides a similar feel as the video, but without the visual clutter.</p>
 <p><img src="/img/main_new.png" /></p>
-</section>
-<section id="session-builder" class="level3">
+</div>
+<div id="session-builder" class="section level3">
 <h3>Session Builder</h3>
 <p>The main function of the app is that it lets you create timers by stacking different blocks together. This is a useful but novel way of constructing a timer, so it’s important that the visuals of the session builder are clear. Unfortunately, what we ended up with wasn’t that clear:</p>
 <p><img src="/img/builder_old.jpeg" /></p>
 <p>Each block on this screen represents a time segment which is either a time interval, a gong, or an audio recording of some meditation instructions. The problem with this screen is that we’re using the wrong idiom. Functionally, this screen is a swipable list like Google Inbox, but the initial design made it look like a bunch of buttons. It’s natural for the user to tap on each block as though they were buttons, but it’s not natural to use the swipe functionality to delete a block. In order to fix this I made use of visual idioms related to swipable lists. This included adding in little square icons and making the text portion of the block a standard colour.</p>
 <p><img src="/img/builder_new.png" /></p>
-</section>
-<section id="the-player" class="level3">
+</div>
+<div id="the-player" class="section level3">
 <h3>The Player</h3>
 <p>The player screen on the app was the biggest visual improvement. The idea behind the player was that we would show the user a graph of their meditation session, so they could see how much time each block would take to play. It was also important to link the two screens together visually so that the user could understand the relationship between them. The initial block did this by expanding the height of each block proportional to its length, but in the new app we went with a simpler doughnut chart.</p>
 <p><img src="/img/player_old.jpeg" /></p>
 <p>This illustrates all three slogans. First, the initial design of the player invited explanation. You wanted to say “no, those aren’t buttons, they represent the relative time for each block. And see? their outline changes colour when they are playing.” Additionally there are lots of buttons on the bottom which are only useful some of the time. Second, it is has a terrible information-to-ink ratio. The data visualization occupies almost all of the available pixels, but doesn’t really communicate all that much. Finally, it doesn’t use the right visual idioms, again using the ‘button’ idiom when we want something that says ‘timer’.</p>
 <p>The revised screen does a much better job. It shows the relative time of each block in a pie chart around a big Play/Pause button, and the time remaining on the session is shown by changing the opacity of the timer. By doing this we use way less digital ink to show the same amount of information, and make use of a standard idiom for timer which is a circle with a button in the center.</p>
 <p><img src="/img/player_new.png" /></p>
-</section>
+</div>
