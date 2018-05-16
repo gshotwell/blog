@@ -1,5 +1,10 @@
-<!-- BLOGDOWN-HEAD -->
-<!-- /BLOGDOWN-HEAD -->
+---
+title: "Flagging toxic comments with Tidytext and Keras"
+author: "Gordon Shotwell"
+date: '2018-02-01'
+output: html_document
+---
+
 
 
 <p>I recently took a look at a <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data">Kaggle Competition</a> about automatically labeling toxic comments on Wikipedia. I thought it would be a good opportunity to showcase how well the <code>tidytext</code> and <code>keras</code> R interfaces work together. This data includes a lot of really troubling language, including racial slurs, misogynistic language, and homophobic content and so I decided to not include most of the exploratory data analysis because this is a family blog.</p>
@@ -163,7 +168,7 @@ models &lt;- y_train %&gt;%
 <pre class="r"><code>walk(c(&quot;toxic&quot;, &quot;insult&quot;, &quot;threat&quot;), ~{
     plot(models[[.]])
     title(.)})</code></pre>
-<p><img src="toxic_files/figure-html/plot%20models-1.png" width="672" /><img src="toxic_files/figure-html/plot%20models-2.png" width="672" /><img src="toxic_files/figure-html/plot%20models-3.png" width="672" /></p>
+<p><img src="/post/toxic_files/figure-html/plot%20models-1.png" width="672" /><img src="/post/toxic_files/figure-html/plot%20models-2.png" width="672" /><img src="/post/toxic_files/figure-html/plot%20models-3.png" width="672" /></p>
 <p>These plots aren’t exactly what we were hoping for. Our model is doing a fairly good job identifying the <code>toxic</code> and <code>insult</code> labels, but failed to converge for the <code>threat</code> label. This is especially disappointing because fitting all these models took forever, and we ended up with something that isn’t at all useful for making predictions.</p>
 <p>I have four main ideas for what to do at this point:</p>
 <ol style="list-style-type: decimal">
@@ -253,7 +258,7 @@ history &lt;- tox_mod %&gt;% fit(
   validation_data = list(x_val, y_val)
 )
 plot(history)</code></pre>
-<p><img src="toxic_files/figure-html/neural%20network-1.png" width="672" /></p>
+<p><img src="/post/toxic_files/figure-html/neural%20network-1.png" width="672" /></p>
 <p>This plot shows that the model is getting better each epoch and doesn’t appear to be over-fitting. It also more or less plateaus after about the fifth epoch, so we could cut off training there if we were worried about computation resources. Importantly, I’m actually getting something which can make predictions which is a big step up from my first attempt.</p>
 <p>Finally we can output some predictions to check the model against the hold out test. The Kaggle competition asked for a mean log-loss score which we can compute easily using <code>purrr</code> and the <code>MLmetrics</code> package.</p>
 <pre class="r"><code>preds &lt;- tox_mod %&gt;% 
@@ -262,7 +267,7 @@ plot(history)</code></pre>
 y_test &lt;- as.data.frame(y_test)
 purrr::map2_dbl(preds, y_test, ~MLmetrics::LogLoss(.x,.y)) %&gt;% 
     mean()</code></pre>
-<pre><code>## [1] 0.06841568</code></pre>
+<pre><code>## [1] 0.06922315</code></pre>
 <p>The leader board on the Kaggle competition tells me that the best mean log-loss score is <code>0.052</code> and while that’s quite a bit lower than my score the fact that it’s in the same ballpark is encouraging. The network I used here is very simple with only two hidden layers with 16 nodes, but it performs quite well. The next steps for this problem would be to add some complexity to the model by adding layers or nodes.</p>
 </div>
 <div id="conclusion" class="section level1">

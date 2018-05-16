@@ -451,7 +451,7 @@ plot(history)</code></pre>
 y_test &lt;- as.data.frame(y_test)
 purrr::map2_dbl(preds, y_test, ~MLmetrics::LogLoss(.x,.y)) %&gt;% 
     mean()</code></pre>
-<pre><code>## [1] 0.06952685</code></pre>
+<pre><code>## [1] 0.06922315</code></pre>
 <p>The leader board on the Kaggle competition tells me that the best mean log-loss score is <code>0.052</code> and while that’s quite a bit lower than my score the fact that it’s in the same ballpark is encouraging. The network I used here is very simple with only two hidden layers with 16 nodes, but it performs quite well. The next steps for this problem would be to add some complexity to the model by adding layers or nodes.</p>
 </div>
 <div id="conclusion" class="section level1">
