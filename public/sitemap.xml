@@ -1,40 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://shotwell.ca/blog/2017/05/03/why-you-should-work-remotely-even-if-youre-not-remote/</loc>
-    <lastmod>2017-05-03T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shotwell.ca/blog/2017/04/13/data-visualization-and-ui-design/</loc>
-    <lastmod>2017-04-13T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shotwell.ca/blog/2017/02/16/the-power-of-tidy-data/</loc>
-    <lastmod>2017-02-16T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shotwell.ca/blog/2017/02/02/r-for-excel-users/</loc>
-    <lastmod>2017-02-02T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shotwell.ca/blog/about/</loc>
-    <lastmod>2017-02-01T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://shotwell.ca/blog/</loc>
-    <lastmod>2017-05-03T21:48:51-07:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shotwell.ca/blog/post/</loc>
+    <loc>/posts/</loc>
+    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/2019-04-19-technical-debt-in-data-science/</loc>
+    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/model_testing/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/learning_data_science/</loc>
+    <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/remote_work/</loc>
     <lastmod>2017-05-03T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/ui_data_analysis/</loc>
+    <lastmod>2017-04-13T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/the_power_of_tidy_data/</loc>
+    <lastmod>2017-02-16T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/r_for_excel_users/</loc>
+    <lastmod>2017-02-02T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2017-02-01T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   

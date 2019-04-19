@@ -1,45 +1,61 @@
-baseurl = "/"
-publishDir= "docs"
-relativeurls = true
-languageCode = "en-us"
+## Basic Configuration
+baseurl = "https://blog.shotwell.ca/"
+languageCode = "en"
+
 title = "Gordon Shotwell"
-theme = "hyde-y"
-ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+theme = "hyde-hyde"
 
+## Hugo Built-in Features
+# disqusShortname = "your-disqus-shortname"
+googleAnalytics = "UA-98228149-1"
+# enableRobotsTXT = true
 
-# Copyright
-copyright = "(c) 2017 Gordon Shotwell."
+# summarylength = 30
 
-# "yaml", "toml", "json"
-metaDataFormat = "yaml"
+#paginate = 5
 
-# pagination
-paginate = 10
-paginatePath = "page"
-
-# Enable Disqus integration
-disqusShortname = "shotwell-1"
-
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
-    code = "/:slug/"
-
-[taxonomies]
-    tag = "tags"
-    topic = "topics"
-
-[author]
-    name = "Gordon Shotwell"
-    email = "g.e.shotwell@gmail.com"
-
-#
-# All parameters below here are optional and can be mixed and matched.
-#
+## Site Settings
 [params]
-    highlight = "solarized_light"
-    brand = "Gordon Shotwell"
-    sidebar = "left"
+    author = "Author"
+    title = "Title"
+    # description = "..."
+    authorimage = "/img/hugo.png"
+    dateformat = "Jan 2, 2006"
+
+    # sidebar, copyright & license
+    copyright = "htr3n"
+    license = "CC BY-SA 4.0"
+    licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+    showBuiltWith = true
+
+    # https://highlightjs.org
+    highlightjs = true
+    highlightjsstyle = "github"
+    ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+    # please choose either GraphComment or Disqus or Utterances
+    #GraphCommentId = "..."
+    #UtterancesRepo = "..." # https://utteranc.es/
+    #UtterancesIssueTerm = "..." # pathname, url, title, og:title
+    #UtterancesTheme = "..." # github-light or github-dark
+
+    # Table of contents
+    #toc = none, "hugo", or "tocbot"
+
+## Social Accounts
+[params.social]
     github = "GShotwell"
     linkedin = "gshotwell"
     twitter = "@gshotwell"
-    googleAnalytics = "UA-98228149-1"
+    email = "gorgon@shotwell.ca"
+
+## Main Menu
+[[menu.main]]
+    name = "Posts"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 300
+    url = "/about/"
