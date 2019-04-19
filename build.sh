@@ -1,2 +1,2 @@
-Rscript -r "blogdown::build_site()"
-cp public docs
+Rscript -e "blogdown::build_site()"
+cp -r public docs
