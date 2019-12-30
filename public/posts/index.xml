@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.shotwell.ca/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why_I_use_r</title>
+      <link>https://blog.shotwell.ca/posts/why_i_use_r/</link>
+      <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.shotwell.ca/posts/why_i_use_r/</guid>
+      <description>They said the war was over… Over the last couple of years prominent members of both the R and Python communities have tried to move past the language wars and support both R and Python workflows. This makes sense intellectually, after all, R and Python are not all that different in the scheme of things and so we should let people use whichever language they find more productive. This conversation manifests very differently in the workplace.</description>
+    </item>
     
     <item>
       <title>Technical debt for data scientists</title>

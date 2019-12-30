@@ -1,13 +1,8 @@
 ---
 title: "Why_I_use_r"
-date: 2019-12-25T10:43:33-04:00
-lastmod: 2019-12-25T10:43:33-04:00
-tags : [ "dev", "hugo", "hyde-hyde"]
-categories : [ "dev" ]
-layout: post
-type:  "post"
-highlight: false
-draft: true
+author: "Gordon Shotwell"
+date: '2019-12-30'
+output: html_document
 ---
 
 # They said the war was over...
