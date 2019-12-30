@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Gordon Shotwell</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.shotwell.ca/posts/2019-04-19-technical-debt-in-data-science/</guid>
-      <description>How to know if you have a problem. Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later.</description>
+      <description>Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later. This kind of technical debt is similar to taking out a mortgage or small business loan.</description>
     </item>
     
     <item>
@@ -54,15 +54,6 @@
       
       <guid>https://blog.shotwell.ca/posts/ui_data_analysis/</guid>
       <description>Over the past couple of months, I’ve been rebuilding the Shambhala Meditation Timer using React Native and Redux. The idea behind the Shambhala app was to create a kind of modular framework for building meditation timers in order to allow people to create complex timers out of simple components. The three build blocks for a timer are time intervals, gong sounds, and recorded audio contemplations, and the user can stack these building blocks to create whatever kind of meditation session they want.</description>
-    </item>
-    
-    <item>
-      <title>The Power of Tidy Data</title>
-      <link>https://blog.shotwell.ca/posts/the_power_of_tidy_data/</link>
-      <pubDate>Thu, 16 Feb 2017 21:48:51 -0700</pubDate>
-      
-      <guid>https://blog.shotwell.ca/posts/the_power_of_tidy_data/</guid>
-      <description>Tidy Data Tidy data has become the dominant way of thinking about problems in R. The idea behind tidy data is to develop an ecosystem of R packages which all work around a similar kind of data structure. That way you can easily compose many different tools together to accomplish very complex tasks in an iterative, easy to understand fashion. There are lots of excellent presentations about why this is a great approach but the one I would recommend if you are new to this area is Hadley Wickham’s keynote from the 2017 rstudio conference.</description>
     </item>
     
     <item>

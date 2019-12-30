@@ -5,7 +5,6 @@ date: '2019-04-19'
 output: html_document
 ---
 
-# How to know if you have a problem. 
 Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there's a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later. This kind of technical debt is similar to taking out a mortgage or small business loan. You don't have the money to realize an opportunity right now, so you borrow that money even though it's going to cost more down the road. The lifetime cost of the investment goes up, but at least you get to make the investment. 
 
 Too often however, data science technical debt is more like a payday loan. We take shortcuts in developing a solution without an understanding of the risks and costs of those shortcuts, and without a realistic plan for how we're going to pay back the debt. Code is produced, but it's not tested, documented, or robust to changes in the system. The result is that data science projects become expensive or impossible to maintain as time goes on. 
@@ -23,7 +22,7 @@ I think there are four basic areas that data scientists should focus on to impro
 
 ## Testing
 
-I'm a self-taught data scientist, and during the whole time I was taking online courses, working on sample projects, and working on data analytics at various companies I never once learned how to test code. Data science code starts out simple enough that a single person can hold everything in their head, and so adding a bunch of tests feels like a waste of time. This changed for me when I started working at [Crunch](crunch.io) on a large open source R package. 
+I'm a self-taught data scientist, and during the whole time I was taking online courses, working on sample projects, and working on data analytics at various companies I never once learned how to test code. Data science code starts out simple enough that a single person can hold everything in their head, and so adding a bunch of tests feels like a waste of time. This changed for me when I started working at [Crunch](https://crunch.io/) on a large open source R package. 
 
 Crunch is a test-first company, and had a policy of exhaustive unit tests for everything that could possibly be tested. To accomplish this goal my boss Neal wrote a [whole package](https://github.com/nealrichardson/httptest) which records and plays back http responses to allow you to simulate a web service for tests. Starting work at Crunch was a steep learning curve because it was the first time that I was working on something that was way too complex to hold in my head all at once. I might implement a method for some object that would effect dozens of other methods scattered across thousands of lines of code. The only way to understand what was going on in the system was to read the tests, and trust that those tests were a complete description of how the system was supposed to work. If the tests passed I could be sure that my change was correct even if I couldn't really envision all the side effects of that change. Bit by painful bit I started to understand the value of this workflow and now think it's the only way to go. 
 

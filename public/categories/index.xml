@@ -2,23 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Gordon Shotwell</title>
-    <link>/categories/</link>
+    <link>https://blog.shotwell.ca/categories/</link>
     <description>Recent content in Categories on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Dec 2019 10:43:33 -0400</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.shotwell.ca/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>dev</title>
-      <link>/categories/dev/</link>
-      <pubDate>Wed, 25 Dec 2019 10:43:33 -0400</pubDate>
-      
-      <guid>/categories/dev/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
