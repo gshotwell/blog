@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Gordon Shotwell</title>
@@ -6,9 +6,19 @@
     <description>Recent content in Categories on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 25 Dec 2019 10:43:33 -0400</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dev</title>
+      <link>/categories/dev/</link>
+      <pubDate>Wed, 25 Dec 2019 10:43:33 -0400</pubDate>
+      
+      <guid>/categories/dev/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
