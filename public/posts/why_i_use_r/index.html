@@ -17,14 +17,14 @@
     
     
 
-<title>They told me to learn a &#34;real language&#34; you&#39;ll never guess what happened next ... • Gordon Shotwell</title>
+<title>Why I use R • Gordon Shotwell</title>
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="They told me to learn a &#34;real language&#34; you&#39;ll never guess what happened next ..."/>
+<meta name="twitter:title" content="Why I use R"/>
 <meta name="twitter:description" content="They said the war was over… Over the last couple of years prominent members of both the R and Python communities have tried to move past the language wars and support both R and Python workflows. This makes sense intellectually; after all, R and Python are not all that different in the scheme of things, and so we should let people use whichever language they find more productive. This conversation manifests very differently in the workplace, however."/>
 
-<meta property="og:title" content="They told me to learn a &#34;real language&#34; you&#39;ll never guess what happened next ..." />
+<meta property="og:title" content="Why I use R" />
 <meta property="og:description" content="They said the war was over… Over the last couple of years prominent members of both the R and Python communities have tried to move past the language wars and support both R and Python workflows. This makes sense intellectually; after all, R and Python are not all that different in the scheme of things, and so we should let people use whichever language they find more productive. This conversation manifests very differently in the workplace, however." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/why_i_use_r/" />
@@ -144,7 +144,7 @@
     </div>
     
 <div class="copyright">
-  &copy; 2019 htr3n
+  &copy; 2020 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -164,7 +164,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 <article>
   <header>
-    <h1>They told me to learn a &#34;real language&#34; you&#39;ll never guess what happened next ...</h1>
+    <h1>Why I use R</h1>
     
     
 <div class="post__meta">
@@ -193,73 +193,73 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p>Over the last couple of years prominent members of both the R and Python communities have tried to move past the language wars and support both R and Python workflows.
 This makes sense intellectually; after all, R and Python are not all that different in the scheme of things, and so we should let people use whichever language they find more productive.
 This conversation manifests very differently in the workplace, however.<br />
-Most of the time when a Python data scientist hears that the language wars are over they think “Well great — if R and Python are equally effective, then we can all just standardize on Python.”</p>
-<p>This comes up for me personally, when coworkers tell me some version of “Hey, your work is great, you’re an excellent developer, but have you thought of switching over the Python/Scala/Javascript so that you can really make a contribution.”
+Most of the time when a Python data scientist hears that the language wars are over, they think “Well, great — if R and Python are equally effective, then we can all just standardize on Python.”</p>
+<p>This comes up for me personally when coworkers tell me some version of “Hey, your work is great, you’re an excellent developer, but have you thought of switching over to Python/Scala/Javascript so that you can really make a contribution?”
 Early in my career I took these suggestions seriously.
 I came to R from an Excel background, and for a long time I had internalized the feeling that serious engineers used Python, while analysts or researchers could use languages like R.
 Over time I’ve realized that the people making that statement often aren’t really informed.
 They rarely know anything about R, and often don’t really write production-quality code themselves.
-By contrast, most of the very senior engineers I’ve met understand that all programming languages are basically just bundles of trade-offs, and so no single language is going to be globally superior to another.
-There really are no production languages, only production engineers.</p>
+In contrast, most of the very senior engineers I’ve met understand that all programming languages are basically just bundles of trade-offs, and so no single language is going to be globally superior to another.
+There really are no production languages – only production engineers.</p>
 <p>The thing is, I don’t use R out of some blind brand loyalty but because I don’t like working hard.
-Every time I’m faced with a problem I try to figure out how I can solve that problem in a stable way with the least amount of effort, and for most of the problems I face, R is the right tool.
-This is partially an accident of training — I know R very well at this point, so it’s usually the most efficient way for me to solve a problem, but it’s also because of core language features that don’t really exist in Python.</p>
-<p>Overall I think there are basically four main features of the core R language which are essential to my work.
-These are things which are present in R, and which I haven’t found to be available or accessible in any other single language, and which make R the best choice for my work:</p>
+Every time I’m faced with a problem, I try to figure out how I can solve that problem in a stable way with the least amount of effort; for most of the problems I face, R is the right tool.
+This is partially an accident of training – I know R very well at this point, so it’s usually the most efficient way for me to solve a problem – but it’s also because of core language features that don’t really exist in Python.</p>
+<p>Overall I think there are four main features of the core R language that are essential to my work.
+These are things that are present in R, that I haven’t found to be available or accessible in any other single language, and that make R the best choice for my work:</p>
 <ol style="list-style-type: decimal">
-<li>Data science structures in the base language</li>
+<li>Native data science structures</li>
 <li>Non-standard evaluation</li>
-<li>Packaging consensus</li>
+<li>Packaging consensus (The glory of CRAN)</li>
 <li>Functional programming</li>
 </ol>
 </div>
 <div id="native-data-science-structures" class="section level1">
-<h1>Native data science structures</h1>
+<h1>1. Native data science structures</h1>
 <p>It’s relatively easy to do data science in R without any external libraries.
 You can read data from a csv into a data frame, plot and clean that data, and analyse it using built-in statistical models.
 This is possible because R was built to do statistics, and so it includes features like vectors and data frames, and lets you invert a matrix or fit a linear model.
 Over time Python has added all of these capabilities with numpy, pandas, and scikitlearn, but you usually require dependencies to do data science work.</p>
 <p>I’m generally in favour of using external libraries, but it’s nice to have the option of avoiding them in certain circumstances.
-Data structures in the base language tend to be more stable than thoses provided by external dependencies. For instance, I can run base R code from 2010 and be reasonably sure that the code will behave the same way today as it did a decade ago, because maintainers of the core language are very conservative in introducing breaking changes.</p>
-<p>This is probably not true of R or Python code which relies on libraries like dplyr or pandas because both of those libraries prioritize feature improvement over stability.
-This isn’t meant as a criticism of either of those libraries, but just to point out that it is beneficial to use a language that allows you to do meaningful data science work without importing external libraries.</p>
+Data structures in the base language tend to be more stable than those provided by external dependencies. For instance, I can run base R code from 2010 and be reasonably sure that the code will behave the same way today as it did a decade ago, because maintainers of the core language are very conservative in introducing breaking changes.</p>
+<p>This is probably not true of R or Python code that relies on libraries like dplyr or pandas because both of those libraries prioritize feature improvement over stability.
+This isn’t meant as a criticism of either of those libraries, but is meant just to point out that it is beneficial to use a language that allows you to do meaningful data science work without importing external libraries.</p>
 <p>One of the weird things that you probably won’t hear from the “R isn’t a real language” Pythonistas is that there’s this whole group of production Python engineers who don’t think that the Python scientific computing stack is appropriate for production.
-These people will make the same basic argument about pandas that pandas people make about R: That it’s something appropriate for research, but production code requires vanilla Python. Switching from R to Python often doesn’t significantly reduce deployment friction, because you still have to do some kind of microservice process in order to isolate the data science dependencies from the rest of the Python code base.</p>
+These people will make the same basic argument about pandas that pandas people make about R: it’s appropriate for research, but production code requires vanilla Python. Switching from R to Python often doesn’t significantly reduce deployment friction, because you still have to do some kind of microservice process in order to isolate the data science dependencies from the rest of the Python code base.</p>
 </div>
 <div id="non-standard-evaluation" class="section level1">
-<h1>Non-Standard Evaluation</h1>
+<h1>2. Non-Standard Evaluation</h1>
 <p>R includes a strange and wonderful type of <a href="https://stackoverflow.com/questions/2565572/metaprogramming-self-explanatory-code-tutorials-articles-books/2566561#2566561">metaprogramming</a> called <a href="http://adv-r.had.co.nz/Computing-on-the-language.html">Non-standard evaluation</a>,
 which allows you to access and manipulate the calling environment of a function.
 This lets you do things like use a variable name in a plot title, or evaluate a user-supplied expression in a different environment.</p>
-<p>NSE reminds me of a niche and dangerous power tool.
-It shouldn’t be the first thing you reach for and it’s very dangerous if you don’t know what your doing,
-but it allows you to solve problems which would otherwise be unsolvable.</p>
+<p>NSE reminds me of a niche and dangerous power tool:<br />
+it shouldn’t be the first thing you reach for, and it’s very dangerous if you don’t know what you’re doing,
+but it allows you to solve problems that would be otherwise unsolvable.</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/ox93snKVuaM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>There are three main ways that I use NSE.</p>
-<div id="separate-user-representations-from-programmatic-representations" class="section level2">
-<h2>Separate user representations from programmatic representations</h2>
+<p>There are three main ways that I use NSE:</p>
+<div id="separate-user-representations-from-programmatic-representations" class="section level3">
+<h3>Separate user representations from programmatic representations</h3>
 <p>There’s often a tension between the most natural way for a user to represent a problem and the best way to organize that problem internally.
 Internally, it’s good if the inputs to a system are unambiguously specified so that it’s crystal clear what the system should do, and how the system should be organized.
-By contrast, the user of a function often doesn’t need or want to know about the implementation details and instead wants to provide the inputs in the way that requires them to learn the fewest number of new things.
+In contrast, the user of a function often doesn’t need or want to know about the implementation details and instead wants to provide the inputs in the way that requires them to learn the fewest number of new things.
 Without NSE, it’s very hard to solve this problem because what goes into a function is what the function has to use, but NSE lets you capture and modify the expressions the user sends into the function so you can translate them into another form.
 For example, R lets you specify models with a formula interface like this: <code>lm(mtcars, mpg ~ cyl)</code>.
 This is a natural way for statisticians to specify statistical models because they’re usually familliar with the syntax, but without NSE there’s no way to make that function work as written
 because <code>mpg</code> and <code>cyl</code> are not objects in the calling environment.
 NSE allows <code>lm</code> to capture the <code>mpg ~ cyl</code> and evaluate them within the <code>data</code> environment.
-To accomplish the same thing in a standard evaluation model you’d need to do some sort of string manipulation which is what you find in the <a href="https://patsy.readthedocs.io/en/latest/R-comparison.html">Python version</a>.</p>
+To accomplish the same thing in a standard evaluation model you’d need to do some sort of string manipulation, which is what you find in the <a href="https://patsy.readthedocs.io/en/latest/R-comparison.html">Python version</a>.</p>
 <p>Note that you give up a lot by using NSE, and in almost every context it’s the wrong tool.
 You might look at the R and Python formula interface and think that giving up referential transparency isn’t worth avoiding a few quotation marks, but there are lots of cases where it saves the day.</p>
-<p>A more complex example is dplyr, which puts a a consistent user facing api in front of dataframe and database backends.</p>
+<p>A more complex example is dplyr, which puts a consistent user facing api in front of dataframe and database backends.</p>
 <p>The programmatic representation varies greatly across the different backends.
-Using NSE, the package translates captures the expressions supplied by the user and translates them into programmatic representations that are understood by the various backends.</p>
+Using NSE, the package captures the expressions supplied by the user and translates them into programmatic representations that are understood by the various backends.</p>
 </div>
-<div id="make-code-more-concise" class="section level2">
-<h2>Make code more concise</h2>
-<p>Recently I had a whole bunch of functions which all included a structure like this:</p>
+<div id="make-code-more-concise" class="section level3">
+<h3>Make code more concise</h3>
+<p>Recently I had a whole bunch of functions that all included a structure like this:</p>
 <pre class="r"><code>f1 &lt;- function(df) {
   if (nrow(df) == 0) {
     return(
@@ -287,11 +287,11 @@ f1 &lt;- function(df) {
 f1(data.frame())</code></pre>
 <pre><code>##   join_col
 ## 1       NA</code></pre>
-<p>In this example, <code>returnIfEmpty</code> is first creating an object in its parent environment, then building a call to return that object, and finally then evaluating that call in the parent environment. This was a good way for me to avoid a lot of code repetition, which I don’t think I would’ve been able to do otherwise.</p>
+<p>In this example, <code>returnIfEmpty</code> is first creating an object in its parent environment, then building a call to return that object, and finally evaluating that call in the parent environment. This was a good way for me to avoid a lot of code repetition, which I don’t think I would’ve been able to do otherwise.</p>
 </div>
-<div id="learn-the-users-language" class="section level2">
-<h2>Learn the user’s language</h2>
-<p>One of the great things about accessing the user’s environment is that there’s a wealth of information in that environment which is particularly meaningful to that user.
+<div id="learn-the-users-language" class="section level3">
+<h3>Learn the user’s language</h3>
+<p>One of the great things about accessing the user’s environment is that there’s a wealth of information in that environment that is particularly meaningful to that user.
 In particular, if you can use the names that a user assigned to a variable in function output or error messages it makes your function much easier for them to understand.</p>
 <p>Consider this function:</p>
 <pre class="r"><code>regularError &lt;- function(df) {
@@ -318,16 +318,15 @@ fancyError(my_var)</code></pre>
 <pre><code>## Warning in fancyError(my_var): &#39;my_var&#39; is of class &#39;integer&#39; when it needs
 ## to be a dataframe</code></pre>
 <p>This communicates what’s going wrong in terms that are much more meaningful to the user, because they assigned the name “my_var” to the object in the first place.</p>
-<p>You might think that it’s too much effort to write a friendly error message, but in my work I find that details like this help build delightful products which are easy to use.
+<p>You might think that it’s too much effort to write a friendly error message, but in my work I find that details like this help build delightful products that are easy to use.
 It’s worth taking the time to communicate problems in the user’s language, and NSE is the best way I know to learn that language.</p>
 </div>
 </div>
 <div id="the-glory-of-cran" class="section level1">
-<h1>The glory of CRAN</h1>
+<h1>3. The glory of CRAN</h1>
 <p>I started programming on a Saturday morning during law school.
-In hindsight this was a very important morning for me because in many ways it shaped the course ofmy career for the next ten years.
-I probably had about 20 minutes to become interested and excited about the project.
-After all I had lots of homework to do, and programming wasn’t something that was on any of my to-do lists at the time.
+In hindsight this was a very important morning for me because in many ways it shaped the course of my career for the next ten years.
+I probably had about 20 minutes to become interested and excited about the project, since I had lots of homework to do and programming wasn’t something that was on any of my to-do lists at the time.
 The resource I started with was “R Twotorials,” which taught you how to use R in two minute lessons.</p>
 <pre class="r"><code>blogdown::shortcode(&quot;youtube&quot;, &quot;5DZkQjPyzjs&quot;)</code></pre>
 
@@ -335,12 +334,12 @@ The resource I started with was “R Twotorials,” which taught you how to use 
   <iframe src="https://www.youtube.com/embed/5DZkQjPyzjs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>R let me get up and running, installing packages, filtering data and printing plots in under 20 minutes, which meant that I stayed interested in the language and eventually started using it professionally.
-I had actually started to learn Python at around the same time, but just found it too difficult.
-I didn’t know how to open a terminal window, I didn’t want to spend any time on configuration, and I didn’t have any time to devote to set up.
+<p>R let me get up and running, installing packages, filtering data, and printing plots in under 20 minutes, which meant that I stayed interested in the language and eventually started using it professionally.
+I had actually started to learn Python at around the same time but just found it too difficult.
+I didn’t know how to open a terminal window, I didn’t want to spend any time on configuration, and I didn’t have any time to devote to setup.
 Python required me to spend more than 20 minutes on setup, and R didn’t, so I picked R.</p>
 <p>The reason why this all worked was because of CRAN.
-CRAN has (maybe forcibly) created a strong consensus on how to package and distribute R code which means that nine times out of ten an R package will install and run with no user configuration.
+CRAN has (maybe forcibly) created a strong consensus on how to package and distribute R code, which means that nine times out of ten an R package will install and run with no user configuration.
 Today I am fairly comfortable at the command line and futzing around getting computer programs to work on my machine, but I’m still completely unwilling to use an R package that requires me to do much more than <code>install.packages(&quot;package_name&quot;)</code>.</p>
 <p>This feature is important to me because I want my code to be useable and installable by people who, like my law school self, do not think of themselves as programmers and do not have any tolerance for <a href="http://pgbovine.net/command-line-bullshittery.htm">command line bullshittery</a>.
 My goal for all the products I develop is that they are installable and runnable with a single user action, and that action cannot take place in the terminal.
@@ -348,23 +347,23 @@ This means that when I’m importing dependencies, I need to be confident that a
 CRAN does this by moving a lot of the setup and configuration pain from the end user to the package maintainer, and while this probably slows down development and release of packages, it vastly improves the user experience of the average user.</p>
 <p>Python is, well, <a href="https://medium.com/knerd/the-nine-circles-of-python-dependency-hell-481d53e3e025">not like that</a>.
 I’m not a great Python developer, but I am a professional computer programmer and I still feel like it’s even odds that installing some Python library is going to cost me an afternoon of torture and four broken keyboards.
-If there are any Python evangelists still reading this, they might have a response to this that begins with, “Well you just,” but remember the user that I care the most about only has 20 minutes of attention and no real programming skill, so the only thing they can “just” do is copy and paste one line of code into a console.
+If there are any Python evangelists still reading this, they might have a response that begins with, “Well you just,” but remember the user that I care the most about only has 20 minutes of attention and no real programming skill, so the only thing they can “just” do is copy and paste one line of code into a console.
 If that doesn’t work, I’ve lost them, and they’ll spend another lonely year renewing their SPSS licenses.</p>
 </div>
 <div id="functional-programming" class="section level1">
-<h1>Functional programming</h1>
-<p>R is a <a href="http://adv-r.had.co.nz/Functional-programming.html">functional programming</a> language which means that the natural way to accomplish something in the language is to use functions.
+<h1>4. Functional programming</h1>
+<p>R is a <a href="http://adv-r.had.co.nz/Functional-programming.html">functional programming</a> language, which means that the natural way to accomplish something in the language is to use functions.
 I really like this pattern of programming because breaking complicated jobs down into small functional bricks gives me confidence that the overall solution is correct.
 I can work on the small functions, verify that they’re correct through tests, and then know that combining those building blocks together won’t change their behaviour.</p>
 <p>Functional programming is not the best paradigm for all problems.
 For example, React is a functional paradigm for building user interfaces where you stack together functional components to build complicated web apps.
-The issue with React initially was that since the components were designed to be independent of one another, it made it very difficult to track application state.
-If a user logged in in some part of the application, you would have to pass that information back up to the top level of the app, and then back down to all the compoenents who needed to know about it.
-It was easy to miss a connection which would result in the user being logged into one part of the app, but logged out of another.</p>
+The initial issue with React was that since the components were designed to be independent from one another, it made it very difficult to track application state.
+If a user logged in in some part of the application, you would have to pass that information back up to the top level of the app, and then back down to all the components that needed to know about it.
+It was easy to miss a connection, which would result in the user being logged into one part of the app, but logged out of another.</p>
 <p>This creates a lot of difficult bugs where the application state is inconsistent across the product.
-React solved this problem by adding in global state stores like Rudux, which let people still use pure functional components for most things, but break that pattern when you needed to set or access application state.</p>
+React solved this problem by adding in global state stores like Rudux, which let people still use pure functional components for most things, but break that pattern when you need to set or access application state.</p>
 <p>Functional programming is a great tool for data science problems because they are mostly stateless.
-When I’m building a statistical model, what I’m really doing is creating a mapping between some set of inputs and an outpu; in other words, a function.
+When I’m building a statistical model, what I’m really doing is creating a mapping between some set of inputs and an output; in other words, a function.
 It’s usually more important that the mapping is clearly defined than that it takes into account user state.
 It is possible to do <a href="https://stackabuse.com/functional-programming-in-python/">functional programming</a> in Python, but it’s a bit like ordering soup at a pizza parlour.</p>
 <p>While a lot of the FP tools are there, the majority of the community doesn’t use functional patterns as their main development paradigm, and you’d probably get a few “That’s not Pythonic” comments on your pull request.</p>
