@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gordon Shotwell</title>
@@ -6,10 +6,30 @@
     <description>Recent content on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why I use R</title>
+      <link>/posts/why_i_use_r/</link>
+      <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/why_i_use_r/</guid>
+      <description>They said the war was over… Over the last couple of years prominent members of both the R and Python communities have tried to move past the language wars and support both R and Python workflows. This makes sense intellectually; after all, R and Python are not all that different in the scheme of things, and so we should let people use whichever language they find more productive. This conversation manifests very differently in the workplace, however.</description>
+    </item>
+    
+    <item>
+      <title>Why I use R</title>
+      <link>/post/why-i-use-r/</link>
+      <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/why-i-use-r/</guid>
+      <description>Insert Lead paragraph here.
+A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus. Feugiat ultricies dictumst iaculis potenti odio laoreet urna at, ultrices curae leo accumsan proin sem lobortis.
+Heading 2 Sollicitudin ornare odio blandit aenean enim lacus accumsan elementum vestibulum porta mauris lorem, ullamcorper class fermentum sem hendrerit ante augue penatibus scelerisque felis leo proin,ad nascetur venenatis sodales dignissim viverra suspendisse turpis convallis condimentum sapien.</description>
+    </item>
     
     <item>
       <title>Technical debt for data scientists</title>
@@ -57,15 +77,6 @@
     </item>
     
     <item>
-      <title>The Power of Tidy Data</title>
-      <link>/posts/the_power_of_tidy_data/</link>
-      <pubDate>Thu, 16 Feb 2017 21:48:51 -0700</pubDate>
-      
-      <guid>/posts/the_power_of_tidy_data/</guid>
-      <description>Tidy Data Tidy data has become the dominant way of thinking about problems in R. The idea behind tidy data is to develop an ecosystem of R packages which all work around a similar kind of data structure. That way you can easily compose many different tools together to accomplish very complex tasks in an iterative, easy to understand fashion. There are lots of excellent presentations about why this is a great approach but the one I would recommend if you are new to this area is Hadley Wickham’s keynote from the 2017 rstudio conference.</description>
-    </item>
-    
-    <item>
       <title>R for Excel Users</title>
       <link>/posts/r_for_excel_users/</link>
       <pubDate>Thu, 02 Feb 2017 21:48:51 -0700</pubDate>
@@ -80,8 +91,8 @@
       <pubDate>Wed, 01 Feb 2017 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>My name is Gordon Shotwell. I&amp;rsquo;m a lawyer and R developer in Halifax, Nova Scotia. I&amp;rsquo;m the author of a couple of R packages and one meditation app, and have helped non-profits, web properties, and correctional facilities understand their data in order to make better decisions.
-My particular interests include demystifying statistical programming, meditation, and legal technology. I’m always open to hearing about new career opportunities so please get in touch, I&amp;rsquo;d love to hear from you.</description>
+      <description>My name is Gordon Shotwell. I&#39;m a lawyer and R developer in Halifax, Nova Scotia. I&#39;m currently a data scientist at Socure and have helped non-profits, web properties, and correctional facilities understand their data in order to make better decisions.
+My particular interests include demystifying statistical programming, meditation, and legal technology. I’m always open to hearing about new opportunities so please get in touch, I&#39;d love to hear from you.</description>
     </item>
     
   </channel>

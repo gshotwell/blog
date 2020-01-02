@@ -1,17 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/why_i_use_r/</loc>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-12-25T10:42:41-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/why-i-use-r/</loc>
+    <lastmod>2019-12-25T10:42:41-04:00</lastmod>
   </url>
   
   <url>
@@ -40,11 +53,6 @@
   </url>
   
   <url>
-    <loc>/posts/the_power_of_tidy_data/</loc>
-    <lastmod>2017-02-16T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/posts/r_for_excel_users/</loc>
     <lastmod>2017-02-02T21:48:51-07:00</lastmod>
   </url>
@@ -56,12 +64,10 @@
   
   <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
