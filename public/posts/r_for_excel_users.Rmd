@@ -32,7 +32,11 @@ df %>%
   ggplot(aes(x = Complexity, y = value, group = tool, colour = tool)) +
   geom_line() +
   ylab("Difficulty") +
-  ggtitle("Difficulty vs. Complexity")
+  ggtitle("Difficulty vs. Complexity") +
+  theme_minimal() +
+    theme(
+        axis.text=element_blank())
+  
 
 ```
 
@@ -59,7 +63,7 @@ In my opinion obstacle #2 is by far the larger barrier for Excel users. Most of 
 
 ## Four Fundamental Differences Between R and Excel
 
-####1) Text-based analysis
+#### 1) Text-based analysis
 
 Excel is based on the physical spreadsheet, or accountant's ledger. This was a large piece of paper with rows and columns. Records were stored in the first column on the left, calculations on those records were stored in the boxes to the right, and the sum of those calculations was totaled at the bottom. I would call this a referential model of computation which has a few qualities:
 
@@ -73,19 +77,19 @@ Text based data analysis is different:
 * Data is generally referenced by name. Instead of having a dataset which lives in the range of `$A1:C$36` you name the data set when you read it in, and refer to it by that name whenever you want to do something with it. You can do this with Excel by naming ranges of cells, but most people don't do this. 
 
 
-####2) Data structures
+#### 2) Data structures
 
 Excel has only one basic data structure: the cell. Cells are extremely flexible in that they can store numeric, character, logical or formula information. The cost of this flexibility is unpredictability. For instance you can store the character "6" in a cell when you mean to store the number `6`.
 
 The basic R data structure is a vector. You can think of a vector like a column in an Excel spreadsheet with the limitation that all the data in that vector must be of the same type. If it is a character vector, every element must be a character; if it is a logical vector, every element must be `TRUE` or `FALSE`; if it's numeric you can trust that every element is a number. There's no such constraint in Excel: you might have a column which has a bunch of numbers, but then some explanatory test intermingled with the numbers. This isn't allowed in R. 
 
-####3) Iteration
+#### 3) Iteration
 
 Iteration is one of the most powerful features of programming languages and is a big adjustment for Excel users. Iteration is just getting the computer to do the same thing over and over again for some period of time. Maybe you want to draw the same graph based on fifty different data sets, or read and filter a lot of data tables. In a programming language like R you write a script which works for all of the cases which you want to apply it to, and then tell the computer to do the application. 
 
 Excel analysts typically do a lot of this iteration themselves. For instance if an Excel analyst wanted to combine ten different `.xls` files into one big file, they would probably open each one individually, copy the data, and paste it into a master spreadsheet. The analyst is effectively taking the place of a `for` loop by doing one thing over and over again until a condition is met. 
 
-####4) Simplification through abstraction
+#### 4) Simplification through abstraction
 
 Another major difference is that programming encourages you to simplify your analysis by abstracting common functions from that analysis. In the example above you might find that you have to read in the same type of files over and over again and check that they have the right number of rows. R allows you to write a function which does this: 
 

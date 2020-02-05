@@ -214,7 +214,8 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 </div>
 <div id="four-fundamental-differences-between-r-and-excel" class="section level2">
 <h2>Four Fundamental Differences Between R and Excel</h2>
-<p>####1) Text-based analysis</p>
+<div id="text-based-analysis" class="section level4">
+<h4>1) Text-based analysis</h4>
 <p>Excel is based on the physical spreadsheet, or accountant’s ledger. This was a large piece of paper with rows and columns. Records were stored in the first column on the left, calculations on those records were stored in the boxes to the right, and the sum of those calculations was totaled at the bottom. I would call this a referential model of computation which has a few qualities:</p>
 <ul>
 <li>The data and computation are usually stored in the same place</li>
@@ -226,13 +227,19 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>Data and computation are separate. You have one file which stores the data and another file which stores the commands which tell the program how to manipulate that data. This leads to a procedural kind of model in which the raw data is fed through a set of instructions and the output pops out the other side.</li>
 <li>Data is generally referenced by name. Instead of having a dataset which lives in the range of <code>$A1:C$36</code> you name the data set when you read it in, and refer to it by that name whenever you want to do something with it. You can do this with Excel by naming ranges of cells, but most people don’t do this.</li>
 </ul>
-<p>####2) Data structures</p>
+</div>
+<div id="data-structures" class="section level4">
+<h4>2) Data structures</h4>
 <p>Excel has only one basic data structure: the cell. Cells are extremely flexible in that they can store numeric, character, logical or formula information. The cost of this flexibility is unpredictability. For instance you can store the character “6” in a cell when you mean to store the number <code>6</code>.</p>
 <p>The basic R data structure is a vector. You can think of a vector like a column in an Excel spreadsheet with the limitation that all the data in that vector must be of the same type. If it is a character vector, every element must be a character; if it is a logical vector, every element must be <code>TRUE</code> or <code>FALSE</code>; if it’s numeric you can trust that every element is a number. There’s no such constraint in Excel: you might have a column which has a bunch of numbers, but then some explanatory test intermingled with the numbers. This isn’t allowed in R.</p>
-<p>####3) Iteration</p>
+</div>
+<div id="iteration" class="section level4">
+<h4>3) Iteration</h4>
 <p>Iteration is one of the most powerful features of programming languages and is a big adjustment for Excel users. Iteration is just getting the computer to do the same thing over and over again for some period of time. Maybe you want to draw the same graph based on fifty different data sets, or read and filter a lot of data tables. In a programming language like R you write a script which works for all of the cases which you want to apply it to, and then tell the computer to do the application.</p>
 <p>Excel analysts typically do a lot of this iteration themselves. For instance if an Excel analyst wanted to combine ten different <code>.xls</code> files into one big file, they would probably open each one individually, copy the data, and paste it into a master spreadsheet. The analyst is effectively taking the place of a <code>for</code> loop by doing one thing over and over again until a condition is met.</p>
-<p>####4) Simplification through abstraction</p>
+</div>
+<div id="simplification-through-abstraction" class="section level4">
+<h4>4) Simplification through abstraction</h4>
 <p>Another major difference is that programming encourages you to simplify your analysis by abstracting common functions from that analysis. In the example above you might find that you have to read in the same type of files over and over again and check that they have the right number of rows. R allows you to write a function which does this:</p>
 <pre class="r"><code>read_and_check &lt;- function(file){
   out &lt;- read.csv(file)
@@ -244,6 +251,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 }</code></pre>
 <p>All this function does is read in a <code>.csv</code> file and then check to see if it has more than zero rows. If it doesn’t, it returns an error. Otherwise it returns the file (which is called “out”). This is a powerful approach because it helps you save time and reduce errors. For instance, if you want to check if the file has more than 23 rows, you only have to change the condition in one place rather than in several spreadsheets.</p>
 <p>There’s really no analog for these kinds of functions in an Excel-based workflow, and when most analysts get to this point they just start writing VBA code to do some of this work.</p>
+</div>
 <div id="example-joining-two-tables-together" class="section level3">
 <h3>Example: Joining two tables together</h3>
 <p>I thought I’d illustrate these principles by working through the example of joining two tables together in Excel and R. Let’s say that we had two data tables, one with some information about cars and another with the colour of those cars, and we want to join the two of them together. For the purpose of this exercise, we’re going to assume that the number of cylinders in a car determines its colour.</p>
@@ -606,7 +614,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 </table>
 <p>Here we refer to the data by its name, use one function to operate on the whole table rather than row by row. Because consistency is enforced for each vector we can’t accidentally store a character entry in a numeric vector.</p>
 </div>
-<div id="iteration" class="section level3">
+<div id="iteration-1" class="section level3">
 <h3>Iteration</h3>
 <p>Now let’s say we wanted to get the mean displacement for each colour of car. Most Excel users would probably do this iteration manually, first selecting the table, sorting it by colour and then picking out the ranges that they wanted to average. A more sophisticated analyst would probably use the <code>averageif()</code> function to pick out the criteria they wanted to average on, and so avoid a few errors. Both approaches are implemented in the <a href="https://docs.google.com/spreadsheets/d/1K2IqdXX2MoUB4BorRcBcruS7spCvRtDwqXV-4gYAob4/edit#gid=364351786">iteration</a> tab of the spreadsheet.</p>
 <p>In R you would do something like this:</p>
