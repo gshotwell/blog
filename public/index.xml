@@ -6,19 +6,10 @@
     <description>Recent content on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Techincal Debt is a  Social Problem</title>
-      <link>/post/techincal-debt-is-a-social-problem/</link>
-      <pubDate>Mon, 03 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/techincal-debt-is-a-social-problem/</guid>
-      <description>Technical debt is the accumulation of all the shortcuts we take when developing software. The idea is that you skip a few steps when developing a product with the intention of completing them down the road. Despite these intension technical debt often continues to accumulate and eventually causes major problems within an organization. Over the course of my career, I&#39;ve often found myself knowing how to fix a technical debt problem, but not having decision-making power to actually do it.</description>
-    </item>
     
     <item>
       <title>Why I use R</title>
