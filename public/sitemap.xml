@@ -3,71 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
+    <loc>https://blog.shotwell.ca/</loc>
+    <lastmod>2020-03-18T08:36:56-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.shotwell.ca/post/</loc>
+    <lastmod>2020-03-18T08:36:56-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.shotwell.ca/post/what-are-we-waiting-for/</loc>
+    <lastmod>2020-03-18T08:36:56-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.shotwell.ca/posts/</loc>
     <lastmod>2019-12-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/</loc>
+    <loc>https://blog.shotwell.ca/posts/why_i_use_r/</loc>
     <lastmod>2019-12-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/why_i_use_r/</loc>
-    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
+    <loc>https://blog.shotwell.ca/post/why-i-use-r/</loc>
     <lastmod>2019-12-25T10:42:41-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/why-i-use-r/</loc>
-    <lastmod>2019-12-25T10:42:41-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/2019-04-19-technical-debt-in-data-science/</loc>
+    <loc>https://blog.shotwell.ca/posts/2019-04-19-technical-debt-in-data-science/</loc>
     <lastmod>2019-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/model_testing/</loc>
+    <loc>https://blog.shotwell.ca/posts/model_testing/</loc>
     <lastmod>2018-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/learning_data_science/</loc>
+    <loc>https://blog.shotwell.ca/posts/learning_data_science/</loc>
     <lastmod>2017-08-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/remote_work/</loc>
+    <loc>https://blog.shotwell.ca/posts/remote_work/</loc>
     <lastmod>2017-05-03T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/ui_data_analysis/</loc>
+    <loc>https://blog.shotwell.ca/posts/ui_data_analysis/</loc>
     <lastmod>2017-04-13T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/r_for_excel_users/</loc>
+    <loc>https://blog.shotwell.ca/posts/r_for_excel_users/</loc>
     <lastmod>2017-02-02T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://blog.shotwell.ca/about/</loc>
     <lastmod>2017-02-01T21:48:51-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://blog.shotwell.ca/categories/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://blog.shotwell.ca/tags/</loc>
   </url>
   
 </urlset>
