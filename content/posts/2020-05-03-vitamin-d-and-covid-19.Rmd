@@ -7,7 +7,7 @@ highlight: no
 output: html_document
 ---
 
-In a [recent piece](https://www.nytimes.com/2020/05/03/world/asia/coronavirus-spread-where-why.html?referringSource=articleShare) about the puzzling ways that Covid-19 has spread across the world the New York Times explores a number of possible theories about why Covid-19 has effected some countries more greivously than others, including “demographics, culture, environment, and the speed of government responses.” I think Vitamin D status should probably be included in this conversation. 
+In a [recent piece](https://www.nytimes.com/2020/05/03/world/asia/coronavirus-spread-where-why.html?referringSource=articleShare) about the puzzling ways that Covid-19 has spread across the world the New York Times explores a number of possible theories about why Covid-19 has affected some countries more grievously than others, including “demographics, culture, environment, and the speed of government responses.” I think Vitamin D status should probably be included in this conversation. 
 ```{r, include = FALSE}
 library(dplyr)
 df <- readr::read_csv("covid_04-28-2020.csv") %>% 
@@ -29,9 +29,9 @@ country_summary <- df %>%
 ## A tale of two countries
 
 Canada and Australia have had pretty similar Covid-19 timelines. 
-They both had their first case at the end of January, and hit a hundred cases around mid March. 
+They both had their first case at the end of January, and hit a hundred cases around mid- March. 
 They are similarly sized countries with similar demographics, and both have robust testing infrastructure.
-Despite this, Australia has 3.6 deaths per million people, while Canada's rate is twenty times as high. 
+Despite this, Australia has 3.6 deaths per million people (to date), while Canada's rate is twenty times as high. 
 
 ```{r, echo = FALSE}
 country_summary %>% 
@@ -57,15 +57,15 @@ and they both enacted similar social distancing regulations around the same time
 For example Australia cancelled university classes in the third week of March, while most Canadian provinces closed schools in mid-March.
 
 Despite all this, the countries ended up with extreme differences in death rates. 
-For example I live in Nova Scotia, a small province of 900,000 people, which has almost as many deaths (31) as New South Wales (39). 
-NSW has eight times as many people as Nova Scotia, relatively higher density, and an outbreak which started two months earlier. 
+I live in Nova Scotia, a small province of 900,000 people, which has had almost as many deaths (31) as New South Wales (39). 
+NSW has eight times as many people as Nova Scotia, relatively higher density, and an outbreak that started two months earlier. 
 
-Even if we accepted that the Australian response was much better than the Canadian one, there's still a large difference in the death rates between the two countries. 
+Even if we accept that the Australian response was much better than the Canadian one, that would likely account for differences in infection rate. But there's still a large difference in the death rates between the two countries. 
 In Canada, 13% of resolved cases have resulted in deaths, while in Australia just 1.3% of resolved cases are deaths.
-Since both countries have high quality medical systems that weren't overwhelmed by the disease, it doesn't make sense that people in Canada are dying at a rate 10 times higher than Australia. 
+Both countries have high quality medical systems that weren't overwhelmed by the disease. 
 There's no real treatment for Covid-19, so public action shouldn't be able to influence the course of the disease.
 
-So what the hell is going on?
+It doesn't make sense that people in Canada are dying at a rate 10 times higher than Australia. So what the hell is going on?
 
 There are a few good theories for the difference including:
 
@@ -75,16 +75,16 @@ There are a few good theories for the difference including:
 
 ## The case for vitamin D
 
-One theory that hasn't gotten enough attention though is vitamin D plays an important role the immune response to Covid-19.
-Most people get their vitamin D through their skin, and the skin can only manufacture vitamin D during the summer if you're far from the equator. 
-One [study](https://www.medicinenet.com/script/main/art.asp?articlekey=170741) of 3.4 million blood samples collected in the U.S. over the course of five years showed that vitamin D levels peaked in August and bottomed out in February 
+One theory that hasn't gotten enough attention, though, is that vitamin D plays an important role the immune response to Covid-19.
+Most people get their vitamin D through their skin, and if you are far from the equator, your skin can only manufacture vitamin D during the summer. 
+One [study](https://www.medicinenet.com/script/main/art.asp?articlekey=170741) of 3.4 million blood samples collected in the U.S. over the course of five years showed that vitamin D levels peaked in August and bottomed out in February.
 Since the pandemic started at the end of Canada's winter and the end of Australia's summer, average vitamin D levels would have been much lower in Canada and higher in Australia. 
 
 There's some preliminary (preprint) research that supports this theory:
 
 - A [restrospective study](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3571484) in the Philippines found a significant association between vitamin D status and severe Covid-19 infections.
-- An [Indonesian](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3585561) study of 712 people found that after controlling for age, gender, and co-morbidity, vitamin D deficiency was associated with a twelve times higher risk of death
-- Covid-19 appears to [vary by latitude](https://www.ncbi.nlm.nih.gov/pubmed/32311755)
+- An [Indonesian](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3585561) study of 712 people found that after controlling for age, gender, and co-morbidity, vitamin D deficiency was associated with a twelve times higher risk of death.
+- Covid-19 appears to [vary by latitude](https://www.ncbi.nlm.nih.gov/pubmed/32311755).
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(dplyr)
@@ -122,7 +122,7 @@ country_summary %>%
 ```
 
 
-Additionally there are some other factors that make vitamin D a plausible candidate:
+There are some additional factors that make vitamin D a plausible candidate:
 
 - Vitamin D helps regulate the [renin angiotensin system](https://youtu.be/Nfp4X4O87DQ?t=1499) which includes the ACE2 receptor that Covid-19 binds to.
 - Vitamin D deficiency is common among populations at risk for Covid-19 mortality, including people of colour, the elderly, people with a high BMI, health care workers, and those in institutional settings.
@@ -136,7 +136,7 @@ Lastly, vitamin D status would help explain some other puzzling phenomena:
 - Considering the age demographics in Florida, why isn't Florida doing worse?
 
 Now, I'm not saying that vitamin D is definitely the cause of differential Covid-19 mortality;
-it's quite likely that there's some bundle of factors which explain all of the above. But given that it's an abundent, safe, and well understood therapy, I think we should be paying attention to it. 
-I'm looking forward to the results of some of the vitamin D [clinical trials](https://clinicaltrials.gov/ct2/show/NCT04334005) and am concerned that the places like Argentina, New Zealand, and Chile are going to see worsening outbreaks as the seasons change.
+it's quite likely that there's some bundle of factors that explain all of the above. But given that it's an abundent, safe, and well understood therapy, I think we should be paying attention to it. 
+I'm looking forward to the results of some of the vitamin D [clinical trials](https://clinicaltrials.gov/ct2/show/NCT04334005) and am concerned that countries in the southern hemisphere are going to see worsening outbreaks as the seasons change.
 
 
