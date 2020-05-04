@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vitamin D and Covid-19</title>
+      <link>/post/vitamin-d-and-covid-19/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/vitamin-d-and-covid-19/</guid>
+      <description>The New York Times had a recent piece about the puzzling ways that Covid-19 has spread across the world. In it they articulate a number of possible theories about why Covid-19 has effected some countries more than others, but I think they left out one potential explanation: Vitamin D status.
+The story so far So far the story we’ve been told about Covid-19 is that it is an extremely dangerous virus that spreads expoentially.</description>
+    </item>
     
     <item>
       <title>Why I use R</title>
