@@ -3,12 +3,8 @@ title: Vitamin D and Covid-19
 author: Gordon Shotwell
 date: '2020-05-03'
 slug: vitamin-d-and-covid-19
-categories: []
-tags: []
-lastmod: '2020-05-03T11:15:41-03:00'
-layout: post
-type: post
 highlight: no
+output: html_document
 ---
 
 In a [recent piece](https://www.nytimes.com/2020/05/03/world/asia/coronavirus-spread-where-why.html?referringSource=articleShare) about the puzzling ways that Covid-19 has spread across the world the New York Times explores a number of possible theories about why Covid-19 has effected some countries more greivously than others, including “demographics, culture, environment, and the speed of government responses.” I think Vitamin D status should probably be included in this conversation. 
