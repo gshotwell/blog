@@ -84,6 +84,7 @@ There's some preliminary (preprint) research that supports this theory:
 
 - A [restrospective study](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3571484) in the Philippines found a significant association between vitamin D status and severe Covid-19 infections.
 - An [Indonesian](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3585561) study of 712 people found that after controlling for age, gender, and co-morbidity, vitamin D deficiency was associated with a twelve times higher risk of death.
+- UVB radiation, which the skin uses to manufacture vitamin D is [associated](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3586555#.XrA5awDBBLE.twitter) with lower death rates and case fatality rates.
 - Covid-19 appears to [vary by latitude](https://www.ncbi.nlm.nih.gov/pubmed/32311755).
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
