@@ -86,48 +86,15 @@ There's some preliminary (preprint) research that supports this theory:
 - An [Indonesian](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3585561) study of 712 people found that after controlling for age, gender, and co-morbidity, vitamin D deficiency was associated with a twelve times higher risk of death.
 - UVB radiation, which the skin uses to manufacture vitamin D is [associated](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3586555#.XrA5awDBBLE.twitter) with lower death rates and case fatality rates.
 - Covid-19 appears to [vary by latitude](https://www.ncbi.nlm.nih.gov/pubmed/32311755).
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(dplyr)
-library(ggplot2)
-df <- readr::read_csv("covid_04-28-2020.csv") %>%
-  janitor::clean_names()
-
-df$lat[df$country_region == "Canada"] <- 43
-
-pop <- readr::read_csv('wb_population.csv', skip = 3) %>%
-  janitor::clean_names()
-pop <- pop %>%
-  select(country_name, country_code, pop_2018 = x2018)
-
-country_summary <- df %>%
-  group_by(country_region) %>%
-  summarize(deaths = sum(deaths),
-            lat = mean(lat),
-            long = mean(long))
-
-country_summary <- country_summary %>%
-  left_join(pop, by = c("country_region" = "country_name"))
-
-country_summary %>%
-  filter(deaths > 50) %>%
-  mutate(death_per_million = (deaths / pop_2018) * 1e6) %>%
-  ggplot(aes(x = lat, y = death_per_million)) +
-  geom_point(alpha = 0.5) +
-  theme_minimal() +
-  labs(title = "Covid-19 deaths by latitude, April 28, 2020",
-       subtitle = "Countries with > 50 deaths",
-       y = "Deaths per million",
-       x = "Latitude")
-
-```
-
+- Hospitalized male Covid-19 patients [were found](https://www.medrxiv.org/content/10.1101/2020.05.01.20079376v1) to have lower vitamin D levels than controls
 
 There are some additional factors that make vitamin D a plausible candidate:
 
 - Vitamin D helps regulate the [renin angiotensin system](https://youtu.be/Nfp4X4O87DQ?t=1499) which includes the ACE2 receptor that Covid-19 binds to.
+- Vitamin D [may bind](https://www.preprints.org/manuscript/202005.0084/v1) to the  non-structural protein nsp7 on the SARS-CoV-2 virus.
 - Vitamin D deficiency is common among populations at risk for Covid-19 mortality, including people of colour, the elderly, people with a high BMI, health care workers, and those in institutional settings.
 - Vitamin D reduces the risk of [other](https://www.bmj.com/content/356/bmj.i6583) acute respiratory infections.
+- Vitamin D deficiency is [very common](https://www.ncbi.nlm.nih.gov/pubmed/12856111) in places that have been hit hard by the disease.
 
 Lastly, vitamin D status would help explain some other puzzling phenomena:
 
@@ -137,5 +104,5 @@ Lastly, vitamin D status would help explain some other puzzling phenomena:
 - Considering the age demographics in Florida, why isn't Florida doing worse?
 
 Now, I'm not saying that vitamin D is definitely the cause of differential Covid-19 mortality;
-it's quite likely that there's some bundle of factors that explain all of the above. But given that it's an abundent, safe, and well understood therapy, I think we should be paying attention to it.
+it's quite likely that there's some bundle of factors that explain all of the above. But given that it's an abundant, safe, and well understood therapy, I think we should be paying attention to it.
 I'm looking forward to the results of some of the vitamin D [clinical trials](https://clinicaltrials.gov/ct2/show/NCT04334005) and am concerned that countries in the southern hemisphere are going to see worsening outbreaks as the seasons change.
