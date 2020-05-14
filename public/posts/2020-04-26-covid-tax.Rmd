@@ -3,12 +3,7 @@ title: Covid Tax
 author: Gordon Shotwell
 date: '2020-05-14'
 slug: covid-tax
-categories: []
-tags: []
-lastmod: '2020-04-26T10:53:27-03:00'
-layout: post
-type: post
-highlight: no
+output: html_document
 ---
 ```{r, include=FALSE}
 library(dplyr)
