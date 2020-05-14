@@ -17,7 +17,9 @@ covid_tax <- function(n, t) {
 Let's say you were a market-oriented dictator who is worried about Covid-19 and wants to reduce the size and number of social gatherings. 
 You understand that gatherings generate a lot of value for your population and so you want a mechanism to ban the least valuable gatherings, while allowing the high value ones to continue. 
 For example you probably want to reduce the number of work karaoke parties, while allowing people to go to their best friend's wedding.
-As a market-oriented dictator you don't have a lot of confidence in the government's ability to separate high-value social gatherings from low-value ones, so you decide to put in a funny kind of tax incentive and let the market solve for the equilibrium gathering size. 
+As a market-oriented dictator you don't have a lot of confidence in the government's ability to separate high-value social gatherings from low-value ones, so you decide to put in a funny kind of tax incentive and let the market solve for the equilibrium gathering size.  
+
+ 
 
 The way this tax works is that each attendee at an event is charged a Covid tax of _$n_ for every other person at the event.
 So if there are 11 people at an event, and the Covid tax is $2, everyone has to spend $20 to go, and the total tax bill for the event is $200. 
