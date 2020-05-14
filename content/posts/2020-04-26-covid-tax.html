@@ -1,94 +1,97 @@
 ---
 title: Covid Tax
 author: Gordon Shotwell
-date: '2020-04-26'
+date: '2020-05-14'
 slug: covid-tax
-categories: []
-draft: true
-tags: []
-lastmod: '2020-04-26T10:53:27-03:00'
-layout: post
-type: post
-highlight: no
+output: html_document
 ---
 
 
 
-<div id="an-optimal-strategy-for-reducing-group-size" class="section level1">
-<h1>An optimal strategy for reducing group size</h1>
-<p>Let’s say you were a market oriented dictator who is worried about COVID-19 and wants to reduce the size and number of social gatherings.
+<p>Let’s say you were a market-oriented dictator who is worried about Covid-19 and wants to reduce the size and number of social gatherings.
 You understand that gatherings generate a lot of value for your population and so you want a mechanism to ban the least valuable gatherings, while allowing the high value ones to continue.
 For example you probably want to reduce the number of work karaoke parties, while allowing people to go to their best friend’s wedding.
-As a market-oriented dictator you don’t have a lot of confidence in the government’s ability to separate high-value social gatherings from low-value ones, so you decide to put in a funny kind of tax incentive and let the market solve for the equilibrium gathering size.<br />
-The way this tax works is that each attendee at an event is changed a COVID tax of <em>$n</em> for every other person at the event.
-So if there are 11 people at an event, and the covid tax is $2, everyone has to spend $20 to go, and the total tax bill for the event is $200.</p>
+As a market-oriented dictator you don’t have a lot of confidence in the government’s ability to separate high-value social gatherings from low-value ones, so you decide to put in a funny kind of tax incentive and let the market solve for the equilibrium gathering size.</p>
+<p>The way this tax works is that each attendee at an event is charged a Covid tax of <em>$n</em> for every other person at the event.
+So if there are 11 people at an event, and the Covid tax is $2, everyone has to spend $20 to go, and the total tax bill for the event is $200.</p>
 <p>The important thing about this tax is that the total bill increases quadratically with the number of people.
-If the tax were $2 then an 11 person event would be taxed $200, while a 21 person event would be taxed $800.
+If the tax were $2, the 11th person would add $200 to the total bill, while a 21 person event would add $800.
+This is the case because every additional person who comes increases the amount that every <em>other</em> person has to pay.
 Over time you might vary the Covid tax rate, increasing it if there were more outbreaks and decreasing it if our treatments improved, but large gatherings will always be charged disproportionately more than small ones.</p>
 <p><img src="/posts/2020-04-26-covid-tax_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-</div>
 <div id="the-real-world-covid-tax" class="section level1">
 <h1>The real world Covid tax</h1>
 <p>Even though we probably won’t ever live under a formal Covid tax like this,
 it’s a great model for how people and businesses are likely to behave until there’s a coronavirus vaccine.
 One thing we can say for sure about Covid is that it’s increased the cost of social interaction.
-before Covid, we might have been indifferent between going to the store or ordering online,
+Before Covid, we might have been indifferent between going to the store or ordering online,
 but now most of us have a strong preference for things which don’t require in-person interaction.
-This might be because the givernement has closed a lot of stores, or because we’re worried about getting the disease, or because the measures put in place to protect people are annoying.
+This might be because the government has closed a lot of stores, or because we’re worried about getting the disease, or because the measures put in place to protect people are annoying, but the outcome is the same: we avoid large gatherings and prefer small ones.
 Over time the disease may ease up, or social distancing rules may be relaxed, and the Covid tax might go down, but it’s probably not going away until there’s a widely adopted vaccine.</p>
-<p>If there’s a tax on social interaction we would people to substitue away from low-value interactions and towards high value ones.
-For exmple I might be happy to pay the Covid tax to see family or close friends, but not be willing to pay it to see my banker.
-Similarly I’ll probably avoid going to events with lots of people because the Covid tax is higher in those places.
-Similarly, we can judge businesses and industry vulnerability to the pandemic by how exposed they are to the covid tax.</p>
 </div>
 <div id="why-are-large-events-large" class="section level1">
 <h1>Why are large events large?</h1>
 <p>Large events exist because they have <em>decreasing marginal costs</em> with respect to number of attendees.
-For example most of the costs of owning an NBA team are fixed.
-You have to pay the players the same amount of money regardless of how many people come to the game so there’s an incentive to have as many people as possible come to the game.
+For example most of the costs of owning an NBA team are fixed,
+you have to pay the players the same amount of money regardless of how many people come to the game so you have an incentive to pack as many people as possible into the arena.
 The total costs of putting the game on are pretty high, but the marginal costs go down with each attendee.
 The same thing is true of concerts, conferences, movie theaters, and restaurants, the marginal cost of additional people is low so firms have an incentive to make the event bigger.</p>
-<p>The covid tax changes this because it causes marginal costs to increase with the number of attendees.
-The magnitude of this tax changes how extreme the increase is, but the structure implies that the marginal cost line always slopes upwards.</p>
-<pre><code>## Warning: Removed 5 rows containing missing values (geom_path).</code></pre>
+<p>The Covid tax changes this because it causes marginal costs to increase with the number of attendees.
+The magnitude of this tax changes how extreme the increase is, but the structure implies that the marginal cost curve always slopes upwards.</p>
 <p><img src="/posts/2020-04-26-covid-tax_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Of course this isn’t the only cost for these businesses, so it’s possible that the firms other costs outweigh the covid tax so that they still make money by adding new people.
-Also note that some event sizes might still make sense, if the covid tax is ten cents then inviting your seventh person over for dinner only costs a dollar, while the 100th person coming to a theater would cost $20.
+<p>Of course this isn’t the only cost for these businesses, so it’s possible that the other costs outweigh the Covid tax so that they still make money by adding new people, but for a lot of businesses this is probably enough to make large events unprofitable.
+Some event sizes might still make sense, if the Covid tax is ten cents then inviting your seventh person over for dinner only costs a dollar, while the 100th person coming to a theater would cost $20.
 The important thing is that the Covid tax is going to create a long term incentive to reduce the size of events because it increase the marginal cost of an additional attendee.</p>
 </div>
 <div id="what-does-this-do-to-your-business" class="section level1">
 <h1>What does this do to your business?</h1>
-<div id="where-were-your-profits-coming-from" class="section level2">
-<h2>Where were your profits coming from</h2>
-<p>The first thing to do is ask yourself what happens to your profit margin if there are increasing marginal costs to social interaction.
+<p>This is a great mental model of the disease because it clarifies the questions you should be asking about your business.</p>
+<div id="where-are-your-profits-coming-from" class="section level2">
+<h2>Where are your profits coming from?</h2>
+<p>The first question to ask yourself is what happens to your profit margin if there are increasing marginal costs to social interaction.
 For example, most restaurants, hotels, and cruise ships have large up-front costs, and they tend to turn a profit only when their average occupancy rates are high.
-If you own a restaurant, you have to rent the building, pay the kitchen staff, and purchase supplies no matter how many people come in to dinner that night, so you’ll lose money if only 5 people show up, and make money as your dining room fills up and you recoup your fixed costs.</p>
-<p>This business model looks pretty bleak under a Covid tax regime because your fixed costs stay the same, but your marginal costs go up as more people come to your restaurant.
-The hundreth person coming in the door might actually lose money because they increase the overall risk that someone will transmit the virus, or that the government will impose some regulation or restriction on your business.</p>
+If you own a restaurant, you have to rent the building, pay the kitchen staff, and purchase supplies no matter how many people come in to dinner that night.
+As a result you’ll lose money if only 5 people show up, and make money as your dining room fills up and you recoup your fixed costs.
+This business model looks pretty bleak under a Covid tax regime because your fixed costs stay the same, but your marginal costs go up as more people come to your restaurant.
+The hundredth person coming in the door will probably cost more than the fifth person because they increase the overall risk that someone will transmit the virus, or that the government will impose some regulation or restriction on your business.</p>
 </div>
-<div id="tax-exempt-competitors" class="section level2">
-<h2>Tax exempt competitors</h2>
-<p>While the Covid tax is very bad news for restaurants and hotels it at least effects most firms in the same way.
-If you run a hotel for example, you can be fairly confident that while it’s going to be a very bad few years, your business won’t lose market share because all of your compeitors are effected by the tax in the same way.
-It’s possible that something changes about the disease, or there’s some kind of industry bailout which will keep your place of business afloat, and if you can survive you’ll come out of the crisis in the same basic position that you went into it.
-This is not true for all firms.</p>
-<p>The people who should really panic right now are businesses who have a high Covid tax burden, and who are competing with digital-first businesses who are more or less exempt from the Covid tax.
+<div id="do-i-have-tax-exempt-competitors" class="section level2">
+<h2>Do I have tax exempt competitors</h2>
+<p>While the Covid tax is very bad news for restaurants and hotels it at least affects most firms in the same way.
+If you run a hotel you can be fairly confident that while it’s going to be a very bad few years, your business won’t lose market share because all of your competitors have to pay the same tax.
+It’s possible that something changes about the disease, or there’s some kind of industry bailout which will keep your place of business afloat, and if you can survive you’ll come out of the crisis in the same basic position that you went into it with. This is not true for all firms.</p>
+<p>The people who should really panic right now are businesses who have a high Covid tax burden, and are competing with digital-first businesses who are more or less exempt from the Covid tax.
 One of the main trends over the last five years are in-person commercial activities being replaced by remote interactions.
-We order more and more things online, watch streaming services instead of going to movie theaters, and even apply for mortages online.
-If your business model relies on in-person interactions, and you are competing with a business that doesn’t need those interactions, the Covid tax is going to be absolutely crushing.</p>
-<p>This is true for three main reasons.
-First, in the short run, you are going to lose a lot of market share to your online competitors.
-Movie theaters were having trouble competing with streaming providers before Covid,
-and it will be difficult to get customers back after this is all over.</p>
+We order more and more things online, watch streaming services instead of going to movie theaters, and prefer online banking to going to the branch.
+If your business model relies on in-person interactions, and you are competing with a business that doesn’t need those interactions, the Covid tax is going to be absolutely crushing for three main reasons.</p>
+<p>First, in the short run, you are going to lose a lot of market share to your online competitors.
+Movie theaters were having trouble competing with streaming providers before Covid, and the covid tax will cause these customers to flee in droves to streaming providers.
+After the crisis is over these streaming services will have a much larger market share than they do now, and it will be very difficult for movie theaters to regain those customers.</p>
 <p>Second, in the long run, digital-first firms are going to use that increased market share to increase pressure on their brick and mortar competitors.
-So Netflix might see that AMC is struggling and win licensing deals for new movie releases.
-Since AMC has to pay the Covid tax and Netflix doesn’t, they won’t really be in the positiona to compete for suppliers.</p>
-<p>Finally, industries with a viable remote substitute will be unlikely to get social support.
+Since AMC has to pay the Covid tax and Netflix doesn’t, they won’t really be in the position to compete for licencing contrats.
+As a result they will lose a lot of the legacy contracts and relationships that kept new releases in the theaters.
+Those advantages are durable and will continue long after the Covid tax is lifted.</p>
+<p>Finally, industries with a viable remote substitute will be unlikely to get bailouts.
 There are going to be lots and lots of business failures over the next few years, and governments are going to have to decide which ones to save and which ones to let die.
-Industries like commercial aviation have no remote substitutes, so we’ll probably save them because we want to be able to fly in three years.
-Nobody is going to save movie theaters because it turns out that streaming services are pretty good substitutes, and even if every theater in the country closes, we’ll be able to get most of the value of watching new movies through streaming.</p>
+Industries like commercial aviation have no remote substitutes and significant ramp-up costs, so we’ll probably save them because we want to be able to fly in three years,
+but nobody is going to save movie theaters because it turns out that streaming services are pretty good substitutes.
+If every theater in the country closes, we’ll still be able to get most of the value of watching new movies at home.
+As a result so a bailout of movie theaters is unlikely to garner support from the public.</p>
 </div>
 </div>
 <div id="what-should-you-do" class="section level1">
 <h1>What should you do?</h1>
+<p>As an individual and business you should be asking two main questions:</p>
+<ol style="list-style-type: decimal">
+<li>“Is it possible for my business to pay the Covid tax and stay profitable”</li>
+</ol>
+<p>This crisis is going to last long enough that most firms that can’t find a path to profitability are going to close, so it’s important to be brutally honest when asking this question.
+There are a lot of industries for which the answer to this is ‘no’ and it’s probably better to exit those industries earlier rather than later.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>“What can I do to reduce my Covid tax burden”</li>
+</ol>
+<p>The structure of the Covid tax makes large investments in reducing the tax burden sensible.
+For example you might make investments in remote work, or close your dining room to focus on food delivery.
+Anything that you can do to reduce your Covid tax burden is likely to pay off over the next year or so.
+This question should also guide government decisions in terms of modifying regulations or making investments to lower the cost of the Covid tax.</p>
 </div>
