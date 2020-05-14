@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Covid Tax</title>
+      <link>/posts/covid-tax/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/covid-tax/</guid>
+      <description>Let’s say you were a market-oriented dictator who is worried about Covid-19 and wants to reduce the size and number of social gatherings. You understand that gatherings generate a lot of value for your population and so you want a mechanism to ban the least valuable gatherings, while allowing the high value ones to continue. For example you probably want to reduce the number of work karaoke parties, while allowing people to go to their best friend’s wedding.</description>
+    </item>
     
     <item>
       <title>Vitamin D and Covid-19</title>
@@ -19,15 +28,6 @@
       <guid>/posts/vitamin-d-and-covid-19/</guid>
       <description>In a recent piece about the puzzling ways that Covid-19 has spread across the world the New York Times explores a number of possible theories about why Covid-19 has affected some countries more grievously than others, including “demographics, culture, environment, and the speed of government responses.” I think Vitamin D status should probably be included in this conversation.
 A tale of two countries Canada and Australia have had pretty similar Covid-19 timelines.</description>
-    </item>
-    
-    <item>
-      <title>Covid Tax</title>
-      <link>/posts/covid-tax/</link>
-      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/covid-tax/</guid>
-      <description>An optimal strategy for reducing group size Let’s say you were a market oriented dictator who is worried about COVID-19 and wants to reduce the size and number of social gatherings. You understand that gatherings generate a lot of value for your population and so you want a mechanism to ban the least valuable gatherings, while allowing the high value ones to continue. For example you probably want to reduce the number of work karaoke parties, while allowing people to go to their best friend’s wedding.</description>
     </item>
     
     <item>
