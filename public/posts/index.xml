@@ -21,6 +21,16 @@
     </item>
     
     <item>
+      <title>Vitamin D and Covid: We don&#39;t need to wait for more data.</title>
+      <link>/posts/supplment_vitamin_d/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/supplment_vitamin_d/</guid>
+      <description>I recently posted this graph on Twitter which suggests that Covid-19 mortality is related to latitude:
+There’s a particular type of smug person on the internet who sees a graph like this and reaches deep into their memories of their datascience bootcamp to exclaim “correlation doesn’t imply causation” or “we need a randomized clinical trial to be sure” or even “there are differences in testing strategy”. These responses are stupid not because they’re wrong but because they ignore the fact that we usually have to make decisions while we’re still uncertain.</description>
+    </item>
+    
+    <item>
       <title>Vitamin D and Covid-19</title>
       <link>/posts/vitamin-d-and-covid-19/</link>
       <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
@@ -91,16 +101,6 @@ A tale of two countries Canada and Australia have had pretty similar Covid-19 ti
       
       <guid>/posts/r_for_excel_users/</guid>
       <description>Like most people, I first learned to work with numbers through an Excel spreadsheet. After graduating with an undergraduate philosophy degree, I somehow convinced a medical device marketing firm to give me a job writing Excel reports on the orthopedic biomaterials market. When I first started, I remember not knowing how to anything, but after a few months I became fairly proficient with the tool, and was able to build all sorts of useful models.</description>
-    </item>
-    
-    <item>
-      <title>Vitamin D and Covid: We don&#39;t need to wait for more data.</title>
-      <link>/posts/supplment_vitamin_d/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/supplment_vitamin_d/</guid>
-      <description>I recently posted this graph on Twitter which suggests that Covid-19 mortality is related to latitude:
-There’s a particular type of smug person on the internet who sees a graph like this and reaches deep into their memories of their datascience bootcamp to exclaim “correlation doesn’t imply causation” or “we need a randomized clinical trial to be sure” or even “there are differences in testing strategy”. These responses are stupid not because they’re wrong but because they ignore the fact that we usually have to make decisions while we’re still uncertain.</description>
     </item>
     
   </channel>
