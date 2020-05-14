@@ -193,8 +193,10 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p><img src="/img/pai_mei.gif" /></p>
 <p>I couldn’t get R to do anything. It wouldn’t read in files, draw a plot or multiply two numbers together. All I could do was generate mystifying errors and get mocked on Stack Overflow for asking redundant questions. This was all made more frustrating by the fact that I could accomplish all of these things in Excel without much difficulty.</p>
 <p>This is the basic pain of learning to program. Programming languages are designed to be general in their application and to allow you to accomplish a huge variety of complex tasks with the same basic set of tools. The cost of this generality is a steep learning curve. When you start learning to do basic tasks in R, you are also learning how to do complex things down the road. As you learn more and more, the marginal cost of complex analyses goes down. Excel is the opposite, and is very easy at the beginning, but the marginal cost goes up with the complexity of the problem. If you were to graph this it might look like this:</p>
-<pre><code>## Warning: `data_frame()` is deprecated, use `tibble()`.
-## This warning is displayed once per session.</code></pre>
+<pre><code>## Warning: `data_frame()` is deprecated as of tibble 1.1.0.
+## Please use `tibble()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
 <p><img src="/posts/r_for_excel_users_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>At the beginning, when you are trying to accomplish simple things like balancing a budget or entering some data by hand, R is definitely harder to learn than Excel. However, as the task gets more complex, it becomes easier to accomplish in R than Excel, because the core structures of Excel are designed for relatively simple use cases and are not the best for more complex problems. This isn’t to say that you can’t solve a lot of complex problems with Excel, it’s just that the tool won’t make it easy for you.</p>
 <p>For a lot of us, the pain of learning to program feels like the pain of failure. When the program gives you an incomprehensible error message it feels like it’s telling you that you’re stupid and lack programming aptitude. But after programming for a while, you learn that nobody really understands those errors, and everybody feels like an imposter when their program fails. The pain you feel is not the pain of failure, it’s just the pain of learning.</p>
@@ -691,6 +693,11 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
   
 
 <div class="navigation navigation-single">
+    
+    <a href="/posts/supplment_vitamin_d/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Vitamin D and Covid: We don&#39;t need to wait for more data.</span>
+    </a>
     
     
     <a href="/posts/ui_data_analysis/" class="navigation-next">
