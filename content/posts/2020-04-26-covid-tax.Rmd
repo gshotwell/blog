@@ -59,6 +59,7 @@ Before Covid, we might have been indifferent to going to the store versus orderi
 but now most of us have a strong preference for things that don't require in-person interaction. 
 This might be because the government has closed a lot of stores, or because we're worried about getting the disease, or because the measures put in place to protect people are annoying, but the outcome is the same: we avoid large gatherings and prefer small ones.
 Over time the disease may ease up, or social distancing rules may be relaxed, and the de facto Covid tax might go down, but it's probably not going away until there's a widely adopted vaccine.
+Thinking about all of these changes using the "Covid tax" mental model helps us predict what's going to happen to the economy over the next few years.
 
 # Why are large events large?
 
@@ -106,7 +107,7 @@ The hundredth person coming in the door will probably cost more than the fifth p
 
 ## Do I have tax exempt competitors
 
-While the Covid tax -- the de facto tax already happening naturally as well as the imaginary concrete one I'm describing as a thought experiment -- is very bad news for restaurants and hotels it at least affects most firms in the same way. 
+While the Covid tax is bad news for restaurants and hotels it at least affects most firms in the same way. 
 If you run a hotel you can be fairly confident that while it's going to be a very bad few years, your business won't lose market share because all of your competitors  have to pay the same tax.
 It's possible that something changes about the disease, or there's some kind of industry bailout to keep your business afloat, and if you can survive you'll come out of the crisis in the same basic position that you went into it with. This is not true for all firms. 
 
