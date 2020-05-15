@@ -37,7 +37,7 @@ plot_df %>%
          y = "Deaths per Million")
 ```
 
-There's a particular type of person on the internet who sees a graph like this and reaches deep into their datascience bootcamp memories to exclaim "Correlation doesn't imply causation!" or "There's no randomized clinical trial!" or even "There are differences in testing strategy!"
+There's a particular type of person on the internet who sees a graph like this and reaches deep into their data science boot-camp memories to exclaim "Correlation doesn't imply causation!" or "There's no randomized clinical trial!" or even "There are differences in testing strategy!"
 
 These responses are stupid not because they're wrong but because they ignore how decision-making works. 
 It would be great if we had several high quality clinical trials for every decision. 
@@ -58,7 +58,8 @@ The way to make these decisions is by combining _prior knowledge_ with _risk ass
 
 For example, we have a lot of prior knowledge about treating acute respiratory distress with ventilators. 
 Since Covid-19 looks like a respiratory disease, doctors have a prior expectation that mechanical ventilation will help Covid patients when they enter respiratory distress.  
-Note that we do this without a clinical trial. It's entirely possible that Covid-19 patients are [not helped](https://time.com/5820556/ventilators-covid-19/) by mechanical ventilation or that it's even harmful. But we shouldn't wait to put people on ventilators until we have a Covid-19 ventilation study because [GORDON INSERT AN EXPLANATION]
+Note that we do this without a clinical trial. It's entirely possible that Covid-19 patients are [not helped](https://time.com/5820556/ventilators-covid-19/) by mechanical ventilation or that it's even harmful. 
+But we shouldn't wait to put people on ventilators until we have a Covid-19 ventilation study because patients would die in the time it takes to conduct such a study.
 Similarly, public health interventions were put in place without perfect certainty about how Covid is transmitted. 
 Public health officials didn't wait for a large clinical trial on social distancing; 
 instead they relied on their prior knowledge about how viruses like Covid are transmitted 
@@ -69,14 +70,14 @@ and decided that the risks of letting the virus run wild are probably higher tha
 The second consideration is how the risk of action compares with that of inaction.
 Given that we don't know much about this virus, what's the downside risk if you're totally wrong about the intervention?
 If the risks of intervention are very low and the upside is high, it's often worth pursuing even if there's a low probability of success.
-For example, we don't really have good evidence that widespead mask usage prevents Covid-19, but since masks are very unlikely to be harmful and there's a plausible way they could reduce transmission, we might decide to promote them. 
+For example, we don't really have good evidence that widespread mask usage prevents Covid-19, but since masks are very unlikely to be harmful and there's a plausible way they could reduce transmission, we might decide to promote them. 
 Similarly, we don't know that closing playgrounds reduces transmission, but closing them isn't going to put anyone at major risk so it's probably a good bet.
 
 # Prior knowledge about Vitamin D and Covid
 
 Our prior knowledge about vitamin D and Covid should be based on the same logic as mechanical ventilation: 
 Covid looks like a respiratory virus, so until we learn otherwise we should treat and prevent it like a respiratory virus. 
-A [meta-analysis](https://www.sciencedirect.com/science/article/pii/S1871402120301156) found two important facts about vitamin D supplemntation and other respiratory conditions:
+A [meta-analysis](https://www.sciencedirect.com/science/article/pii/S1871402120301156) found two important facts about vitamin D supplementation and other respiratory conditions:
 
 1. Overall. vitamin D supplementation reduced the incidence of respiratory distress by 20%.
 2. For the very deficient, supplementation reduced the incidence by around 70%.
@@ -86,7 +87,7 @@ I might not get that excited about reducing my risk of dying from a cold from 0.
 If we could reduce the rate of Covid respiratory distress by 20% - 70% that would not only save a lot of lives but also allow us to relax certain types of social distancing. 
 
 Again, this is just a prior. As we learn more about the virus we might discover that Covid is different from other respiratory viruses and vitamin D has no real effect. 
-However, so far [almost everything](https://github.com/GShotwell/vitamin_d_covid) we've learned has supported a conenction between vitamin D and Covid outcomes. For example:
+However, so far [almost everything](https://github.com/GShotwell/vitamin_d_covid) we've learned has supported a connection between vitamin D and Covid outcomes. For example:
 
 - A re-analysis of [107 Swiss blood samples](https://www.mdpi.com/2072-6643/12/5/1359/htm) found that PCA positive patients had 25-hydroxyvitamin D concentrations half that of PCA negatives. This finding held after stratifying for age and gender.  
 - A [restrospective study](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3571484) in the Philippines found a significant association between vitamin D status and severe Covid-19 infections.
@@ -103,16 +104,16 @@ What happens if we supplement everyone with vitamin D and it doesn't help Covid 
 First, people are unlikely to be harmed by supplementation. 
 Vitamin D supplementation is extremely safe. The above meta-analysis found that supplementation didn't increase death or adverse events from any cause. 
 Second, even if widespread vitamin D supplementation doesn't mitigate Covid, it will still help prevent _other respiratory conditions_, which is positive.
-In the scenario where supplementation is not helpful to Covid, it would help decrease infection and hospital visits from things like non-Covid pnemonia, and as a result there would be more ventilators and hospital resources for Covid patients.
+In the scenario where supplementation is not helpful to Covid, it would help decrease infection and hospital visits from things like non-Covid pneumonia, and as a result there would be more ventilators and hospital resources for Covid patients.
 Similarly, it probably improves Covid outcomes indirectly because people who get Covid-19 after an unrelated respiratory ailment probably do worse. 
 
 So the upside of vitamin D supplementation is a significant reduction in Covid-19 transmission and mortality. 
 The downside is that we don't change Covid-19 rates at all but reduce the rate of other respiratory conditions, which in turns helps our Covid-19 response.   
 The upside is large, the downside is also positive: therefore we should supplement with Vitamin D. 
 
-This argument should sound familliar because it's exactly the same one that convinced so many people to wear homemade masks.
+This argument should sound familiar because it's exactly the same one that convinced so many people to wear homemade masks.
 There are no clinical trials testing mask use among the general population, and indeed it's pretty difficult to imagine such a trial ever being done. 
-There aren't even any observational studies of populations in real world conditions. All we have are a few labratory studies that show that masks can trap viral particles, and an association between a small number of mask-wearing countries and low Covid rates. 
+There aren't even any observational studies of populations in real world conditions. All we have are a few laboratory studies that show that masks can trap viral particles, and an association between a small number of mask-wearing countries and low Covid rates. 
 Despite that, we have a prior expectation that since Covid mostly comes out of people's mouths, covering those mouths probably has some protective effect.
 Since mask use is basically risk-free, any protective effect is worth the effort.
 The clinical data on vitamin D is quite a lot stronger than universal masking because we have high quality randomized clinical trials demonstrating that vitamin D protects against other respiratory viruses, and we have at least a few observational studies showing that vitamin D deficient patients are at a high risk for severe Covid.
