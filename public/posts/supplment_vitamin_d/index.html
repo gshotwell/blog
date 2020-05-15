@@ -22,15 +22,18 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vitamin D and Covid: We don&#39;t need to wait for more data."/>
-<meta name="twitter:description" content="How to make decisions with poor data I recently posted this graph on Twitter which suggests that Covid-19 mortality :
-library(tidyverse) df &lt;- read_csv(&quot;april_28_deaths_latitude.csv&quot;) df &lt;- df %&gt;% mutate(Latitude = as.numeric(Latitude), deaths_per_million = as.numeric(deaths_per_million)) %&gt;% mutate(lat_group = dplyr::case_when( Latitude &gt; 25 ~ &quot;&gt; 25 degrees&quot;, TRUE ~ &quot; &lt; 25 degrees&quot; )) plot_df &lt;- df %&gt;% filter(deaths_per_million &lt; 750) plot_df %&gt;% ggplot(aes(x = lat_group, y = deaths_per_million, colour = Latitude)) &#43; scale_color_viridis_c() &#43; theme_minimal() &#43; geom_jitter(alpha = 0."/>
+<meta name="twitter:description" content="I recently posted this graph on Twitter which suggests that Covid-19 mortality is related to latitude:
+There’s a particular type of person on the internet who sees a graph like this and reaches deep into their data science boot-camp memories to exclaim “Correlation doesn’t imply causation!” or “There’s no randomized clinical trial!” or even “There are differences in testing strategy!”
+These responses are stupid not because they’re wrong but because they ignore how decision-making works."/>
 
 <meta property="og:title" content="Vitamin D and Covid: We don&#39;t need to wait for more data." />
-<meta property="og:description" content="How to make decisions with poor data I recently posted this graph on Twitter which suggests that Covid-19 mortality :
-library(tidyverse) df &lt;- read_csv(&quot;april_28_deaths_latitude.csv&quot;) df &lt;- df %&gt;% mutate(Latitude = as.numeric(Latitude), deaths_per_million = as.numeric(deaths_per_million)) %&gt;% mutate(lat_group = dplyr::case_when( Latitude &gt; 25 ~ &quot;&gt; 25 degrees&quot;, TRUE ~ &quot; &lt; 25 degrees&quot; )) plot_df &lt;- df %&gt;% filter(deaths_per_million &lt; 750) plot_df %&gt;% ggplot(aes(x = lat_group, y = deaths_per_million, colour = Latitude)) &#43; scale_color_viridis_c() &#43; theme_minimal() &#43; geom_jitter(alpha = 0." />
+<meta property="og:description" content="I recently posted this graph on Twitter which suggests that Covid-19 mortality is related to latitude:
+There’s a particular type of person on the internet who sees a graph like this and reaches deep into their data science boot-camp memories to exclaim “Correlation doesn’t imply causation!” or “There’s no randomized clinical trial!” or even “There are differences in testing strategy!”
+These responses are stupid not because they’re wrong but because they ignore how decision-making works." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/supplment_vitamin_d/" />
-<meta property="og:site_name" content="Title" />
+<meta property="article:published_time" content="2020-05-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-15T00:00:00+00:00" /><meta property="og:site_name" content="Title" />
 
 
     
@@ -171,12 +174,14 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <div class="post__meta">
     
     
+      <i class="fas fa-calendar-alt"></i> May 15, 2020
+    
     
     
     
     
     <br/>
-    <i class="fas fa-clock"></i> 5 min read
+    <i class="fas fa-clock"></i> 8 min read
 </div>
 
 
@@ -187,86 +192,95 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
     
 
 
-<div id="how-to-make-decisions-with-poor-data" class="section level1">
-<h1>How to make decisions with poor data</h1>
-<p>I recently posted this graph on Twitter which suggests that Covid-19 mortality :</p>
-<pre class="r"><code>library(tidyverse)
-df &lt;- read_csv(&quot;april_28_deaths_latitude.csv&quot;)
-
-df &lt;- df %&gt;% 
-  mutate(Latitude = as.numeric(Latitude),
-         deaths_per_million = as.numeric(deaths_per_million)) %&gt;% 
-  mutate(lat_group = dplyr::case_when(
-    Latitude &gt; 25 ~ &quot;&gt; 25 degrees&quot;,
-    TRUE ~ &quot; &lt; 25 degrees&quot;
-  ))
-
-plot_df &lt;- df %&gt;% 
-  filter(deaths_per_million &lt; 750)
-
-
-plot_df %&gt;% 
-  ggplot(aes(x = lat_group, y = deaths_per_million, colour = Latitude)) +
-  scale_color_viridis_c() +
-  theme_minimal() +
-  geom_jitter(alpha = 0.7) +
-  labs(title = &quot;Covid 19 deaths per million&quot;,
-         x = &quot;Latitude&quot;,
-         y = &quot;Deaths per Million&quot;)</code></pre>
+<p>I recently posted this graph on Twitter which suggests that Covid-19 mortality is related to latitude:</p>
 <p><img src="/posts/supplment_vitamin_d_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>There’s a particular type of smug person on the internet who sees a graph like this and reaches deep into their memories of their datascience bootcamp to exclaim “correlation doesn’t imply causation” or “we need a randomized clinical trial to be sure” or even “there are differences in testing strategy”.
-These responses are stupid not because they’re wrong but because they ignore the fact that we usually have to make decisions while we’re still uncertain.
-It would be great if we had several high quality clinical trials for every decision we need to make, but clinical trials are difficult, expensive, and take a long time to complete.
-As a result we usually have to make medical decisions without clear direction from clinical trials.
-This is especially true in the case of Covid-19, the disease has only existed for 9 months, so obviously we’re not going to have a RCT for every medical intervention.
-It would be profoundly silly to wait to treat patients, or engage in public health interventions, until we have clear guidance from a large, multi-center clinical trial.
-We have to make these medical decisions today with today’s knowledge, even if that knowledge doesn’t include any RCTs.</p>
-<p>The way we make these decisions is by combining <em>prior knowledge</em> with <em>risk assessment</em>.
-For example, we have a lot of prior knowledge about treating respiratory distress with ventilators.
-Since Covid-19 looks like a respiratory virus, we have a prior expectation that we should put Covid patients on ventilators when they have trouble breating.
-Note that we do this without a clinical trial, it’s entirely possible that Covid-19 patients are not helped by mechanical ventilation or that it’s harmful, but if we wait to put people on ventilators until we have a Covid-19 ventilation study patients might die.
-Similarly, we put public health interventions in place without perfect certainty about how Covid is transmitted,
-we have a piror belief about how viruses like Covid are transmitted, and we understand that the risks of letting the virus run are probably higher than putting in overly stringent public health interventions.</p>
+<p>There’s a particular type of person on the internet who sees a graph like this and reaches deep into their data science boot-camp memories to exclaim “Correlation doesn’t imply causation!” or “There’s no randomized clinical trial!” or even “There are differences in testing strategy!”</p>
+<p>These responses are stupid not because they’re wrong but because they ignore how decision-making works.
+It would be great if we had several high quality clinical trials for every decision.
+But clinical trials are difficult, expensive, and take a long time to complete,
+so we usually have to make medical decisions without clear clinical direction.
+Even in cases where there <em>is</em> a lot of clinical data, that data may not map perfectly onto a doctor’s actual decision.
+A drug may have been approved based on a large, multi-center randomized trial, but maybe they have to treat a pregnant diabetic patient, and the trial didn’t include any of them.
+As a result, doctors usually have to make decisions with vague, provisional information.</p>
+<p>This is especially true in the case of Covid-19.
+The disease has only existed for 9 months, so obviously we’re not going to have a randomized clinical trial for most medical interventions.
+It would be a kind of malpractice to wait to treat patients, or engage in public health interventions, until we have clear guidance from a large, multi-center clinical trial.
+Medical personnel have to make medical decisions today with today’s knowledge, even if that knowledge is provisional.</p>
+<p>The way to make these decisions is by combining <em>prior knowledge</em> with <em>risk assessment</em>.</p>
+<div id="prior-knowledge" class="section level3">
+<h3>Prior knowledge</h3>
+<p>For example, we have a lot of prior knowledge about treating acute respiratory distress with ventilators.
+Since Covid-19 looks like a respiratory disease, doctors have a prior expectation that mechanical ventilation will help Covid patients when they enter respiratory distress.<br />
+Note that we do this without a clinical trial. It’s entirely possible that Covid-19 patients are <a href="https://time.com/5820556/ventilators-covid-19/">not helped</a> by mechanical ventilation or that it’s even harmful.
+But we shouldn’t wait to put people on ventilators until we have a Covid-19 ventilation study because patients would die in the time it takes to conduct such a study.
+Similarly, public health interventions were put in place without perfect certainty about how Covid is transmitted.
+Public health officials didn’t wait for a large clinical trial on social distancing;
+instead they relied on their prior knowledge about how viruses like Covid are transmitted
+and decided that the risks of letting the virus run wild are probably higher than putting in overly stringent public health interventions.</p>
 </div>
-<div id="prior-belief-about-vitamin-d-and-covid" class="section level1">
-<h1>Prior belief about Vitamin D and Covid</h1>
-<p>Our prior about Vitamin D and Covid should be similar to how we use ventilators.
+<div id="risk-assessment" class="section level3">
+<h3>Risk assessment</h3>
+<p>The second consideration is how the risk of action compares with that of inaction.
+Given that we don’t know much about this virus, what’s the downside risk if you’re totally wrong about the intervention?
+If the risks of intervention are very low and the upside is high, it’s often worth pursuing even if there’s a low probability of success.
+For example, we don’t really have good evidence that widespread mask usage prevents Covid-19, but since masks are very unlikely to be harmful and there’s a plausible way they could reduce transmission, we might decide to promote them.
+Similarly, we don’t know that closing playgrounds reduces transmission, but closing them isn’t going to put anyone at major risk so it’s probably a good bet.</p>
+</div>
+<div id="prior-knowledge-about-vitamin-d-and-covid" class="section level1">
+<h1>Prior knowledge about Vitamin D and Covid</h1>
+<p>Our prior knowledge about vitamin D and Covid should be based on the same logic as mechanical ventilation:
 Covid looks like a respiratory virus, so until we learn otherwise we should treat and prevent it like a respiratory virus.
-We can use to get an expectation about what widespread vitamin D supplementation would do to Covid rates.
-A <a href="https://www.sciencedirect.com/science/article/pii/S1871402120301156">meta-analysis</a> found two important facts about vitamin D supplemntation and other respiratory conditions:</p>
-<ul>
-<li>Overall vitamin D supplementation reduced the incidence of respiratory conditions by 20%</li>
-<li>For the very deficient, supplementation reduced the incidence by around 40%</li>
-</ul>
-<p>It’s important to note that these are big effects.
-If we could reduce the rate of covid transmission by 20-40% that would both save a lot of lives, but also allow us to relax certain types of social distancing.
-For example if the virus has an R0 of 2.2 without supplementation, it would be between 1.3 and 1.8 with supplementation.</p>
-<p>Again this is just a prior and as we learn more about the virus we might discover that Covid is different from other respiratory virus and Vitamin D has no real effect.
-However, so far <a href="https://github.com/GShotwell/vitamin_d_covid">almost everything</a> we’ve learned has supported a conenction between vitamin D and Covid outcomes:</p>
+A <a href="https://www.sciencedirect.com/science/article/pii/S1871402120301156">meta-analysis</a> found two important facts about vitamin D supplementation and other respiratory conditions:</p>
+<ol style="list-style-type: decimal">
+<li>Overall. vitamin D supplementation reduced the incidence of respiratory distress by 20%.</li>
+<li>For the very deficient, supplementation reduced the incidence by around 70%.</li>
+</ol>
+<p>These results aren’t that impressive for most respiratory viruses, which have a low rate of complication.
+I might not get that excited about reducing my risk of dying from a cold from 0.05% to 0.04%, but those are big numbers for Covid because the baseline risk is higher.
+If we could reduce the rate of Covid respiratory distress by 20% - 70% that would not only save a lot of lives but also allow us to relax certain types of social distancing.</p>
+<p>Again, this is just a prior. As we learn more about the virus we might discover that Covid is different from other respiratory viruses and vitamin D has no real effect.
+However, so far <a href="https://github.com/GShotwell/vitamin_d_covid">almost everything</a> we’ve learned has supported a connection between vitamin D and Covid outcomes. For example:</p>
 <ul>
 <li>A re-analysis of <a href="https://www.mdpi.com/2072-6643/12/5/1359/htm">107 Swiss blood samples</a> found that PCA positive patients had 25-hydroxyvitamin D concentrations half that of PCA negatives. This finding held after stratifying for age and gender.<br />
 </li>
 <li>A <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3571484">restrospective study</a> in the Philippines found a significant association between vitamin D status and severe Covid-19 infections.</li>
 <li>An <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3585561">Indonesian</a> study of 712 people found that after controlling for age, gender, and co-morbidity, vitamin D deficiency was associated with a twelve times higher risk of death.</li>
-<li>Hospitalized male Covid-19 patients <a href="https://www.medrxiv.org/content/10.1101/2020.05.01.20079376v1">were found</a> to have lower vitamin D levels than controls</li>
-<li>A study out of <a href="https://www.medrxiv.org/content/10.1101/2020.04.08.20058578v3.full.pdf">Northwestern University</a> found that the vitamin D status of a country’s elderly population was associated with the number of severe cases of Covid-19 in that country</li>
+<li>Hospitalized male Covid-19 patients <a href="https://www.medrxiv.org/content/10.1101/2020.05.01.20079376v1">were found</a> to have lower vitamin D levels than controls.</li>
+<li>A study out of <a href="https://www.medrxiv.org/content/10.1101/2020.04.08.20058578v3.full.pdf">Northwestern University</a> found that the vitamin D status of a country’s elderly population was associated with the number of severe cases of Covid-19 in that country.</li>
 </ul>
-<p>None of these data points are particular strong, but they all reinforce our prior belief that vitamin D reduces incidence of Covid infection in the same way it does other respiratory conditions.</p>
+<p>None of these data points are particularly strong, but they all point in the same direction and reinforce the prior expectation that vitamin D reduces incidence of Covid infection in the same way it does other respiratory conditions.</p>
 </div>
 <div id="risk-of-action-and-inaction" class="section level1">
 <h1>Risk of action and inaction</h1>
-<p>This is a decision made without good data under of conditions of uncertainty and so we should consider carefully the possibility that we’re wrong.
-What happens if we supplement everyone with vitamin D and it doesn’t help Covid patients one bit?</p>
-<p>Vitamin D supplementation is extremely safe, the above meta-analysis found that supplementation didn’t increase death or adverse events from any cause.
-But even if widespread vitamin D supplementation doesn’t prevent Covid, it will still prevent <em>other respiratory conditions</em> which is extremely positive.
-So even in the downside scenario we prevent infection and hospital visits from flu or non-Covid pnemonia, as a result there would be more ventilators and hospital resources for the pandemic.</p>
-<p>To sum up the upside of vitamin D supplementation is a large reduction in Covid-19 transmission and mortality.
-The downside is that we don’t change Covid-19 rates at all, but reduce the rate of other respiratory conditions.
-This frees up resources to treat Covid.
-The upside is large, the risks are non-existent so we should therefor supplement with Vitamin D.</p>
+<p>What happens if we supplement everyone with vitamin D and it doesn’t help Covid patients one bit?</p>
+<p>First, people are unlikely to be harmed by supplementation.
+Vitamin D supplementation is extremely safe. The above meta-analysis found that supplementation didn’t increase death or adverse events from any cause.
+Second, even if widespread vitamin D supplementation doesn’t mitigate Covid, it will still help prevent <em>other respiratory conditions</em>, which is positive.
+In the scenario where supplementation is not helpful to Covid, it would help decrease infection and hospital visits from things like non-Covid pneumonia, and as a result there would be more ventilators and hospital resources for Covid patients.
+Similarly, it probably improves Covid outcomes indirectly because people who get Covid-19 after an unrelated respiratory ailment probably do worse.</p>
+<p>So the upside of vitamin D supplementation is a significant reduction in Covid-19 transmission and mortality.
+The downside is that we don’t change Covid-19 rates at all but reduce the rate of other respiratory conditions, which in turns helps our Covid-19 response.<br />
+The upside is large, the downside is also positive: therefore we should supplement with Vitamin D.</p>
+<p>This argument should sound familiar because it’s exactly the same one that convinced so many people to wear homemade masks.
+There are no clinical trials testing mask use among the general population, and indeed it’s pretty difficult to imagine such a trial ever being done.
+There aren’t even any observational studies of populations in real world conditions. All we have are a few laboratory studies that show that masks can trap viral particles, and an association between a small number of mask-wearing countries and low Covid rates.
+Despite that, we have a prior expectation that since Covid mostly comes out of people’s mouths, covering those mouths probably has some protective effect.
+Since mask use is basically risk-free, any protective effect is worth the effort.
+The clinical data on vitamin D is quite a lot stronger than universal masking because we have high quality randomized clinical trials demonstrating that vitamin D protects against other respiratory viruses, and we have at least a few observational studies showing that vitamin D deficient patients are at a high risk for severe Covid.
+Even if vitamin D has no effect on Covid, we can be fairly sure that supplementation will free up health care resources by reducing other illnesses, and we can be very sure that it won’t cost much or cause any harm.</p>
 </div>
 <div id="recommendations" class="section level1">
 <h1>Recommendations</h1>
+<p>There are a number of clinical trials for vitamin D in Covid-19, but it would be a mistake to wait for the results of these trials because there’s substantial upside to supplementation, and no real downside.</p>
+<ul>
+<li>If you are vulnerable to low vitamin D you can get safe sun exposure or start supplementing with vitamin D.</li>
+<li>Facilities such as prisons, long term care facilities, and hospitals where sun exposure is limited should provide vitamin D supplementation.</li>
+<li>Governments should develop vitamin D plans for winter months. Argentina and New Zealand should start doing this now; Canada and Europe should plan for the fall.</li>
+<li>Health care workers, <a href="http://www.pulsetoday.co.uk/news/bapio-addresses-nhs-employers-over-high-mortality-rates-among-bame-staff/20040687.article">especially people of colour</a>, should be tested and treated for vitamin D deficiency.</li>
+</ul>
+<p>Again, these things may do nothing but reduce the number of non-Covid respiratory infections.
+But as interventions go, they are cheap, safe, and easy to implement.
+If there’s any chance they can reduce Covid transmission, they are worth doing.</p>
 </div>
 
   </div>
@@ -274,11 +288,11 @@ The upside is large, the risks are non-existent so we should therefor supplement
 
 <div class="navigation navigation-single">
     
-    
-    <a href="/posts/r_for_excel_users/" class="navigation-next">
-      <span class="navigation-tittle">R for Excel Users</span>
-      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    <a href="/posts/covid-tax/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Covid Tax</span>
     </a>
+    
     
 </div>
 
