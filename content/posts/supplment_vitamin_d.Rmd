@@ -77,7 +77,7 @@ Similarly, we don't know that closing playgrounds reduces transmission, but clos
 
 Our prior knowledge about vitamin D and Covid should be based on the same logic as mechanical ventilation: 
 Covid looks like a respiratory virus, so until we learn otherwise we should treat and prevent it like a respiratory virus. 
-A [meta-analysis](https://www.sciencedirect.com/science/article/pii/S1871402120301156) found two important facts about vitamin D supplementation and other respiratory conditions:
+A [meta-analysis](https://www.bmj.com/content/356/bmj.i6583) found two important facts about vitamin D supplementation and other respiratory conditions:
 
 1. Overall. vitamin D supplementation reduced the incidence of respiratory distress by 20%.
 2. For the very deficient, supplementation reduced the incidence by around 70%.
