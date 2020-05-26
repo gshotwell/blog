@@ -52,15 +52,15 @@ digraph boxes_and_circles {
 ")
 ```
 
-What bothers me about this this model is that it leads to a pretty fatalistic perspective on Covid mortaliy. 
+What bothers me about this this model is that it leads to a pretty fatalistic perspective on Covid mortality. 
 Most of the damage from the Covid pandemic is going to take place over the next 1-2 years, and it's hard to imagine any of these systemic factors changing significantly during that time period. 
 We're probably not going to make major changes to our housing or economy such that Black people are not disproportionately proximate to the virus, and it's unlikely that rates of pre-existing conditions can be modified in a year. 
-It's possible that bias in healthcare can be remedied, but I'm unaware of any project that has improved unconcious racial bias at such a large scale in such a short period of time.
+It's possible that bias in healthcare can be remedied, but I'm unaware of any project that has improved unconscious racial bias at such a large scale in such a short period of time.
 The result is that if you think that this is a complete model of excess Covid mortality, it seems likely that excess mortality is already baked into the system, and while tragic it's not treatable.
 Even if these are major causes, they're not causes that we can realistically modify over the next two years.
 
 I think this is pretty dangerous because it leads researchers to effectively triage Black communities. 
-If we're certain that these are the only factors, and we're also fairly certain that they can't be changed within the necessary timespan, what's the point of studying the matter? 
+If we're certain that these are the only factors, and we're also fairly certain that they can't be changed within the necessary time span, what's the point of studying the matter? 
 Wouldn't research energy be better spent reducing the overall incidence of the virus, rather than looking at relative differences between groups?
 
 The fact is that we don't know that much about Covid-19, 
@@ -71,9 +71,9 @@ then researchers won't invest time or money trying to figure out things that *ca
 # The vitamin D model
 
 I've been very interested in vitamin D deficiency as a potential cause of Covid-19 mortality because it's one of the best treatment candidates for widespread use.
-Unlike other potential therapies, we already have a lot of vitamin D clinical research data and we know that it's safe to consume prophylatically.
-Vitamin D would also go a long way to explain why people of colour are dying at such high rates in the northern hemiphere where sunlight is currently scarce, but not in equatorial or southern parts of the world where sunlight is currently abundant.
-While skin colour is not the only factor that changes serum vitamin D, and race is a social category that's only loosely related to skin colour, it is the case that in most northern latitudes people with darker skin tend to have lower vitamin D levels in the winter. [#TODO add study]
+Unlike other potential therapies, we already have a lot of vitamin D clinical research data and we know that it's safe to consume prophylactically.
+Vitamin D would also go a long way to explain why people of colour are dying at such high rates in the northern hemisphere where sunlight is currently scarce, but not in equatorial or southern parts of the world where sunlight is currently abundant.
+While skin colour is not the only factor that changes serum vitamin D, and race is a social category that's only loosely related to skin colour, it is the case that in most northern latitudes people with darker skin (tend to have lower vitamin D)[https://nutrition.bmj.com/content/early/2020/05/20/bmjnph-2020-000096#ref-13] levels in the winter.
 
 It's important to be clear about the causal model I'm proposing. 
 I am not arguing for a model like this one where vitamin D is the only relevant factor: 
@@ -129,21 +129,18 @@ So far there have been two main strategies that point in the direction that vita
 
 ## Controlling for social determinants of health
 
-The main strategy statisticians use to identify whether a factor is important is to control for confounding factors. 
-For instance, someone might suggest that race determines SAT scores by looking at some data and seeing that there's a correlation between race and SAT scores.
-We might respond to this claim by pointing out that different racial groups live in different neighborhoods and go to different schools that are allocated different resources, and this probably changes how prepared students are for the test.
-If you control for those factors, you tend to find that race provides no real information about SAT scores because it's just a proxy for which school you go to. [#TODO add study]
-The true causal factors are related to the school, not to the race of the student. 
+One of the main strategy statisticians use to identify whether a factor is important is to control for confounding factors. 
+For example imagine if you had a dataset that showed a significant relationship between maternal weight,
+and a child's birth weight. 
+If you had a suspicion that gestational time had some effect on both birth weight and maternal weight, you could include the length of the pregnancy as a term in the model.
+If maternal weight is just a spurious correlation, it won't be a significant contributor to the model.
 
-By contrast, when you do the same exercise about arrest decisions you probably would find that race is an independent factor.
-Even if you account for neighborhood, crime, or time of day, you still find that race is an important predictor of arrest because police, consciously or not, tend to arrest people of colour more often.
-So when you include race in an arrest model, you tend to find that race provides some unique and important information, because racism causes arrest. [#TODO add study]
-
-We should have a strong intuition that the virus itself is not racist.  [#TODO why? Is this a good place to say something like "because a virus cares about physical traits, and race is a socially constructed concept" and some reference to disproven race science? Or maybe the piece about race being an inadequate data proxy for skin colour?]
-The only plausible way a virus can distinguish between people is if there's some genetic trait that makes one person more vulnerable than another, and
-it's not like people of colour in northern latitudes (but not southern latitudes) share some genetic factor that the virus attacks.
-Instead, what we're looking for is something like the SAT case: if we include all the causal variables in our model, we assume that we will discover that race doesn't really add much. 
-If we find that race still provides a lot of information (meaning variation not accounted for by any of the other factors), that indicates that we're probably leaving out a causal factor. 
+I think we should assume at the start that the virus itself is not making racial distinctions. 
+There's no common genetic pattern that unites all black and brown people in Northern countries, 
+and so it's hard to imagine a mechanism whereby the virus itself is picking out people of colour. 
+Whatever effect race has on mortality is probably mediated by something like medical bias or proximity to the virus.
+So when a study says that race is a significant predictor after controlling for *x*, *y*, and *z*, 
+that means that we're probably missing a causal factor. 
 
 There are two main studies that have attempted to control for social determinants of health when explaining Covid-19 outcomes:
 
@@ -157,19 +154,19 @@ and pre-existing conditions were also found to lead to increased mortality.
 But since race still provides a lot of information, we know that there's a missing factor. 
 
 The second study is a [study of US veterans,](https://www.medrxiv.org/content/10.1101/2020.05.12.20099135v1) which found that "Black and Hispanic individuals are experiencing an excess burden of Covid-19 not entirely explained by underlying medical conditions or where they live or receive care." 
-The main outcome [#TODO find a different word] of this study was positive Covid diagnosis, 
+The main outcome of this study was positive Covid diagnosis, 
 and it controlled for age, pre-existing conditions, and whether someone lived in an urban or rural setting.
 They found that Black veterans were more likely to be tested than white veterans,
 but were about twice as likely to test positive.
 
 This study also controls for two pieces of Villarosa's model: pre-existing conditions and healthcare bias. 
-It directly controls for pre-existing conditions, but there also is a kind of implicit control on medical bias because the main outcome [#TODO use the new word here too] was a positive test.
+It directly controls for pre-existing conditions, but there also is a kind of implicit control on medical bias because the main outcome was a positive test.
 Logically, healthcare bias is more important the more treatment decisions a caregiver has to make. 
 Giving birth is a great example: a doctor needs to decide whether to admit someone who might have a dangerous pregnancy, whether to induce, how to monitor fetal heart rate, and at what point to intervene with an emergency C-section. 
 Bias creeps in at all of these points (and more); doctors might send a Black woman home when they would admit a white woman, monitor fetal heart rate less carefully, or intervene in dangerous labour a few minutes later. 
-Each of these biased decisions endangers mother and child, and it's a big part of why there's a big racial gap in infant mortality. [#TODO find study]
+Each of these biased decisions endangers mother and child, and it's a big part of why there's a big racial gap in [infant mortality](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5388980/).
 
-By contrast, Covid diagnosis really only involves the one decision of whether to test or not, and we can assume that racial bias would tend to lead doctors to undertest Black people. [#TODO find study, could be about undertesting for other disease]
+By contrast, Covid diagnosis really only involves the one decision of whether to test or not, and we can assume that racial bias would tend to lead doctors to [undertest](https://philadelphia.cbslocal.com/2020/04/06/coronavirus-philadelphia-positive-tests-higher-in-poorer-neighborhoods-despite-six-times-more-testing-in-higher-income-neighborhoods-researcher-says/) Black people.
 A doctor might do a Covid-19 test on a white patient with marginal symptoms, while they may send a Black patient with the same symptoms home without a test. 
 So bias in this case would reinforce, rather than undermine, the finding that Black and Hispanic people are at a higher risk of Covid-19 diagnosis, because the more bias there is, the fewer tests they would receive. 
 
@@ -178,13 +175,12 @@ It's possible that the missing piece in the NHS model was biased medical care an
 
 ## Mendelian Randomization
 
-A [recent study](https://nutrition.bmj.com/content/early/2020/05/20/bmjnph-2020-000096) in the BMJ [#TODO expand acronym] provides a strong argument that the missing factor is vitamin D. 
+A [recent study](https://nutrition.bmj.com/content/early/2020/05/20/bmjnph-2020-000096) provides a strong argument that the missing factor is vitamin D. 
 The study uses a technique called mendelian randomisation, which requires a bit of explanation:
 In the ideal world, we would answer the question of whether vitamin D deficiency increases your risk of dying of Covid-19 by controlling for vitamin D in the model, but we don't have  information about everyone's vitamin D levels. 
 Mendelian randomization is the idea that if you have information about something that you know is related to the thing you wish you had data on, then you can include that as a proxy. 
-In this case we know that people with darker skin tend to have lower vitamin D levels than people with lighter skin[#TODO find study], and that that gets worse as you move north. 
-In places like Florida, it doesn't really matter how efficient your skin is at making vitamin D because it's sunny most of the year. 
-In places like Wisconsin where the UV intensity is too low to make vitamin D for much of the year, the gap gets bigger. 
+In this case we know that people with darker skin [tend to have lower vitamin D levels](https://nutrition.bmj.com/content/early/2020/05/20/bmjnph-2020-000096#ref-13) than people with lighter skin, and that that probably gets worse as you move north. 
+The intuition here is that the skin's ability to synthesize vitamin D is less important in Florida than Wisconsin because intense UVB radiation is abundant for most of the year.
 So this study uses race + latitude as a proxy for vitamin D levels. 
 
 The rules of mendelian randomization are that the randomizing factor can't be directly associated with the outcome, and it can't be associated with other explanatory factors. 
@@ -216,9 +212,9 @@ digraph boxes_and_circles {
 The BMJ study found that excess mortality went up as you went north.
 Places like Alabama, which we typically think of as having bad racial health outcomes, had lower excess Covid mortality than places like Wisconsin, which we generally assume have at least somewhat better racial health outcomes. 
 This is a pretty good argument for vitamin D's involvement because it's hard to find a story where latitude modifies other inputs into the Covid mortality.
-This isn't to say that there's no such story, but the most obvious one is that vitamin D deficiency increases risk of Covid-19 complication.
+This isn't to say that there's no such story, but the most obvious one is that vitamin D deficiency increases risk of Covid-19 complication. This is the main graphic from the paper:
 
-![](/img/excess_aa_mortality.jpg) [#TODO where is this graph from?]
+![](/img/excess_aa_mortality.jpg)
 
 
 ### Does latitude modify other social determinants of health?
@@ -250,8 +246,8 @@ digraph boxes_and_circles {
 ```
 
 One quick check we can do to see if this graph makes sense is to look at infant mortality data by latitude. 
-If excess infant mortality were higher in northern states than in southern ones, that would suggest that latitude acted on social determinants of health. [#TODO why?]
-This data from the CDC [#TODO link to where you are getting this data] shows that children of Black or African-American mothers die at a rate 2-3 times higher than the children of white mothers, and this rate doesn't really change by latitude. 
+If excess infant mortality were higher in northern states than in southern ones, that would suggest that latitude acted on social determinants of health, because things like medical bias are likely affecting black mothers in the same way they are affecting black Covid patients.
+This data [from the CDC](https://wonder.cdc.gov/lbd-current.html) shows that children of Black or African-American mothers die at a rate 2-3 times higher than the children of white mothers, and this rate doesn't really change by latitude. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 april_16 <- readr::read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/04-16-2020.csv")
@@ -285,7 +281,7 @@ The other way that mendelian randomization can be invalid is if the proxy acts d
 In this case, that would mean that latitude directly increased excess Covid mortality. 
 At first glance it's hard to think of how this would happen, but if you add testing to the model it becomes a bit clearer. 
 If southern states have worse testing, and in particular are less likely to test Black people, Covid deaths would be misclassified as some other kind of mortality. 
-The result would be that excess mortality would *look* lower, because Covid deaths among Black people were being undercounted.
+The result would be that excess mortality would *look* lower, because Covid deaths among Black people were being under-counted.
 
 
 ```{r, echo = FALSE}
