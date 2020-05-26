@@ -221,7 +221,7 @@ This isn't to say that there's no such story, but the most obvious one is that v
 ![](/img/excess_aa_mortality.jpg)
 
 
-### Does latitude change modify SDH?
+### Does latitude modify other SDH?
 
 Mendelian randomization is not appropriate if the proxy also acts on your other predictor variables.
 For instance you might think that because there are fewer Black people in Wisconsin than Goergia, there are also fewer Black doctors, and so implicit racial bias might be worse. 
