@@ -2,6 +2,7 @@
 title: "Treatable causes of Covid-19 mortality"
 author: "Gordon Shotwell"
 date: "2020-05-23"
+twitterImg: /img/excess_aa_mortality.jpg
 output: html_document
 ---
 ```{r, include = FALSE}
@@ -130,17 +131,18 @@ So far there have been two main strategies that point in the direction that vita
 ## Controlling for social determinants of health
 
 One of the main strategy statisticians use to identify whether a factor is important is to control for confounding factors. 
-For example imagine if you had a dataset that showed a significant relationship between maternal weight,
-and a child's birth weight. 
+For example imagine if you had a dataset that showed a significant relationship between maternal weight and a child's birth weight. 
 If you had a suspicion that gestational time had some effect on both birth weight and maternal weight, you could include the length of the pregnancy as a term in the model.
-If maternal weight is just a spurious correlation, it won't be a significant contributor to the model.
+If maternal weight is just a spurious correlation, it won't be a significant contributor to the model. 
+The basic idea is that if a parameter is an important feature of the model, then either there is a real correlation between the feature and the outcome variable, or we've missed some other important factor that would explain away the relationship. 
 
 I think we should assume at the start that the virus itself is not making racial distinctions. 
-There's no common genetic pattern that unites all black and brown people in Northern countries, 
-and so it's hard to imagine a mechanism whereby the virus itself is picking out people of colour. 
-Whatever effect race has on mortality is probably mediated by something like medical bias or proximity to the virus.
-So when a study says that race is a significant predictor after controlling for *x*, *y*, and *z*, 
-that means that we're probably missing a causal factor. 
+Genetic factors, like sickle cells or blood type can change how a virus attacks a person, but there's 
+probably no common genetic pattern that unites all black and brown people in Northern countries.
+As a result, it's hard to imagine a mechanism whereby the virus itself is picking out people of colour. 
+Whatever effect race has on mortality is probably mediated by something like medical bias or proximity to the virus, 
+and so when a study says that race is a significant predictor after controlling for *x*, *y*, and *z*, 
+that means that we're probably missing an explanatory feature. 
 
 There are two main studies that have attempted to control for social determinants of health when explaining Covid-19 outcomes:
 
