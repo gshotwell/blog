@@ -1,8 +1,8 @@
 ---
-title: "Treatable causes of Covid-19 mortality"
+title: "Race and Covid-19 mortality"
 author: "Gordon Shotwell"
 date: "2020-05-23"
-twitterImg: img/excess_aa_mortality.jpg
+featuredImage: img/excess_aa_mortality.jpg
 output: html_document
 ---
 ```{r, include = FALSE}
