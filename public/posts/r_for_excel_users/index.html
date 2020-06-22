@@ -624,6 +624,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
   group_by(colour) %&gt;% 
   summarize(mean_displacement = mean(disp)) %&gt;% 
   kable()</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -659,6 +660,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <p>The things between the <code>function()</code> braces (<code>df</code> and <code>colour_df</code>) are called “arguments”, and when you call the function all it does is take the actual objects you supply to the function and plugs them in to wherever that argument appears between the curly braces. In this case we would plug in <code>cars</code> for the <code>df</code> argument, and <code>colours</code> for the <code>colour_df</code> argument. The function then basically replaces all the <code>df</code>s with <code>cars</code> and <code>colour_df</code>s with <code>colours</code> and then evaluates the code.</p>
 <pre class="r"><code>join_and_summarize(cars, colours) %&gt;% 
   kable() </code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -693,6 +695,11 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
   
 
 <div class="navigation navigation-single">
+    
+    <a href="/posts/masks_and_vitamin_d/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Masks and Vitamin D</span>
+    </a>
     
     
     <a href="/posts/ui_data_analysis/" class="navigation-next">
