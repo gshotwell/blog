@@ -51,7 +51,7 @@ Again, information about other illnesses might not give us much information abou
 ## Mechanistic studies
 
 Mechanistic studies are where you look at a simplified version of a proposed relationship to establish whether it's plausible.
-They're important because they help debunk correlations which might appear in the data but which don't actually have any realistic causal mechanisms [TODO].
+They're important because they help debunk correlations which might appear in the data but which couldn't exist because there's no realistic causal mechanisms.
 Mechanistic studies can only show you that a causal relationship is plausible, not that it actually exists.
 We have a [few mechanistic studies](https://www.medrxiv.org/content/10.1101/2020.04.02.20051177v1) of masks and Covid that show that cloth masks can block droplet particles when people speak or cough.
 What these studies specifically demonstrate is that, when worn in lab conditions, homemade masks block aerosols which we think transmit Covid.
