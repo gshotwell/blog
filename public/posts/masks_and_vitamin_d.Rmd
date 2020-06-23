@@ -6,21 +6,20 @@ output: html_document
 ---
 
 Imagine that someone offered you a free lottery ticket. 
-You would have a small, unknown chance of winning a million dollars, but the ticket didn't cost anything.
-It would be really silly to turn down this ticket because you thought your odd of winning were either too small or too unclear,
+You would have a small, unknown chance of winning a million dollars, but the ticket doesn't cost anything.
+It would be silly to turn down this ticket because you thought your odds of winning were either too small or too unclear,
 the only reason we care about the odds of winning a game is so that we can determine if the expected value of winning is higher than the expected cost of playing. 
-If the ticket is free, then so long as there is any chance you might win, the rational bet is to play.
+If the ticket is free, then so long as there is any chance you might win, the rational decision is to play.
 
 Doctors don't tend to think about prescriptions as probabilistic bets. 
-Most drug therapies are both pretty expensive and relatively dangerous so you want to recommend them to patients when you're very sure that they work. 
-Until you have really strong evidence to do something, the safest bet is to do nothing.
-This is what caused most public health agencies in the west to doubt the efficacy of cloth face masks, there wasn't any evidence that they really helped with Covid, and so in the absence of evidence we shouldn't recommend them.
-Most doctors seem to come around to the idea that while face masks have a low probability of meaningfully changing the outbreak, because they are safe and cheap we should all wear them on the off chance that they do help.
-In other words, face masks are free lottery tickets and it would be dumb to turn them down because we don't like the odds.
+Most drug therapies are pretty expensive and relatively dangerous so you only want to recommend them when you're very sure that they work. 
+Until you have strong evidence to do something, the safest bet is usually to do nothing.
+This is what caused most public health agencies in the west to doubt the efficacy of cloth face masks, there wasn't any evidence that they really helped with Covid, and so in the absence of evidence they didn't recommend them.
+Most of these agencies have come around to the idea that while face masks have a low probability of meaningfully changing the outbreak, we should still wear them because they are free lottery tickets. 
+It would be fantastic if they helped prevent outbreaks, but there's no real cost if they  don't work.
 
-
-Vitamin D is another free lottery ticket which, for whatever reason, hasn't gotten any traction with doctors or public health officials. 
-I see a lot of doctors on Twitter say that the evidence for vitamin D supplementation is extremely weak, and then turn around and tell everyone who wear face masks while jogging.
+Vitamin D is another free lottery ticket that, for whatever reason, hasn't gotten any traction with doctors or public health officials. 
+I see a lot of doctors on Twitter say that the evidence for vitamin D supplementation is extremely weak, and then turn around and tell everyone to wear face masks while jogging.
 The evidence for vitamin D is weak, but it's stronger than the evidence for universal masking. 
 While we don't have randomized trials of either intervention, vitamin D has been shown to treat other respiratory infections, and we at least have some observational evidence that many Covid-19 patients have low vitamin D levels.
 To be clear, I support both interventions because they're low risk, high upside bets, but there's no consistent way to look at the totality of the information and come to the conclusion that we should wear cloth masks, but not also monitor and treat vitamin D levels.
@@ -30,9 +29,9 @@ So what is the evidence for the two interventions?
 ## Prior belief
 One way to figure out how to treat novel viruses is to look at what worked when treating similar viruses.
 Covid-19 is a respiratory virus, so it's reasonable to assume that things that treat or prevent respiratory viruses are good bets to treat or prevent Covid. 
-The flaw in this reasoning is of course that Covid is new and so the virus might behave differently in ways which we don't understand and which undermine the usefulness of prior studies.
+The flaw in this reasoning is, of course, that Covid is new and so the virus might behave differently in ways that we don't understand and that undermine the usefulness of prior studies.
 Most of the data behind cloth masks falls into this category, 
-we have some trials which show that masks prevent influenza or other respiratory ailments and so we should have a prior belief that they will also help with Covid-19. 
+we have some trials which show that masks prevent influenza and other respiratory ailments and so we should have a prior belief that they will also help with Covid-19. 
 That said, a [recent review](https://www.medrxiv.org/content/10.1101/2020.03.30.20047217v2) of this evidence concluded that:
 
 > Most included trials had poor design, reporting and sparse events. 
@@ -41,9 +40,9 @@ That said, a [recent review](https://www.medrxiv.org/content/10.1101/2020.03.30.
 > respirators and limited evidence to support effectiveness of quarantine. 
 > Based on observational evidence from the previous SARS epidemic included in the previous version of our Cochrane review we recommend the use of masks combined with other measures. 
 
-Which is to say that while there's no strong evidence that universal masking prevents similar illnesses, there's some evidence so why not wear a mask.
+This is to say that while there's no strong evidence that universal masking prevents similar illnesses, there's some evidence so why not wear a mask?
 
-The evidence that vitamin D prevents respiratory illnesses is stronger in part because it's more widely studied.
+The evidence that vitamin D prevents respiratory illnesses is stronger because it's been more widely studied.
 A [meta-analysis](https://www.bmj.com/content/356/bmj.i6583) found two important facts about vitamin D supplementation and other respiratory conditions:
 
 1) Overall. vitamin D supplementation reduced the incidence of respiratory distress by 20%.
@@ -54,46 +53,48 @@ Again, information about other illnesses might not give us much information abou
 ## Mechanistic studies
 
 Mechanistic studies are where you look at a simplified version of a proposed relationship to establish whether it's plausible.
-They're important because it helps debunk correlations which might appear in the data which aren't really possible because there's no mechanism.
-Mechanistic studies can really only show you that a causal relationship is plausible, not that it actually exists.
-We have a [few mechanistic studies](https://www.medrxiv.org/content/10.1101/2020.04.02.20051177v1) of masks and Covid which shows that cloth masks can block droplet particles when people speak or cough.
-What these studies show is that when worn in lab conditions, homemade masks block aerosols which we think transmit Covid, 
+They're important because it helps debunk correlations which might appear in the data which aren't really possible.
+Mechanistic studies can only show you that a causal relationship is plausible, not that it actually exists.
+We have a [few mechanistic studies](https://www.medrxiv.org/content/10.1101/2020.04.02.20051177v1) of masks and Covid which show that cloth masks can block droplet particles when people speak or cough.
+What these studies show is that, when worn in lab conditions, homemade masks block aerosols which we think transmit Covid, 
 so if Covid is transmitted by those particles, and if mask wearing doesn't increase risk in other ways, it's plausible that they could prevent the disease.
 The problem with this type of information is that we don't know the mechanics of the Covid virus and so it's possible that the assumptions underlying the mechanistic studies are wrong. 
-It's possible that it's transmitted through droplets that are blocked by the mask, but it's also possible that it's transmitted via smaller particles which aren't blocked by it.
+It's possible that the virus is transmitted through droplets that are blocked by the mask, but it's also possible that it's transmitted by smaller particles which aren't blocked by it.
 Alternately, it's possible that touching your eyes and nose is the main transmission route and so masks may actually be harmful, we just don't know.
 
 The mechanistic evidence for vitamin D has the same weaknesses.
-We have some idea that Covid involves the ACE2 receptor, overactive immune response, and problems with blood clotting which are all [processes](https://www.nature.com/articles/s41430-020-0661-0) which involve vitamin D but we don't know whether supplementation will actually improve anything.
+We have some idea that Covid involves the ACE2 receptor, overactive immune response, and problems with blood clotting.
+These are all [processes](https://www.nature.com/articles/s41430-020-0661-0) which involve vitamin D, and for which supplementation has been helpful  but we don't know whether supplementation of Covid-19 patients will actually improve anything.
+Additionally we know that calcitriol, the active form of Vitamin D, [is active](https://www.biorxiv.org/content/10.1101/2020.06.21.162396v1) against the SARS-COV2 virus in the lab, but we don't know if that will improve illness in humans.
 It's therefore plausible that vitamin D could ameliorate severe Covid, but we don't know whether it actually does. 
 Overall the mechanistic case for mask wearing is probably stronger than for vitamin D because it's a much simpler mechanism, but it's very far from proof that cloth masks prevent infection.
 
 ## Ecological studies
 
 Ecological studies take the form of looking at groups of people and identifying relationships between qualities of those groups. 
-For instance you might look at a set of countries and discover that countries with high sugar consumption also have high cancer rates. 
+For instance, you might look at a set of countries and discover that countries with high sugar consumption also have high cancer rates. 
 The general problem with ecological studies is that if you compare enough data points you can usually find relationships even if they don't really exist, 
 so it's easy to sift through a dataset and find a number of spurious correlations.
 
-For masks, we have some [ecological](https://www.healthaffairs.org/doi/10.1377/hlthaff.2020.00818?utm_medium=social&utm_source=twitter&utm_campaign=covidfasttrack&utm_content=lyu) studies that orders to wear masks coincide with lower Covid cases. 
+For masks, we have some [ecological](https://www.healthaffairs.org/doi/10.1377/hlthaff.2020.00818?utm_medium=social&utm_source=twitter&utm_campaign=covidfasttrack&utm_content=lyu) studies that find that government directives to wear masks coincide with lower Covid cases. 
 There are lots of problems with these studies, for example most states make mask recommendations _after_ making lots of other recommendations like social distancing and hand washing, and it's impossible to separate the effects of the various public health interventions.
 Additionally mask recommendations typically only occur when there's an adequate supply of masks for health care workers, and so the directive to wear masks may be just a proxy for states that have adequate PPE for their health care workers. 
 Finally the study doesn't include any data about whether these directives were enforced or obeyed. 
 
 The ecological studies for vitamin D have all the same problems. 
-There's a relationship between [latitude](https://github.com/GShotwell/vitamin_d_covid#latitude-and-uvb-radiation) and covid-19 outcomes that doesn't go away when you control for age, but there are plenty of potential confounded like heat, humidity, or BCG vaccinations. 
-Similarly, the rate of vitamin D deficiency predicts [covid severity](https://www.medrxiv.org/content/10.1101/2020.04.08.20058578v3.full.pdf), but there are lots of other differences between the countries in the sample.. 
+There's a relationship between [latitude](https://github.com/GShotwell/vitamin_d_covid#latitude-and-uvb-radiation) and Covid-19 outcomes that doesn't go away when you control for age, but there are plenty of potential confounding variables like heat, humidity, or BCG vaccinations. 
+Similarly, the rate of vitamin D deficiency predicts [covid severity](https://www.medrxiv.org/content/10.1101/2020.04.08.20058578v3.full.pdf), but there are lots of other differences between the countries in the sample. 
 Finally populations which are at risk of Covid like elderly people or people with darker skin also tend to have higher rates of vitamin D deficiency, but there are other factors in those populations which could cause that excess risk. 
 
 ## Observational studies
 
 Observational studies are when you look at an existing patient pool and ask whether some characteristics are over or underrepresented in that pool. 
-The problem with observational studies it that it's hard to control for confoudning variables, and so it's pretty common for there to be a strong relationship in an observational study which disappears when you do a randomized controlled trial. 
+The problem with observational studies it that it's hard to control for confounding variables, and so it's pretty common for there to be a strong relationship in an observational study which disappears when you do a randomized controlled trial. 
 
 There are no strong observational studies that wearing masks prevents Covid. 
-Nobody has found that mask wearers are under represented in Covid populations, or that people who don't wear masks are over represented.
-There is [one study](https://medicalxpress.com/news/2020-05-masks-home-ward-covid-family.html) that found that households that reported wearing masks also reported fewer secondary infections from Covid-19, but since you don't know what percentage of the people who reported wearing masks actually did, it's hard to make an inference about the efficacy of face masks. 
-People who contracted covid from a mask wearing loved one, are probably less likely to report that fact than those who didn't contract it. 
+Nobody has found that mask wearers are under represented amond Covid patients, or that people who don't wear masks are over represented.
+There is [one study](https://medicalxpress.com/news/2020-05-masks-home-ward-covid-family.html) that found that households that reported wearing masks also reported fewer secondary infections from Covid-19, but since you don't know what percentage of the people who _reported_ wearing masks actually did, it's hard to make an inference about the efficacy of face masks. 
+People who contracted Covid from a mask wearing loved one, may be less likely to report that fact than those who didn't contract it. 
 
 We do have a few observational studies that vitamin D levels are associated with Covid outcomes: 
 
@@ -106,20 +107,21 @@ We do have a few observational studies that vitamin D levels are associated with
 - A [restrospective study](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3571484) in the Philippines found a significant association between vitamin D status and severe Covid-19 infections.
 
 
-To be clear, all of these studies have problems, but flawed observational trials are still a heck of a lot better than nothing. 
+To be clear, all of these studies have problems, but flawed observational trials are still a heck of a lot better than nothing.
 We have at least observed vitamin D levels in people with Covid-19 and found that those levels tend to be lower in more severe cases, we do not have that type of information for homemade masks.
 
 # Risks
 
 None of this would be enough to convince me to try a dangerous or unknown compound like hydroxychloroquine or dexamethasone without additional studies, but both masks and vitamin D are extremely safe.
-Masks are more or less risk free, although we could imagine that people might attend larger events because "everyone was wearing a mask", or a severely ashmatic person may wear and mask while exercising and experience complication.
+Masks are more or less risk free, although we could imagine that people might attend larger events because "everyone was wearing a mask", or a severely asthmatic person may wear and mask while exercising and experience complications.
 While it's possible to take too much vitamin D there has never been an observed fatal dose of vitamin D in humans which makes it much safer than common over the counter medications like Tylenol. 
-The number of vitamin D trials over the last 15 years provide a lot of confidence that doses less than 4,000 IU per day are perfectly safe in all populations, and doses higher than that are safe when patients are [monitored by physicians](https://www.preprints.org/manuscript/202005.0265/v1). 
+The number of vitamin D trials over the last 15 years provide a lot of confidence that doses less than 4,000 IU per day are safe in all populations, and doses higher than that are safe when patients are [monitored by physicians](https://www.preprints.org/manuscript/202005.0265/v1). 
 
 
 # Conclusion
 
-It's reasonable to look at all of this information and say "we should only make decisions based on randomized trials" and so reject both universal masking and vitamin D supplementation, but it's inconsistent to support masks and not support vitamin D. 
+It's reasonable to look at all of this information and say "we should only make decisions based on randomized trials" and so reject both universal masking and vitamin D supplementation.
+However, it's inconsistent to support masks and not support vitamin D. 
 The direct evidence that vitamin D ameliorates Covid-19 outcomes is thin, but there is no direct evidence that universal masks prevent disease.
 As a result if the vitamin D evidence doesn't satisfy you, then the evidence for universal masking shouldn't either.
 We should support both of the interventions because they are free lottery tickets, the upside is high, the downside is negligible, and so it's worth the risk.
