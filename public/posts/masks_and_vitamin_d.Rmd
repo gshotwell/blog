@@ -43,7 +43,7 @@ In other words, while there's no strong evidence that universal masking prevents
 The evidence that vitamin D prevents respiratory illnesses is stronger because it has been more widely studied.
 A [meta-analysis](https://www.bmj.com/content/356/bmj.i6583) found two important facts about vitamin D supplementation and other respiratory conditions:
 
-1) Overall, vitamin D supplementation reduced the incidence of respiratory distress by 20%.
+1) Overall, vitamin D supplementation reduced the incidence of respiratory infection by 20%.
 2) For the very deficient, supplementation reduced the incidence by around 70%.
 
 Again, information about other illnesses might not give us much information about Covid, but at least in the case of vitamin D we have strong evidence that it actually helps those other illnesses.
