@@ -1,0 +1,90 @@
+---
+title: "Vitamin D deficiency probably causes Covid-19 "
+author: "Gordon Shotwell"
+date: "2020-09-07"
+output: html_document
+draft: true
+---
+
+# Researcher expected value
+
+Over the last few months, I've been arguing that while there's a low probability that vitamin D causes Covid-19 severity, 
+since it's a cheap and risk-free intervention it makes sense for people to take a supplement.
+To me this is an obvious argument,
+there's a possibility that vitamin D helps, and we know for sure that it won't hurt, so even if there's a 1% chance that it improves outcomes, the expected value of supplementation is positive.
+I've been surprised that many researchers accept the premises of this argument, but not the conclusion.
+They'll agree that Covid-19 is very dangerous, that there's some possibility that vitamin D helps, and no possibility that it hurts, but still say that we need to wait for more data before advocating supplementation.
+This made no sense to me because advocating supplementation follows logical from the premises, so I didn't understand how people could accept those premises, and come to a different conclusion.
+The thing I realized is that these researchers are not just concerned about their own health or the health of others, but are also concerned with managing status and reputational risks. 
+While vitamin D is a zero-risk health intervention, advocating it is not risk free because, as a researcher,
+your reputation is tied to whether you are right or wrong, and if you are in line with scientific consensus on the subject. 
+This provides an incentive to not advocate for low-risk, high-reward interventions because you suffer the same reputational damage whether the intervention is safe or risky, 
+and as a result researchers will tend to be too conservative when evaluating the evidence for low-risk bets.
+
+This explains why we've seen so much herding behaviour among the research community during the pandemic. 
+For example, at the beggining of the pandemic the research community was overwhelmingly against universal masking. They said that there wasn't enough data, that masks may give people a false sense of security, and that we couldn't rely on ecological data to make inferences about the effectiveness of cloth masks.  
+Somewhere in the spring, the whole field suddenly flipped and argued that mask mandates were absolutely required, and that going to large protests was okay if the purpose was worthwhile, and everyone was wearing masks. 
+There was no new data during this time period, so the cause of this change so it can't be that everyone learned something new about masks and Covid-19, but what did change was a critical mass of researchers started advocating masks. 
+This reduced the reputational risks for advocating masks because everyone was advocating for the same thing.
+Once the reputational risk went away, researchers made the same decision as the rest of us to argue that masks can't hurt so why not wear them?
+
+The other feature of this reputational risk  is that it makes researchers incredibly cautious when advocating causation. 
+This is frequently baked into the term 'risk factor' which is what researchers use when they think that one thing causes another, but don't want to stick their neck out to say that it's a causal relationship. 
+The term 'risk factor' doesn't have any statistical meaning. 
+Things are either predictors in that they give you information about the outcome you care about, or they are causes, in that they determine that outcome. 
+Advocating for causal relationships is often pretty risky to your reputation, so people will say that something is a risk-factor when you mean that it's kind of causal, but if it turns out to be just an association you won't be wrong. 
+
+I've changed my op
+
+# Vitamin D causes Covid severity
+
+A recently published randomized pilot trial found that vitamin D supplementation was effective in reducing ICU admission among Covid-19 patients: 
+
+> Our pilot study demonstrated that administration of a high dose of Calcifediol or 25-hydroxyvitamin D, a main metabolite of vitamin D endocrine system, significantly reduced the need for ICU treatment of patients requiring hospitalization due to proven COVID-19.
+
+This is a big deal both because it's the first bit of evidence that we have that vitamin D deficiency both _causes_ Covid-19 severity, and that it can be _modified_ via supplementation. 
+Up until this point there have been 12 observational studies that have found an association between vitamin D deficiency and various stages of Covid-19 disease. 
+Vitamin D deficient people are more likely to be diagnosed with the disease, more likely to require significant hospital intervention, and are more likely to die from the disease. 
+The open question was which way the causality went. 
+Vitamin D is often depleted when people are in hospital, or are in the midst of an infection, but it's entirely possible that this deficiency is the result of the infection, rather than the cause of it. 
+This study was the first clear evidence that vitamin D causes severe Covid-19 rather than the other way around. 
+Now, of course this is just a small pilot study and it's always possible that it will be contradicted by later research, but I think it's important to be clear that as of today the available evidence is overwhelmingly in favour of the vitamin D hypothesis. 
+We have a clear mechanism, a lot of circumstantial data, and now a randomized trial which shows that supplementation improves outcomes. 
+
+The other notable thing about this study was the effect size. 
+Of the 50 people who were given vitamin D, only one required ICU care and no-one died. 
+This is really the best case scenario for vitamin D, or indeed for any treatment because reducing ICU visits by 98% among elderly Covid patients is pretty close to a cure for the disease. 
+However, we should be cautious about the actual numbers because it's very hard to estimate the true effect size from small pilot studies. 
+The way to read these results are that it's clear that vitamin D supplementation is helpful among hospitalized patients, and the best case scenario is that it reduces ICU visits by quite a lot. 
+
+It's worth noting that this huge effect size isn't implausible if you've been following the ecological data on vitamin D and Covid 19. 
+One of the weird things about Covit 19 is that it has huge heterogeneities across different countries which are hard to explain using our existing model of the disease. 
+For example, sub-saharan Africa, and the slums around Mumbai have been largely spared by the disease despite being some of the poorest countries in the world. 
+Similarly, Somalia has only 6 deaths per million residents and Kenya has a high Covid-19 serprevelance rate, but almost no deaths. 
+Despite this, immigrants from these countries to Northern countries have among the highest death rates in the world. 
+Somali immigrants to Sweden have a death rate of 1900 / million, which is *300 times* higher than people in Somalia,
+and a similar pattern exists for Indian and Bangladehsi immigrants to the UK.
+People with dark skin seem to have high death rates in Northern countries, but low death rates in equatorial ones. 
+This is extremely perplexing because the social determinants of health are worse in poor countries than rich ones. 
+Even accounting for racism, Somalis in Sweden have access to better health care, sanitation, and public health infrastructure than they do in Somalia, 
+and so we would expect that the burden of any infectious disease should be much higher in very poor areas of the world, but it's not. 
+
+There have been lots of arguements about why this might be, maybe equatorial countries have younger populations, maybe there's some cross-immunity from a previous infection, or maybe deaths are being undercounted.
+None of these have done a good job fully explaining the difference, and so the difference in death rate is a genuine puzzle. 
+Remember that given the difference in national income it would be intensely surprising if Somalia's disease was even equal to Sweden's. 
+The fact that it's two orders of magnitude better is extremely strange.
+There's some difference between people who live in these countries, and immigrants from those countries, and  that difference  is has a huge effect on Covid-19 mortality. 
+Vitamin D deficiency is a good explanation of this difference because it's a biologically relevant factor that  varies systematically with skin colour and  latitude. 
+Vitamin D deficiency is relatively rare in equatorial countries, but very common among immigrants from those countries to Northern ones.
+If vitamin D is the solution to this puzzle, then  you'd actually expect it to have an effect about as large as the pilot study suggests. 
+There are lots of people contracting Covid in Africa, but almost none of them are going to the hospital or dying, which is consistent with  a 80-90% reduction in Covid-19 severity. 
+
+
+
+
+
+
+
+
+
+
