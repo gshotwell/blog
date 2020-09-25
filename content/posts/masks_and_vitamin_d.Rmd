@@ -25,7 +25,7 @@ To be clear, I support both interventions because they're low-risk, high upside 
 
 So what is the evidence for the two interventions?
 
-## Randomized controlled studies
+## Randomized controlled trials
 
 RCT trials are the easiest way to identify causes because they allow researchers to isolate a particular causal mechanism. 
 It's important to remember that you can do causal inference without a randomized trial, and for many things like smoking or diet, randomized trials are either too difficult to perform or unethical. 
