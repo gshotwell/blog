@@ -75,8 +75,9 @@ date: "2017-02-02T21:48:51-07:00"
 <h3>Example: Joining two tables together</h3>
 <p>I thought I’d illustrate these principles by working through the example of joining two tables together in Excel and R. Let’s say that we had two data tables, one with some information about cars and another with the colour of those cars, and we want to join the two of them together. For the purpose of this exercise, we’re going to assume that the number of cylinders in a car determines its colour.</p>
 <pre class="r"><code>library(dplyr)
-library(knitr)
-cars &lt;- mtcars
+library(knitr)</code></pre>
+<pre><code>## Warning: package &#39;knitr&#39; was built under R version 4.0.2</code></pre>
+<pre class="r"><code>cars &lt;- mtcars
 colours &lt;- data_frame(
   cyl = unique(cars$cyl),
   colour = c(&quot;Blue&quot;, &quot;Green&quot;, &quot;Eggplant&quot;)
@@ -86,7 +87,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">mpg</th>
 <th align="right">cyl</th>
 <th align="right">disp</th>
@@ -102,7 +103,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Mazda RX4</td>
+<td align="left">Mazda RX4</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160.0</td>
@@ -116,7 +117,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Mazda RX4 Wag</td>
+<td align="left">Mazda RX4 Wag</td>
 <td align="right">21.0</td>
 <td align="right">6</td>
 <td align="right">160.0</td>
@@ -130,7 +131,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td>Datsun 710</td>
+<td align="left">Datsun 710</td>
 <td align="right">22.8</td>
 <td align="right">4</td>
 <td align="right">108.0</td>
@@ -144,7 +145,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td>Hornet 4 Drive</td>
+<td align="left">Hornet 4 Drive</td>
 <td align="right">21.4</td>
 <td align="right">6</td>
 <td align="right">258.0</td>
@@ -158,7 +159,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td>Hornet Sportabout</td>
+<td align="left">Hornet Sportabout</td>
 <td align="right">18.7</td>
 <td align="right">8</td>
 <td align="right">360.0</td>
@@ -172,7 +173,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Valiant</td>
+<td align="left">Valiant</td>
 <td align="right">18.1</td>
 <td align="right">6</td>
 <td align="right">225.0</td>
@@ -186,7 +187,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td>Duster 360</td>
+<td align="left">Duster 360</td>
 <td align="right">14.3</td>
 <td align="right">8</td>
 <td align="right">360.0</td>
@@ -200,7 +201,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td>Merc 240D</td>
+<td align="left">Merc 240D</td>
 <td align="right">24.4</td>
 <td align="right">4</td>
 <td align="right">146.7</td>
@@ -214,7 +215,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">2</td>
 </tr>
 <tr class="odd">
-<td>Merc 230</td>
+<td align="left">Merc 230</td>
 <td align="right">22.8</td>
 <td align="right">4</td>
 <td align="right">140.8</td>
@@ -228,7 +229,7 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td>Merc 280</td>
+<td align="left">Merc 280</td>
 <td align="right">19.2</td>
 <td align="right">6</td>
 <td align="right">167.6</td>

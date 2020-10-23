@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Gordon Shotwell</title>
-    <link>https://blog.shotwell.ca/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.shotwell.ca/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vitamin D and Covid-19</title>
-      <link>https://blog.shotwell.ca/post/vitamin-d-and-covid-19/</link>
+      <link>/post/vitamin-d-and-covid-19/</link>
       <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/post/vitamin-d-and-covid-19/</guid>
+      <guid>/post/vitamin-d-and-covid-19/</guid>
       <description>The New York Times had a recent piece about the puzzling ways that Covid-19 has spread across the world. In it they articulate a number of possible theories about why Covid-19 has effected some countries more than others, but I think they left out one potential explanation: Vitamin D status.
 The story so far So far the story we’ve been told about Covid-19 is that it is an extremely dangerous virus that spreads expoentially.</description>
     </item>
     
     <item>
       <title>Why I use R</title>
-      <link>https://blog.shotwell.ca/post/why-i-use-r/</link>
+      <link>/post/why-i-use-r/</link>
       <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/post/why-i-use-r/</guid>
+      <guid>/post/why-i-use-r/</guid>
       <description>Insert Lead paragraph here.
 A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus. Feugiat ultricies dictumst iaculis potenti odio laoreet urna at, ultrices curae leo accumsan proin sem lobortis.
 Heading 2 Sollicitudin ornare odio blandit aenean enim lacus accumsan elementum vestibulum porta mauris lorem, ullamcorper class fermentum sem hendrerit ante augue penatibus scelerisque felis leo proin,ad nascetur venenatis sodales dignissim viverra suspendisse turpis convallis condimentum sapien.</description>
