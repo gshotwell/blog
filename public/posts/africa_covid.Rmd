@@ -3,7 +3,11 @@ title: "Taking vitamin D back from the racists"
 author: "Gordon Shotwell"
 date: "2020-10-23"
 output: html_document
-twitterImg: "https://cdn.pixabay.com/photo/2014/04/05/11/40/pill-316601_960_720.jpg"
+twitter:
+  - card: "summary_large_image"
+  - site: "@vninjanet"
+  - creator: "@h0bbel"
+  - image: "https://vninja.net/img/DesigningRisk.jpeg"
 ---
 Black and brown people in northern countries have been disproportionately affected by Covid-19.
 In the US, Sweden, Canada, and the UK, racialized people have been more likely to contract the disease, more likely to have severe courses, and more likely to die from it. 
