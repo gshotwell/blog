@@ -19,7 +19,7 @@ googleAnalytics = "UA-98228149-1"
     author = "Author"
     title = "Title"
     # description = "..."
-    authorimage = "/img/hugo.png"
+    authorimage = "/img/cadence_glasses.jpg"
     dateformat = "Jan 2, 2006"
 
     # sidebar, copyright & license
