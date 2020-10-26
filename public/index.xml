@@ -2,40 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gordon Shotwell</title>
-    <link>https://blog.shotwell.ca/</link>
+    <link>/</link>
     <description>Recent content on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.shotwell.ca/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Taking vitamin D back from the racists</title>
+      <link>/posts/africa_covid/</link>
+      <pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/africa_covid/</guid>
+      <description>Black and brown people in northern countries have been disproportionately affected by Covid-19. In the US, Sweden, Canada, and the UK, racialized people have been more likely to contract the disease, more likely to have severe courses, and more likely to die from it. The explanation you usually get for this is that excess mortality is caused by systemic racism or social determinants of health. Under this explanation there’s nothing that surprising about the high Covid mortality and it’s just another example of discriminatory health care policies.</description>
+    </item>
+    
+    <item>
+      <title>Vitamin D deficiency probably causes Covid-19 </title>
+      <link>/posts/covid-is-a-chronic-illness/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/covid-is-a-chronic-illness/</guid>
+      <description>Researcher expected value Over the last few months, I’ve been arguing that while there’s a low probability that vitamin D causes Covid-19 severity, since it’s a cheap and risk-free intervention it makes sense for people to take a supplement. To me this is an obvious argument, there’s a possibility that vitamin D helps, and we know for sure that it won’t hurt, so even if there’s a 1% chance that it improves outcomes, the expected value of supplementation is positive.</description>
+    </item>
+    
+    <item>
       <title>Masks and Vitamin D</title>
-      <link>https://blog.shotwell.ca/posts/masks_and_vitamin_d/</link>
+      <link>/posts/masks_and_vitamin_d/</link>
       <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/masks_and_vitamin_d/</guid>
+      <guid>/posts/masks_and_vitamin_d/</guid>
       <description>Imagine that someone offered you a free lottery ticket. You would have a small chance of winning a million dollars, but the ticket doesn’t cost anything. It would be silly to turn down this ticket because you thought your odds of winning were either too small or too unclear; the only reason we care about the odds of winning a game is so that we can determine if the expected value of winning is higher than the expected cost of playing.</description>
     </item>
     
     <item>
       <title>Race and Covid-19 mortality</title>
-      <link>https://blog.shotwell.ca/posts/2020-05-23-race-and-covid/</link>
+      <link>/posts/2020-05-23-race-and-covid/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/2020-05-23-race-and-covid/</guid>
+      <guid>/posts/2020-05-23-race-and-covid/</guid>
       <description>In a recent interview, Linda Villarosa outlines the three major causes that she and other public health researchers have identified as causes for the huge racial gap in Covid mortality:
 1) Proximity to the virus Black people live and work in environments where the virus is difficult to escape. They are more likely to work in essential services where it is difficult to engage in social distancing, and they are more likely to live in inter-generational homes in densely populated areas.</description>
     </item>
     
     <item>
       <title>Vitamin D and Covid: We don&#39;t need to wait for more data.</title>
-      <link>https://blog.shotwell.ca/posts/supplment_vitamin_d/</link>
+      <link>/posts/supplment_vitamin_d/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/supplment_vitamin_d/</guid>
+      <guid>/posts/supplment_vitamin_d/</guid>
       <description>I recently posted this graph on Twitter which suggests that Covid-19 mortality is related to latitude:
 There’s a particular type of person on the internet who sees a graph like this and reaches deep into their data science boot-camp memories to exclaim “Correlation doesn’t imply causation!” or “There’s no randomized clinical trial!” or even “There are differences in testing strategy!”
 These responses are stupid not because they’re wrong but because they ignore how decision-making works.</description>
@@ -43,48 +61,48 @@ These responses are stupid not because they’re wrong but because they ignore h
     
     <item>
       <title>Covid Tax</title>
-      <link>https://blog.shotwell.ca/posts/covid-tax/</link>
+      <link>/posts/covid-tax/</link>
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/covid-tax/</guid>
+      <guid>/posts/covid-tax/</guid>
       <description>Let’s say you are a market-oriented dictator who is worried about Covid-19 and wants to reduce the size and number of social gatherings. You understand that gatherings generate a lot of value for your population and so you want a mechanism to ban the least valuable gatherings while allowing the high value ones to continue. For example, you would probably want to reduce the number of work karaoke parties while allowing people to go to their best friend’s wedding.</description>
     </item>
     
     <item>
       <title>Vitamin D and Covid-19</title>
-      <link>https://blog.shotwell.ca/post/vitamin-d-and-covid-19/</link>
+      <link>/post/vitamin-d-and-covid-19/</link>
       <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/post/vitamin-d-and-covid-19/</guid>
+      <guid>/post/vitamin-d-and-covid-19/</guid>
       <description>The New York Times had a recent piece about the puzzling ways that Covid-19 has spread across the world. In it they articulate a number of possible theories about why Covid-19 has effected some countries more than others, but I think they left out one potential explanation: Vitamin D status.
 The story so far So far the story we’ve been told about Covid-19 is that it is an extremely dangerous virus that spreads expoentially.</description>
     </item>
     
     <item>
       <title>Vitamin D and Covid-19</title>
-      <link>https://blog.shotwell.ca/posts/vitamin-d-and-covid-19/</link>
+      <link>/posts/vitamin-d-and-covid-19/</link>
       <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/vitamin-d-and-covid-19/</guid>
+      <guid>/posts/vitamin-d-and-covid-19/</guid>
       <description>In a recent piece about the puzzling ways that Covid-19 has spread across the world the New York Times explores a number of possible theories about why Covid-19 has affected some countries more grievously than others, including “demographics, culture, environment, and the speed of government responses.” I think Vitamin D status should probably be included in this conversation.
 A tale of two countries Canada and Australia have had pretty similar Covid-19 timelines.</description>
     </item>
     
     <item>
       <title>Why I use R</title>
-      <link>https://blog.shotwell.ca/posts/why_i_use_r/</link>
+      <link>/posts/why_i_use_r/</link>
       <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/why_i_use_r/</guid>
+      <guid>/posts/why_i_use_r/</guid>
       <description>They said the war was over… Over the last couple of years prominent members of both the R and Python communities have tried to move past the language wars and support both R and Python workflows. This makes sense intellectually; after all, R and Python are not all that different in the scheme of things, and so we should let people use whichever language they find more productive. This conversation manifests very differently in the workplace, however.</description>
     </item>
     
     <item>
       <title>Why I use R</title>
-      <link>https://blog.shotwell.ca/post/why-i-use-r/</link>
+      <link>/post/why-i-use-r/</link>
       <pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/post/why-i-use-r/</guid>
+      <guid>/post/why-i-use-r/</guid>
       <description>Insert Lead paragraph here.
 A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus. Feugiat ultricies dictumst iaculis potenti odio laoreet urna at, ultrices curae leo accumsan proin sem lobortis.
 Heading 2 Sollicitudin ornare odio blandit aenean enim lacus accumsan elementum vestibulum porta mauris lorem, ullamcorper class fermentum sem hendrerit ante augue penatibus scelerisque felis leo proin,ad nascetur venenatis sodales dignissim viverra suspendisse turpis convallis condimentum sapien.</description>
@@ -92,64 +110,64 @@ Heading 2 Sollicitudin ornare odio blandit aenean enim lacus accumsan elementum 
     
     <item>
       <title>Technical debt for data scientists</title>
-      <link>https://blog.shotwell.ca/posts/2019-04-19-technical-debt-in-data-science/</link>
+      <link>/posts/2019-04-19-technical-debt-in-data-science/</link>
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/2019-04-19-technical-debt-in-data-science/</guid>
+      <guid>/posts/2019-04-19-technical-debt-in-data-science/</guid>
       <description>Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later. This kind of technical debt is similar to taking out a mortgage or small business loan.</description>
     </item>
     
     <item>
       <title>Testing machine learning models with testthat</title>
-      <link>https://blog.shotwell.ca/posts/model_testing/</link>
+      <link>/posts/model_testing/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/model_testing/</guid>
+      <guid>/posts/model_testing/</guid>
       <description>Automated testing is a huge part of software development. Once a project reaches a certain level of complexity, the only way that it can be maintained is if it has a set of tests that identify the main functionality and allow you to verify that functionality is intact. Without tests, it’s difficult or impossible to identify where errors are occurring, and to fix those errors without causing further problems.</description>
     </item>
     
     <item>
       <title>Advice for non-traditional data scientists</title>
-      <link>https://blog.shotwell.ca/posts/learning_data_science/</link>
+      <link>/posts/learning_data_science/</link>
       <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/learning_data_science/</guid>
+      <guid>/posts/learning_data_science/</guid>
       <description>I have a pretty strange background for a data scientist. In my career I’ve sold electric razors, worked on credit derivatives during the 2008 financial crash, written market reports on orthopaedic biomaterials, and practiced law. I started programming in R during law school, partly as a way to learn more about data visualization and partly to help analyze youth criminal justice data. Over time I came to enjoy programming more than law and decided to make the switch to data work about three years ago.</description>
     </item>
     
     <item>
       <title>Why you should work remotely, even if you&#39;re not remote</title>
-      <link>https://blog.shotwell.ca/posts/remote_work/</link>
+      <link>/posts/remote_work/</link>
       <pubDate>Wed, 03 May 2017 21:48:51 -0700</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/remote_work/</guid>
+      <guid>/posts/remote_work/</guid>
       <description>My last job was as a data scientist at Upworthy, which is a 100% remote company. Prior to starting the position I was worried about whether I could be happy and productive on a remote team. I wondered how project planning would work, whether it would be terribly lonely, and how communication would function when things got hectic. What I discovered is that the company was one of the more efficient and friendly places that I’ve worked, and I think the changes that they have made to accommodate remote work deserve much of the credit.</description>
     </item>
     
     <item>
       <title>Data Visualization and UI design</title>
-      <link>https://blog.shotwell.ca/posts/ui_data_analysis/</link>
+      <link>/posts/ui_data_analysis/</link>
       <pubDate>Thu, 13 Apr 2017 21:48:51 -0700</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/ui_data_analysis/</guid>
+      <guid>/posts/ui_data_analysis/</guid>
       <description>Over the past couple of months, I’ve been rebuilding the Shambhala Meditation Timer using React Native and Redux. The idea behind the Shambhala app was to create a kind of modular framework for building meditation timers in order to allow people to create complex timers out of simple components. The three build blocks for a timer are time intervals, gong sounds, and recorded audio contemplations, and the user can stack these building blocks to create whatever kind of meditation session they want.</description>
     </item>
     
     <item>
       <title>R for Excel Users</title>
-      <link>https://blog.shotwell.ca/posts/r_for_excel_users/</link>
+      <link>/posts/r_for_excel_users/</link>
       <pubDate>Thu, 02 Feb 2017 21:48:51 -0700</pubDate>
       
-      <guid>https://blog.shotwell.ca/posts/r_for_excel_users/</guid>
+      <guid>/posts/r_for_excel_users/</guid>
       <description>Like most people, I first learned to work with numbers through an Excel spreadsheet. After graduating with an undergraduate philosophy degree, I somehow convinced a medical device marketing firm to give me a job writing Excel reports on the orthopedic biomaterials market. When I first started, I remember not knowing how to anything, but after a few months I became fairly proficient with the tool, and was able to build all sorts of useful models.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://blog.shotwell.ca/about/</link>
+      <link>/about/</link>
       <pubDate>Wed, 01 Feb 2017 21:48:51 -0700</pubDate>
       
-      <guid>https://blog.shotwell.ca/about/</guid>
+      <guid>/about/</guid>
       <description>My name is Gordon Shotwell. I&#39;m currently a data scientist at Socure and have helped non-profits, web properties, and correctional facilities understand their data in order to make better decisions.
 These days I&#39;m particularly interested in demystifying statistical programming, data science software quality, and organizational behaviour. I’m always open to hearing about new opportunities so please get in touch, I&#39;d love to hear from you.</description>
     </item>
