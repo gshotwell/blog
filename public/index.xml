@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>How to make good decisions from bad data</title>
+      <link>/posts/good-decisions-bad-data/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/good-decisions-bad-data/</guid>
+      <description>The dominant view of medical data creates a categorical distinction between randomized clinical trial data and other forms of data. Under this view the only information that can ground medical decision making is a large, multicenter, randomized clinical trial, and all other forms of information are just correlation. People who hold this view treat clinical trials as determinative of casaution. Without a clinical trial you can’t make a causal claim, and once you have one you no longer need to think that hard about casaution.</description>
+    </item>
+    
+    <item>
       <title>Masks and Vitamin D</title>
       <link>/posts/masks_and_vitamin_d/</link>
       <pubDate>Sun, 21 Jun 2020 00:00:00 +0000</pubDate>
