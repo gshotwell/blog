@@ -1,5 +1,5 @@
 ---
-title: "How to make good decisions from bad data"
+title: "How to make good decisions from with data"
 author: "Gordon Shotwell"
 date: "2020-11-23"
 output: html_document
@@ -13,10 +13,10 @@ output: html_document
 <script src="/rmarkdown-libs/grViz-binding/grViz.js"></script>
 
 
-<p>The dominant view of medical data creates a categorical distinction between randomized clinical trial data and other forms of data.
-Under this view the only information that can ground medical decision making is a large, multicenter, randomized clinical trial, and all other forms of information are just correlation.
+<p>People often make a categorical distinction between randomized clinical trial data and other forms of data.
+Under this view the only information that can ground medical decision making is a large, multicenter, randomized clinical trial, and other study designs can only prove correlation, not causation.
 People who hold this view treat clinical trials as determinative of casaution.
-Without a clinical trial you can’t make a causal claim, and once you have one you no longer need to think that hard about casaution.</p>
+Without a clinical trial you can’t make a causal claim, and once you have one you no longer need to think that hard about causation.</p>
 <div id="what-do-we-get-from-a-clinical-trial" class="section level3">
 <h3>What do we get from a clinical trial?</h3>
 <p>The purpose of clinical trials is to estimate the distribution of an outcome.
@@ -40,7 +40,7 @@ Observational or ecological data can’t do this effectively so the true distrib
 An observational study might report a highly significant result, but because there are lots of potential causal mechanisms which are not controlled for it’s a poor estimate of what’s actually going on in the world.
 The result of these confounders is the numbers reported by the study will usually be overly precise.
 The true distribution of effects is much larger than that reported by the study.</p>
-<pre><code>## Warning: Removed 127 rows containing non-finite values (stat_density).</code></pre>
+<pre><code>## Warning: Removed 129 rows containing non-finite values (stat_density).</code></pre>
 <p><img src="/posts/good-decisions-bad-data_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>The important thing is that all evidence whether it be experimental, observational, or ecological has this problem.
 What generally makes randomized trials “good” and ecological trials “bad” is that for clinical trials the real distribution will be close to the reported distribution, while for ecological study it will be much wider.
