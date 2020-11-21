@@ -114,7 +114,7 @@ Heading 2 Sollicitudin ornare odio blandit aenean enim lacus accumsan elementum 
       <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/2019-04-19-technical-debt-in-data-science/</guid>
-      <description>Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later. This kind of technical debt is similar to taking out a mortgage or small business loan.</description>
+      <description>Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later.</description>
     </item>
     
     <item>
