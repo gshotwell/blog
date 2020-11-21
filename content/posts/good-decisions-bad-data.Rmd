@@ -3,7 +3,6 @@ title: "How to make good decisions from bad data"
 author: "Gordon Shotwell"
 date: "2020-11-23"
 output: html_document
-draft: true
 ---
 
 ```{r setup, include=FALSE}
