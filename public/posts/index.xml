@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.shotwell.ca/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to make good decisions from bad data</title>
+      <link>https://blog.shotwell.ca/posts/good-decisions-bad-data/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.shotwell.ca/posts/good-decisions-bad-data/</guid>
+      <description>People often make a categorical distinction between randomized clinical trial data and other forms of data. Under this view the only information that can ground medical decision making is a large, multicenter, randomized clinical trial, and other study designs can only prove correlation, not causation. People who hold this view treat clinical trials as determinative of causation. Without a clinical trial you can’t make a causal claim, and once you have one, you no longer need to think that hard about causation.</description>
+    </item>
     
     <item>
       <title>Taking vitamin D back from the racists</title>

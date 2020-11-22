@@ -1,7 +1,7 @@
 ---
 title: "How to make good decisions from bad data"
 author: "Gordon Shotwell"
-date: "2020-11-23"
+date: "2020-11-21"
 output: html_document
 ---
 
@@ -224,9 +224,9 @@ Remember, what makes bad studies bad is that they don't do a good job of estimat
 However, for many interventions we often don't need a precise estimate to make a good treatment decision. 
 
 Consider the idea of wearing a cloth mask to prevent Covid-19 infection.
-The evidence in favour of this intervention is really bad. 
+The evidence in favour of this intervention is [really bad](https://shotwell.ca/posts/masks_and_vitamin_d/). 
 We have a few mechanistic studies which show that, in laboratory conditions, a cloth mask can reduce the transmission of viral particles, and we have severalf highly confounded ecological studies that show that places that have a mask mandate (as well as many other things) have a reduced Covid disease burden. 
-There is a recent randomized study of mask usage, which failed to show that giving people masks reduced their risk of contracting Covid-19. 
+There is also a recent [randomized study](https://www.rt.com/news/507157-danish-study-coronavirus-mask-sudy/) of mask usage, which failed to show that giving people masks reduced their risk of contracting Covid-19. 
 If we go back to our distribution plots, the mask evidence might like this; there's some reported benefit but the available data really can't provide that precise an estimate that masks work: 
 
 ```{r, echo = FALSE}
