@@ -5,8 +5,7 @@ date: "2020-11-21"
 output: html_document
 ---
 
-<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/viz/viz.js"></script>
 <link href="/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
@@ -63,10 +62,12 @@ Since then this result has <a href="https://vitamin-d-covid.shotwell.ca/#post-in
 This is great, but it doesn’t help our interpretation that much because these papers all share the same problems.
 Since these papers measured vitamin D levels after infection, we don’t know what caused what. It’s possible that vitamin D deficiency causes Covid, it’s possible that Covid causes vitamin D deficiency, and it’s also possible that some unknown factor causes both of them.</p>
 <p>To put it visually, the data is equally consistent with the following three causal diagrams, and so replicating it doesn’t give us much information on what we should do.</p>
-<p><div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  D -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-2" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Reverse Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  C -> D;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-3" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Confounder\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  U [label = \"Unknown risk factor\"]\n  U -> D \n  U -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script></p>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  D -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Reverse Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  C -> D;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Confounder\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  U [label = \"Unknown risk factor\"]\n  U -> D \n  U -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Triangulation is basically the process of looking at a diverse set of study designs and asking what causal theory is consistent with all of them.
 The statistical insight here is the same as that underlying ensemble models and polling averages:
 If you have a bunch of diverse sources of evidence, their signal will be correlated but the error will be uncorrelated so if you take a global perspective on the data, the error and bias of the individual trials will tend to cancel each other out.</p>
