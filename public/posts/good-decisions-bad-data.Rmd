@@ -39,7 +39,7 @@ The purpose of clinical trials is to estimate the distribution of an outcome.
 You design and conduct an experiment, and based on the results and some statistical assumptions, you can estimate the range of outcomes that would be seen in the world. 
 All the things we use to talk about clinical results -- like confidence intervals, p-values, or statistical significance -- are just ways of reporting this distribution, which we can visualize with a plot like this one:
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 works <- tibble(
   value = rnorm(10000, 2, 0.2), 
   label = "Drug works!"
@@ -76,7 +76,7 @@ The people who undertake the study will do their best to prevent these problems,
 
 The result is that for any study we really have two distributions of effects, the reported distribution which includes just the quantifiable error, and the true distribution which includes the unquantifiable error as well. 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 real <- tibble(
   value = rnorm(10000, 2, 0.3), 
   label = "True"
@@ -97,7 +97,7 @@ An observational study might report a highly significant result, but because the
 The result of these confounders is that the numbers reported by the study will usually be overly precise.
 The true distribution of effects is much larger than that reported by the study.
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 df2 <- tibble(
   value = rnorm(10000, 1.3, 1.2), 
   label = "True"
@@ -133,7 +133,7 @@ Since these papers measured vitamin D levels after infection, we don't know what
 
 To put it visually, the data is equally consistent with the following three causal diagrams, and so replicating it doesn't give us much information on what we should do. 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 library(DiagrammeR)
 
 
@@ -229,7 +229,7 @@ We have a few mechanistic studies which show that, in laboratory conditions, a c
 There is also a recent [randomized study](https://www.rt.com/news/507157-danish-study-coronavirus-mask-sudy/) of mask usage, which failed to show that giving people masks reduced their risk of contracting Covid-19. 
 If we go back to our distribution plots, the mask evidence might like this; there's some reported benefit but the available data really can't provide that precise an estimate that masks work: 
 
-```{r, echo = FALSE}
+```{r echo=FALSE, warning=FALSE}
 
 df <- tibble(
   value = rnorm(10000, mean = 2, sd = 0.3), 
@@ -251,7 +251,7 @@ Mask wearing is common in many Asian countries and there aren't any reports of i
 While we're not really sure about the upside of mask wearing, we can be very sure that there is no downside. 
 Incorporating this information leads to a graph like this: 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 df2 <- tibble(
   value = runif(10000, min = 0, max = 4), 
   label = "True"
@@ -272,7 +272,7 @@ The poor quality ecological data and mechanistic studies reveal that it's plausi
 We have no choice but to make decisions based on the data that's in front of us. 
 We're lucky if we're able to make those decisions based on several strong clinical trials, 
 but more often than not the only information we have is based on small, biased, confounded studies. 
-However, if we think through the totalily of the evidence, as well as the expected value of our actions, we can usually make high quality, calculated decisions instead of waiting for more evidence. 
+However, if we think through the totality of the evidence, as well as the expected value of our actions, we can usually make high quality, calculated decisions instead of waiting for more evidence. 
 
 
 
