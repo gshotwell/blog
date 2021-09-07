@@ -6,10 +6,19 @@
     <description>Recent content on Gordon Shotwell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 21 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.shotwell.ca/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why the Economist&#39;s excess death model is misleading</title>
+      <link>https://blog.shotwell.ca/posts/economist-excess-deaths/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.shotwell.ca/posts/economist-excess-deaths/</guid>
+      <description>The Economist has published a model which estimates that Kenyans are only detecting 4-25% of the true deaths which can be attributed to Covid. I think this is a good opportunity to learn about why many machine learning models are problematic. I’m going to talk about this particular model, but I should note that I’ve only spent about ten hours looking at this problem and I’m sure the authors of this model are smart thoughtful people who don’t mean to mislead.</description>
+    </item>
     
     <item>
       <title>How to make good decisions from bad data</title>
