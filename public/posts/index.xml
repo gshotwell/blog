@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>The Economist excess death model is misleading</title>
+      <title>Why the Economist&#39;s excess death model is misleading</title>
       <link>https://blog.shotwell.ca/posts/economist-excess-deaths/</link>
       <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.shotwell.ca/posts/economist-excess-deaths/</guid>
-      <description>I recently came across this tweet by one of the writers at the Economist which suggested that Kenya was radically undercounting deaths which have resulted from the Covid 19 pandemic. The Economist has published a model which estimates that Kenyans are only detecting 4-25% of the true deaths which can be attributed to Covid. I think this is a good opportunity to learn about why many machine learning models are bullshit.</description>
+      <description>The Economist has published a model which estimates that Kenyans are only detecting 4-25% of the true deaths which can be attributed to Covid. I think this is a good opportunity to learn about why many machine learning models are problematic. I’m going to talk about this particular model, but I should note that I’ve only spent about ten hours looking at this problem and I’m sure the authors of this model are smart thoughtful people who don’t mean to mislead.</description>
     </item>
     
     <item>
