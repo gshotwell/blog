@@ -50,6 +50,8 @@ The Economist's dataset does not truly reflect the world. In particular it conta
 knitr::include_graphics("paste-2BB84D1B.png")
 ```
 
+![](img/paste-2BB84D1B.png)
+
 So the model only saw one lowish life expectancy country (South Africa) and one country with a per-capita GDP under \$1,000 (Tajikstan). The only way you can think that this data says anything about countries in Central and Eastern Africa is if you think that things like life expectancy and income are totally unrelated to how people die from Covid, which is a stupid thing to think. The ways that people die in poor countries are very different from the ways that they die in rich countries, and so you really need poor countries in your sample if you want to estimate excess deaths in those countries.
 
 Despite this, the Economist went out and published a bunch of slick looking graphics about the the "true death toll" in countries which are not remotely represented in the training data. These graphics provide a time series with some official looking confidence intervals, and as far as I can tell the numbers are effectively made up. A complex non-linear model cannot produce reliable estimates of out of sample data which does not resemble the training data. Numerical estimates for these places are figments of the models imagination, and have no tether to reality.
@@ -58,9 +60,7 @@ Despite this, the Economist went out and published a bunch of slick looking grap
 
 One of the most interesting questions of the pandemic is why Africa has been spared. Virtually every analyst thought that Africans would suffer horribly from Covid in the same way that they have suffered from virtually every infectious disease. Low state capacity, poverty, and poor medical care is a recipe for a high mortality rate. Reported deaths in Africa have, however, stayed extremely low.\
 \
-```{r, echo = FALSE}
-knitr::include_graphics("paste-E793515C.png")
-```
+![](img/paste-E793515C.png)
 
 This has only grown more surprising over time. Africa has extremely low vaccination rates relative to North America and Europe, less natural immunity, and the circulating variants are infectious enough that even advanced economies like Australia are having trouble containing them.
 
