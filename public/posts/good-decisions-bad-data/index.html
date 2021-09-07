@@ -144,7 +144,7 @@
     </div>
     
 <div class="copyright">
-  &copy; 2020 htr3n
+  &copy; 2021 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -186,8 +186,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   <div class="post">
     
-<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/viz/viz.js"></script>
 <link href="/rmarkdown-libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
@@ -222,7 +221,7 @@ Observational or ecological data can’t do this effectively, so the true distri
 An observational study might report a highly significant result, but because there are lots of potential causal mechanisms which are not controlled for, it’s a poor estimate of what’s actually going on in the world.
 The result of these confounders is that the numbers reported by the study will usually be overly precise.
 The true distribution of effects is much larger than that reported by the study.</p>
-<pre><code>## Warning: Removed 124 rows containing non-finite values (stat_density).</code></pre>
+<pre><code>## Warning: Removed 118 rows containing non-finite values (stat_density).</code></pre>
 <p><img src="/posts/good-decisions-bad-data_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>The important thing is that all evidence – whether it be experimental, observational, or ecological – has this problem.
 What generally makes randomized trials “good” and ecological trials “bad” is that for clinical trials the real distribution will be close to the reported distribution, while for ecological study it will be much wider.
@@ -245,10 +244,12 @@ Since then this result has <a href="https://vitamin-d-covid.shotwell.ca/#post-in
 This is great, but it doesn’t help our interpretation that much because these papers all share the same problems.
 Since these papers measured vitamin D levels after infection, we don’t know what caused what. It’s possible that vitamin D deficiency causes Covid, it’s possible that Covid causes vitamin D deficiency, and it’s also possible that some unknown factor causes both of them.</p>
 <p>To put it visually, the data is equally consistent with the following three causal diagrams, and so replicating it doesn’t give us much information on what we should do.</p>
-<p><div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  D -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-2" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Reverse Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  C -> D;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script><div id="htmlwidget-3" style="width:672px;height:480px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Confounder\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  U [label = \"Unknown risk factor\"]\n  U -> D \n  U -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script></p>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  D -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Reverse Causal\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  C -> D;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3" style="width:672px;height:480px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"diagram":"\ndigraph with_title {\n  graph [overlap = true, \n  fontsize = 20,\n  label = \"Confounder\n\n\",\n  labelloc = \"t\",\n  rankdir = LR]\n  # several \"node\" statements\n  node [shape = box,\n  fontsize = 12,\n        fontname = Helvetica]\n  D [label = \"Vitamin D deficiency\"]\n  C [label = \"Severe Covid\"]; \n  U [label = \"Unknown risk factor\"]\n  U -> D \n  U -> C\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Triangulation is basically the process of looking at a diverse set of study designs and asking what causal theory is consistent with all of them.
 The statistical insight here is the same as that underlying ensemble models and polling averages:
 If you have a bunch of diverse sources of evidence, their signal will be correlated but the error will be uncorrelated so if you take a global perspective on the data, the error and bias of the individual trials will tend to cancel each other out.</p>
@@ -314,6 +315,11 @@ However, if we think through the totalily of the evidence, as well as the expect
       <span class="navigation-tittle">Taking vitamin D back from the racists</span>
     </a>
     
+    
+    <a href="/posts/economist-excess-deaths/" class="navigation-next">
+      <span class="navigation-tittle">The Economist excess death model is bad and wrong</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
     
 </div>
 

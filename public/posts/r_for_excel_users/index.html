@@ -144,7 +144,7 @@
     </div>
     
 <div class="copyright">
-  &copy; 2020 htr3n
+  &copy; 2021 htr3n
   
     <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
   
@@ -186,8 +186,7 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   <div class="post">
     
-<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>Like most people, I first learned to work with numbers through an Excel spreadsheet. After graduating with an undergraduate philosophy degree, I somehow convinced a medical device marketing firm to give me a job writing Excel reports on the orthopedic biomaterials market. When I first started, I remember not knowing how to anything, but after a few months I became fairly proficient with the tool, and was able to build all sorts of useful models. When you think about it, this is an amazing feature of Excel. Every day, all over the world, people open up a spreadsheet to do some data entry and then, bit by bit, learn to do increasingly complex analytical tasks. Excel is a master at teaching people how to use Excel.</p>
@@ -195,10 +194,8 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <p><img src="/img/pai_mei.gif" /></p>
 <p>I couldn’t get R to do anything. It wouldn’t read in files, draw a plot or multiply two numbers together. All I could do was generate mystifying errors and get mocked on Stack Overflow for asking redundant questions. This was all made more frustrating by the fact that I could accomplish all of these things in Excel without much difficulty.</p>
 <p>This is the basic pain of learning to program. Programming languages are designed to be general in their application and to allow you to accomplish a huge variety of complex tasks with the same basic set of tools. The cost of this generality is a steep learning curve. When you start learning to do basic tasks in R, you are also learning how to do complex things down the road. As you learn more and more, the marginal cost of complex analyses goes down. Excel is the opposite, and is very easy at the beginning, but the marginal cost goes up with the complexity of the problem. If you were to graph this it might look like this:</p>
-<pre><code>## Warning: `data_frame()` is deprecated as of tibble 1.1.0.
-## Please use `tibble()` instead.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_warnings()` to see where this warning was generated.</code></pre>
+<pre><code>## Warning: `data_frame()` was deprecated in tibble 1.1.0.
+## Please use `tibble()` instead.</code></pre>
 <p><img src="/posts/r_for_excel_users_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>At the beginning, when you are trying to accomplish simple things like balancing a budget or entering some data by hand, R is definitely harder to learn than Excel. However, as the task gets more complex, it becomes easier to accomplish in R than Excel, because the core structures of Excel are designed for relatively simple use cases and are not the best for more complex problems. This isn’t to say that you can’t solve a lot of complex problems with Excel, it’s just that the tool won’t make it easy for you.</p>
 <p>For a lot of us, the pain of learning to program feels like the pain of failure. When the program gives you an incomprehensible error message it feels like it’s telling you that you’re stupid and lack programming aptitude. But after programming for a while, you learn that nobody really understands those errors, and everybody feels like an imposter when their program fails. The pain you feel is not the pain of failure, it’s just the pain of learning.</p>
@@ -260,9 +257,8 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <h3>Example: Joining two tables together</h3>
 <p>I thought I’d illustrate these principles by working through the example of joining two tables together in Excel and R. Let’s say that we had two data tables, one with some information about cars and another with the colour of those cars, and we want to join the two of them together. For the purpose of this exercise, we’re going to assume that the number of cylinders in a car determines its colour.</p>
 <pre class="r"><code>library(dplyr)
-library(knitr)</code></pre>
-<pre><code>## Warning: package &#39;knitr&#39; was built under R version 4.0.2</code></pre>
-<pre class="r"><code>cars &lt;- mtcars
+library(knitr)
+cars &lt;- mtcars
 colours &lt;- data_frame(
   cyl = unique(cars$cyl),
   colour = c(&quot;Blue&quot;, &quot;Green&quot;, &quot;Eggplant&quot;)
@@ -627,7 +623,6 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
   group_by(colour) %&gt;% 
   summarize(mean_displacement = mean(disp)) %&gt;% 
   kable()</code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -663,7 +658,6 @@ kable(cars[1:10, ]) #kable is just for displaying the table</code></pre>
 <p>The things between the <code>function()</code> braces (<code>df</code> and <code>colour_df</code>) are called “arguments”, and when you call the function all it does is take the actual objects you supply to the function and plugs them in to wherever that argument appears between the curly braces. In this case we would plug in <code>cars</code> for the <code>df</code> argument, and <code>colours</code> for the <code>colour_df</code> argument. The function then basically replaces all the <code>df</code>s with <code>cars</code> and <code>colour_df</code>s with <code>colours</code> and then evaluates the code.</p>
 <pre class="r"><code>join_and_summarize(cars, colours) %&gt;% 
   kable() </code></pre>
-<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <table>
 <thead>
 <tr class="header">

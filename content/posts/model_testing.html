@@ -4,8 +4,7 @@ date: "2018-05-01"
 output: html_document
 ---
 
-<link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>Automated testing is a huge part of software development. Once a project reaches a certain level of complexity, the only way that it can be maintained is if it has a set of tests that identify the main functionality and allow you to verify that functionality is intact. Without tests, it’s difficult or impossible to identify where errors are occurring, and to fix those errors without causing further problems.</p>
@@ -42,7 +41,7 @@ rmse = function(predicted, observed){
 }</code></pre>
 <div id="is-it-performing-well-enough" class="section level4">
 <h4>Is it performing well enough?</h4>
-<p>The most basic question you can ask about a model is whether it’s continuing to perform well as new data comes in. Typically when you develop a model for production you have made some kind of promise to your company or customer about how that model performs. For instance, it might be worth predicting a customer’s next purchase if the model is 50% accurate, but not worth doing so if it is only 2% accurate. A model can perform well on the training data, but if customer behavior changes in some way its accuracy can degrade. Instead of being notified of these changes by angry product managers, you can write a test that tells you when the model accuracy falls below a certain threshold. In this case we have a root mean squared error of 5.189134110^{4} dollars so let’s say we want to worry about the model when that error gets bigger than $75,000. I’m going to generate new data by sampling my existing dataset, but in production you should use actual new data. The test would look something like this:</p>
+<p>The most basic question you can ask about a model is whether it’s continuing to perform well as new data comes in. Typically when you develop a model for production you have made some kind of promise to your company or customer about how that model performs. For instance, it might be worth predicting a customer’s next purchase if the model is 50% accurate, but not worth doing so if it is only 2% accurate. A model can perform well on the training data, but if customer behavior changes in some way its accuracy can degrade. Instead of being notified of these changes by angry product managers, you can write a test that tells you when the model accuracy falls below a certain threshold. In this case we have a root mean squared error of 5.1891341^{4} dollars so let’s say we want to worry about the model when that error gets bigger than $75,000. I’m going to generate new data by sampling my existing dataset, but in production you should use actual new data. The test would look something like this:</p>
 <pre class="r"><code>library(testthat)
 new_data &lt;- house[sample(1:nrow(house), replace = TRUE), ]
 test_that(&quot;model rmseis above threshold&quot;, {
