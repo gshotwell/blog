@@ -1,118 +1,69 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://blog.shotwell.ca/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/economist-excess-deaths/</loc>
-    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/good-decisions-bad-data/</loc>
-    <lastmod>2020-11-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/africa-covid/</loc>
-    <lastmod>2020-10-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/masks_and_vitamin_d/</loc>
-    <lastmod>2020-06-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/2020-05-23-race-and-covid/</loc>
-    <lastmod>2020-05-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/supplment_vitamin_d/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/covid-tax/</loc>
-    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/post/</loc>
-    <lastmod>2020-05-03T11:15:41-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/post/vitamin-d-and-covid-19/</loc>
-    <lastmod>2020-05-03T11:15:41-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/vitamin-d-and-covid-19/</loc>
-    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/why_i_use_r/</loc>
-    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/post/why-i-use-r/</loc>
-    <lastmod>2019-12-25T10:42:41-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/2019-04-19-technical-debt-in-data-science/</loc>
-    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/model_testing/</loc>
-    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/learning_data_science/</loc>
-    <lastmod>2017-08-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/remote_work/</loc>
-    <lastmod>2017-05-03T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/ui_data_analysis/</loc>
-    <lastmod>2017-04-13T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/posts/r_for_excel_users/</loc>
-    <lastmod>2017-02-02T21:48:51-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.shotwell.ca/about/</loc>
-    <lastmod>2017-02-01T21:48:51-07:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://blog.shotwell.ca/categories/</loc>
-  </url>
-  
-  <url>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/categories/covid/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/categories/data-science/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/why-the-economist-s-excess-death-model-is-misleading/</loc>
+    <lastmod>2021-09-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/how-to-make-good-decisions-from-bad-data/</loc>
+    <lastmod>2020-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/categories/vitamin-d/</loc>
+    <lastmod>2020-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/taking-vitamin-d-back-from-the-racists/</loc>
+    <lastmod>2020-10-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/masks-and-vitamin-d/</loc>
+    <lastmod>2020-06-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/race-and-covid-19/</loc>
+    <lastmod>2020-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/vitamin-d-and-covid-19/</loc>
+    <lastmod>2020-05-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/categories/r/</loc>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/why-i-use-r/</loc>
+    <lastmod>2019-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/technical-debt-for-data-scientists/</loc>
+    <lastmod>2019-04-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/model-testing/</loc>
+    <lastmod>2018-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/learning-data-science/</loc>
+    <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/categories/education/</loc>
+    <lastmod>2017-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/post/r-for-excel-users/</loc>
+    <lastmod>2017-02-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/about/</loc>
+    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
+  </url><url>
+    <loc>https://blog.shotwell.ca/archives/</loc>
+  </url><url>
     <loc>https://blog.shotwell.ca/tags/</loc>
   </url>
-  
 </urlset>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/blog.shotwell.ca\/",
+  "author": {
+    "@type": "Person",
+    "name": "Gordon Shotwell",
+    
+    "image": "https://avatars.githubusercontent.com/u/8417172?v=4"
+    
+  },
+  "name":"Hugo tranquilpeak theme",
+  "description":"Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later.",
+  "url":"https:\/\/blog.shotwell.ca\/post\/technical-debt-for-data-scientists\/",
+  "keywords":"[]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.88.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Gordon Shotwell">
+<meta name="keywords" content="">
+<meta name="description" content="Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later.">
+
+
+<meta property="og:description" content="Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Technical debt for data scientists">
+<meta name="twitter:title" content="Technical debt for data scientists">
+<meta property="og:url" content="https://blog.shotwell.ca/post/technical-debt-for-data-scientists/">
+<meta property="twitter:url" content="https://blog.shotwell.ca/post/technical-debt-for-data-scientists/">
+<meta property="og:site_name" content="Hugo tranquilpeak theme">
+<meta property="og:description" content="Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later.">
+<meta name="twitter:description" content="Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-04-19T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2019-04-19T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Data Science">
+    
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/8417172?v=4">
+  <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/8417172?v=4">
+
+
+
+
+
+
+    <title>Technical debt for data scientists</title>
+
+    <link rel="icon" href="https://blog.shotwell.ca/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://blog.shotwell.ca/post/technical-debt-for-data-scientists/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://blog.shotwell.ca/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://blog.shotwell.ca/" aria-label="Go to homepage">Hugo tranquilpeak theme</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://blog.shotwell.ca/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://avatars.githubusercontent.com/u/8417172?v=4" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://blog.shotwell.ca/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://avatars.githubusercontent.com/u/8417172?v=4" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Gordon Shotwell</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://blog.shotwell.ca/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://blog.shotwell.ca/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://blog.shotwell.ca/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://blog.shotwell.ca/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://blog.shotwell.ca/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/GShotwell" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/gshotwell" target="_blank" rel="noopener" title="Email">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-envelope" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Email</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://twitter.com/gshotwell" target="_blank" rel="noopener" title="Twitter">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-twitter" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Twitter</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://blog.shotwell.ca/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      Technical debt for data scientists
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2019-04-19T00:00:00Z">
+        
+  April 19, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://blog.shotwell.ca/categories/data-science">Data Science</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              
+<script src="https://blog.shotwell.ca/post/technical-debt-for-data-scientists/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there’s a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later. This kind of technical debt is similar to taking out a mortgage or small business loan. You don’t have the money to realize an opportunity right now, so you borrow that money even though it’s going to cost more down the road. The lifetime cost of the investment goes up, but at least you get to make the investment.</p>
+<p>Too often however, data science technical debt is more like a payday loan. We take shortcuts in developing a solution without an understanding of the risks and costs of those shortcuts, and without a realistic plan for how we’re going to pay back the debt. Code is produced, but it’s not tested, documented, or robust to changes in the system. The result is that data science projects become expensive or impossible to maintain as time goes on.</p>
+<p>Here are a couple of questions to help identify if you have a problem with this kind of technical debt:</p>
+<ul>
+<li>Do you have time and resources to write tests, refactor code, or review the code of your colleagues?</li>
+<li>Do you know the limits of your code base, in other words can you say clearly what parts of your code need to be maintained</li>
+<li>Do you know what your test coverage is for this codebase?</li>
+<li>Do you get and respond to feedback about whether your code is easy to understand?</li>
+</ul>
+<p>If you answered “no” to these questions there’s a good chance you are taking on dangerous technical debt. Not only are you trading today’s work for tomorrow, but you can’t know how much future work you’re committing to. The technical debt sits like a time bomb somewhere in your code base, and you don’t know when it will go off or what damage it will cause.</p>
+<p>I think there are four basic areas that data scientists should focus on to improve this part of their work, testing, documentation, robustness, and social interaction.</p>
+<div id="testing" class="section level2">
+<h2>Testing</h2>
+<p>I’m a self-taught data scientist, and during the whole time I was taking online courses, working on sample projects, and working on data analytics at various companies I never once learned how to test code. Data science code starts out simple enough that a single person can hold everything in their head, and so adding a bunch of tests feels like a waste of time. This changed for me when I started working at <a href="https://crunch.io/">Crunch</a> on a large open source R package.</p>
+<p>Crunch is a test-first company, and had a policy of exhaustive unit tests for everything that could possibly be tested. To accomplish this goal my boss Neal wrote a <a href="https://github.com/nealrichardson/httptest">whole package</a> which records and plays back http responses to allow you to simulate a web service for tests. Starting work at Crunch was a steep learning curve because it was the first time that I was working on something that was way too complex to hold in my head all at once. I might implement a method for some object that would effect dozens of other methods scattered across thousands of lines of code. The only way to understand what was going on in the system was to read the tests, and trust that those tests were a complete description of how the system was supposed to work. If the tests passed I could be sure that my change was correct even if I couldn’t really envision all the side effects of that change. Bit by painful bit I started to understand the value of this workflow and now think it’s the only way to go.</p>
+<p>The reality of testing is that the <em>only</em> way to ensure that your code is correct is to test it because tests <em>define correctness</em>. When you write a piece of code, the way you know that that code is correct is that it produces some expected output based on a set of inputs. Usually we run these “tests” in an ad-hoc fashion by running a bit of code and then examining the output, but this doesn’t work as soon as the problem gets even a little complicated or the code runs for a long time. All that you’re doing when you write formal tests is being explicit about what you expect from your solution, and ensuring that those expectations are met every time a change is made to the codebase. This helps other developers understand what the code is supposed to do, and so allows them to change and extend your code down the line. If your team doesn’t write tests then they can’t really communicate what it means for their solution to be correct.</p>
+<div id="how-to-fix-this" class="section level3">
+<h3>How to fix this</h3>
+<ul>
+<li>Look through your code base and ask “do I care if this code is correct” include tests for all such code.</li>
+<li>Start writing smaller, simpler functions. These are easier to test.</li>
+<li>When other developers ask you to refactor or extend their code, insist that it includes tests. Do not trust people when they the code is correct. Insist that they define what correctness means.</li>
+<li>Make an organizational policy that tasks aren’t complete until they are tested.</li>
+</ul>
+</div>
+</div>
+<div id="documentation" class="section level2">
+<h2>Documentation</h2>
+<p>Documentation is often neglected in the programming world, I think in part because writing prose doesn’t spark joy for many programmers. For instance I’ve often asked “how does this work?” and been told to “RTFS (read the fucking source code). This is a big problem because while reading source code can (sometimes after much pain) tell you <em>what</em> is happening in a system, it can never really tell you why it’s happening, or develop your intuition about what should happen in the future. Source code doesn’t, and shouldn’t, tell a story but that story is important for understanding the problem.</p>
+<p>As I see it there are a few common things to keep in mind when documenting things:
+1) <strong>Documentation should have a single purpose:</strong> If you are not clear about what the document is supposed to accomplish, you can’t evaluate whether it’s doing a good job. There’s <a href="https://www.divio.com/blog/documentation/">a wonderful article</a> about this topic which is worth a careful read. Every document should have a job and you should be able to say what that job is.
+1) <strong>Documentation should be written by the expert:</strong> Often times, especially with internal documents, we expect the person to update the document as they work through it. In other words we want the person who understands the process the least to document it. This never works because being able to explain a process well requires a nuanced understanding that process which new people do not have. Experts have a better intuition about what’s important and usually can do a better job explaining those concepts than novices. We should treat readers of the document as a user, listen to their struggles, empathize with what they don’t understand, but don’t expect them to fix anything.
+1) <strong>Documentation should be written by the person who can change the process</strong> A lot of times documentation is confusing because the thing you’re trying to explain is confusing. When you’re trying to explain a bit of code, or a process, or some feature of how your organization works you might realize that it really doesn’t make any sense, and rather than documenting that thing you <a href="https://enpiar.com/2019/02/17/writing-docs-is-better-than-having-docs/">should fix it</a>. This is great advice but it only works if the person writing the documentation has the <em>power</em> to fix it. Therefore the person with that power should be in charge of writing documentation. If they don’t want the responsibility of documenting a process they should delegate the power to change that process.</p>
+<div id="how-to-fix-this-1" class="section level3">
+<h3>How to fix this</h3>
+<ul>
+<li>Treat documentation as a first-class skill in hiring. Request documentation as part of your programming test, hire people with good examples of technical writing in their background</li>
+<li>Adopt the rule that the person who understands a system best, and has power to change that system is responsible for documenting it</li>
+<li>Never blame the reader, if someone doesn’t understand the documentation, that is a problem with the learning resources</li>
+<li>Adopt a system like <a href="https://www.getguru.com/">Guru</a> to automatically invalidate documents which haven’t been reviewed recently.</li>
+</ul>
+</div>
+</div>
+<div id="robust-code" class="section level2">
+<h2>Robust code</h2>
+<p>Robust code, or sturdy code, is code which doesn’t fall down when the situation changes. Usually when we first write a function we do so to solve the problem which is immediately in front of us. The problem with that is that the code can’t be applied to new situations and so if the problem in front of us changes, we need to rewrite the function. There aren’t hard and fast rules which govern what “robustness” is, and there are problems on either side. On the one hand you can have overly specific code which breaks whenever new situations are thrown at it but on the other you can succumb to speculative generality and build complex solution to solve problems that you’ll never face. There are however a couple of good strategies that at least help with the problem:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Write smaller, more modular functions.</strong> Smaller functions tend to be more robust because they do less. If you have one lengthy script that pulls data, fits a model and generates output, then if any part of that process changes the whole thing breaks. By contrast separating that script into multiple smaller functions means that when one part of the pipeline breaks the failure is contained to a small area that’s easy to identify and fix. This is also very helpful for debugging errors because when the system breaks it points you to the small function that failed rather than some unknown part of a larger script.<br />
+</p></li>
+<li><p><strong>Separate pure and impure functions</strong> Pure functions are those that only communicate with the world through their inputs and their outputs. Kind of like factories with no windows. The great thing about them is that since you can be sure they aren’t effecting the environment outside of the function you can look at its possible inputs and outputs and know exactly what the function does. Impure functions are necessary for things like saving data, querying a database, or requesting something from an API but they are always less robust because it’s harder to reason about the side effects. Separating the pure and impure parts of a big function means pulling out all the bits can can be purified into their own function and have a second function which does the impure part. For instance you might have one function that prepares a dataset, and a second one that writes that dataset to disk, or a function that generates a SQL query and one that executes it. Instead of one giant impure function, you end up with one complex pure function, and one simple impure one.</p></li>
+<li><p><strong>Put up guard rails</strong> It’s a good idea to put up guardrails as part of your ongoing development process. So if you only expect an argument to be a character vector then have the function error if it’s not getting that input. There’s an <a href="https://github.com/jennybc/code-smells-and-feels">excellent talk</a> by Jenny Bryan about some ways of accomplishing this but the basic point is that you should protect future users from error right from the start of writing your function.</p></li>
+</ol>
+<p>Robustness very much follows from documentation and testing. Usually if a function is difficult to document, then it needs to be refactored or split up to make its purpose clearer. Similarly pure functions are easier to test so ensuring that your code is well tested will push you to split functions up into pure and impure sub functions.</p>
+<div id="how-to-fix-this-2" class="section level3">
+<h3>How to fix this</h3>
+<ul>
+<li>Organizationally, allocate time for continual code maintenance and refactoring. Regularly pruning and weeding a code base produces compounding productivity returns and will pay off in the long run</li>
+<li>Do not accept people saying they do not have time to write robust code. Once you get into the habit writing robust code is actually quicker than writing fragile code both in the short run and especially in the long run</li>
+<li>Articulate best practices and point to examples of what you want your code base to look like.</li>
+</ul>
+</div>
+</div>
+<div id="social-interaction" class="section level2">
+<h2>Social Interaction</h2>
+<p>It’s all well and good for an organization to say that it wants to avoid or pay down technical debt, but it’s difficult to get a group of people to do the work to fix things. I think that fundamentally this kind of bad technical debt is more of a social problem than a technical one because people relate to a solution as an individual exercise rather than a contribution to a group project.</p>
+<p>Basically speaking all of the principles in this article are about making it easier for future people to understand, maintain and improve your code. The very best evidence you have about what kinds of problems future people will have with your work are to look at the problems that <em>current</em> people have with it. We all get myopic about the way we solve a particular problem, and so need other people’s feedback to understand conner cases and fix misunderstanding.</p>
+<p>The best way to solicit this feedback is to try to be egoless about your own solutions and kind about other people’s solutions. The <a href="http://www.alexandra-hill.com/2018/06/25/the-art-of-giving-and-receiving-code-reviews/">Art of Giving Code Reviews</a> by Alexandra Hill is an excellent piece about this process I recommend that everyone reads it. But the upshot is that talking about code is a conflict-prone area and it’s important to be intentional about improving the trust between members of a team and reducing conflict which arises when you review code. Personally I try to relate with code I write as a draft piece, and think of the code review process as basically sending a first draft to an editor. There’s going to be lots of typos, poor language, and sloppy writing and it’s impossible to resolve those things alone. Similarly when providing feedback I try to remind myself that whatever I’m looking at is the very best work that an intelligent person could do under the circumstances, and to always include compliments alongside areas for improvement. Another excellent practice is to be inquisitive “I’m not following this, can you say more about why you did it this way?” instead of declarative “I can’t understand this, please do it this other way”. This helps avoid conflict as well as fostering an educational opportunity, when someone explains why they did something you might learn that it’s a great way to do it or they may be better able to see the problems with that approach.</p>
+<div id="how-to-fix-this-3" class="section level3">
+<h3>How to fix this</h3>
+<ul>
+<li>Foster emotional safety on development teams</li>
+<li>Commit to ongoing education and collaboration</li>
+<li>Do code reviews</li>
+<li>Use linters, auto-stylers, and automated checks to automate low value code work</li>
+</ul>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>There’s <a href="https://www.helpscout.com/blog/technical-debt/">an argument</a> that the technical debt I describe in this article isn’t really debt at all but simply shitty coding practice. While I think that’s true to a large degree, it’s much easier to improve things by saying “let’s pay off some technical debt” than by saying “let’s fix your shitty coding practices”. Whatever you call it, it’s a bad state for your code to be in and you should start fixing it as soon as possible.</p>
+</div>
+
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://blog.shotwell.ca/post/why-i-use-r/" data-tooltip="Why I Use R" aria-label="NEXT: Why I Use R">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://blog.shotwell.ca/post/model-testing/" data-tooltip="&#34;Testing machine learning models with testthat&#34;" aria-label="PREVIOUS: &#34;Testing machine learning models with testthat&#34;">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.shotwell.ca/post/technical-debt-for-data-scientists/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.shotwell.ca/post/technical-debt-for-data-scientists/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.shotwell.ca/post/technical-debt-for-data-scientists/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/blog.shotwell.ca\/post\/technical-debt-for-data-scientists\/';
+        
+          this.page.identifier = '\/post\/technical-debt-for-data-scientists\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'hugo-tranquilpeak-theme';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 Gordon Shotwell. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://blog.shotwell.ca/post/why-i-use-r/" data-tooltip="Why I Use R" aria-label="NEXT: Why I Use R">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://blog.shotwell.ca/post/model-testing/" data-tooltip="&#34;Testing machine learning models with testthat&#34;" aria-label="PREVIOUS: &#34;Testing machine learning models with testthat&#34;">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.shotwell.ca/post/technical-debt-for-data-scientists/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.shotwell.ca/post/technical-debt-for-data-scientists/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://blog.shotwell.ca/post/technical-debt-for-data-scientists/" title="Share on Linkedin" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.shotwell.ca%2Fpost%2Ftechnical-debt-for-data-scientists%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fblog.shotwell.ca%2Fpost%2Ftechnical-debt-for-data-scientists%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fblog.shotwell.ca%2Fpost%2Ftechnical-debt-for-data-scientists%2F" aria-label="Share on Linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span>Share on Linkedin</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://avatars.githubusercontent.com/u/8417172?v=4" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Gordon Shotwell</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Lead Data Scientist at Socure
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        Canada
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://blog.shotwell.ca/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://blog.shotwell.ca/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

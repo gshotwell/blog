@@ -1,0 +1,89 @@
+---
+title: Technical debt for data scientists
+author: Gordon Shotwell
+date: '2019-04-19'
+slug: technical-debt-for-data-scientists
+categories:
+  - Data Science
+tags: []
+---
+
+
+Technical debt is the process of avoiding work today by promising to do work tomorrow. A team might identify that there's a small time window for a particular change to be implemented and the only way they can hit that window is to take shortcuts in the development process. They might soberly calculate that the benefits of getting something done now are worth the costs of fixing it later. This kind of technical debt is similar to taking out a mortgage or small business loan. You don't have the money to realize an opportunity right now, so you borrow that money even though it's going to cost more down the road. The lifetime cost of the investment goes up, but at least you get to make the investment. 
+
+Too often however, data science technical debt is more like a payday loan. We take shortcuts in developing a solution without an understanding of the risks and costs of those shortcuts, and without a realistic plan for how we're going to pay back the debt. Code is produced, but it's not tested, documented, or robust to changes in the system. The result is that data science projects become expensive or impossible to maintain as time goes on. 
+
+Here are a couple of questions to help identify if you have a problem with this kind of technical debt: 
+
+ - Do you have time and resources to write tests, refactor code, or review the code of your colleagues?
+ - Do you know the limits of your code base, in other words can you say clearly what parts of your code need to be maintained
+ - Do you know what your test coverage is for this codebase?
+ - Do you get and respond to feedback about whether your code is easy to understand?
+
+If you answered "no" to these questions there's a good chance you are taking on dangerous technical debt. Not only are you trading today's work for tomorrow, but you can't know how much future work you're committing to. The technical debt sits like a time bomb somewhere in your code base, and you don't know when it will go off or what damage it will cause. 
+
+I think there are four basic areas that data scientists should focus on to improve this part of their work, testing, documentation, robustness, and social interaction. 
+
+## Testing
+
+I'm a self-taught data scientist, and during the whole time I was taking online courses, working on sample projects, and working on data analytics at various companies I never once learned how to test code. Data science code starts out simple enough that a single person can hold everything in their head, and so adding a bunch of tests feels like a waste of time. This changed for me when I started working at [Crunch](https://crunch.io/) on a large open source R package. 
+
+Crunch is a test-first company, and had a policy of exhaustive unit tests for everything that could possibly be tested. To accomplish this goal my boss Neal wrote a [whole package](https://github.com/nealrichardson/httptest) which records and plays back http responses to allow you to simulate a web service for tests. Starting work at Crunch was a steep learning curve because it was the first time that I was working on something that was way too complex to hold in my head all at once. I might implement a method for some object that would effect dozens of other methods scattered across thousands of lines of code. The only way to understand what was going on in the system was to read the tests, and trust that those tests were a complete description of how the system was supposed to work. If the tests passed I could be sure that my change was correct even if I couldn't really envision all the side effects of that change. Bit by painful bit I started to understand the value of this workflow and now think it's the only way to go. 
+
+The reality of testing is that the _only_ way to ensure that your code is correct is to test it because tests _define correctness_. When you write a piece of code, the  way you know that that code is correct is that it produces some expected output based on a set of inputs. Usually we run these "tests" in an ad-hoc fashion by running a bit of code and then examining the output, but this doesn't work as soon as the problem gets even a little complicated or the code runs for a long time. All that you're doing when you write formal tests is being explicit about what you expect from your solution, and ensuring that those expectations are met every time a change is made to the codebase. This helps other developers understand what the code is supposed to do, and so allows them to change and extend your code down the line. If your team doesn't write tests then they can't really communicate what it means for their solution to be correct.
+
+### How to fix this
+- Look through your code base and ask "do I care if this code is correct" include tests for all such code.
+- Start writing smaller, simpler functions. These are easier to test. 
+- When other developers ask you to refactor or extend their code, insist that it includes tests. Do not trust people when they the code is correct. Insist that they define what correctness means. 
+- Make an organizational policy that tasks aren't complete until they are tested. 
+
+## Documentation
+
+Documentation is often neglected in the programming world, I think in part because writing prose doesn't spark joy for many programmers. For instance I've often asked "how does this work?" and been told to "RTFS (read the fucking source code). This is a big problem because while reading source code can (sometimes after much pain) tell you _what_ is happening in a system, it can never really tell you why it's happening, or develop your intuition about what should happen in the future.  Source code doesn't, and shouldn't, tell a story but that story is important for understanding the problem. 
+
+As I see it there are a few common things to keep in mind when documenting things: 
+1) **Documentation should have a single purpose:**  If you are not clear about what the document is supposed to accomplish, you can't evaluate whether it's doing a good job. There's [a wonderful article](https://www.divio.com/blog/documentation/) about this topic which is worth a careful read. Every document should have a job and you should be able to say what that job is. 
+1) **Documentation should be written by the expert:** Often times, especially with internal documents, we expect the person to update the document as they work through it. In other words we want the person who understands the process the least to document it. This never works because being able to explain a process well requires a nuanced understanding that process which new people do not have. Experts have a better intuition about what's important and usually can do a better job explaining those concepts than novices. We should treat readers of the document as a user, listen to their struggles, empathize with what they don't understand, but don't expect them to fix anything. 
+1) **Documentation should be written by the person who can change the process** A lot of times documentation is confusing because the thing you're trying to explain is confusing. When you're trying to explain a bit of code, or a process, or some feature of how your organization works you might realize that it really doesn't make any sense, and rather than documenting that thing you [should fix it](https://enpiar.com/2019/02/17/writing-docs-is-better-than-having-docs/).  This is great advice but it only works if the person writing the documentation has the _power_ to fix it. Therefore the person with that power should be in charge of writing documentation. If they don't want the responsibility of documenting a process they should delegate the power to change that process. 
+
+
+
+### How to fix this
+- Treat documentation as a first-class skill in hiring. Request documentation as part of your programming test, hire people with good examples of technical writing in their background
+- Adopt the rule that the person who understands a system best, and has power to change that system is responsible for documenting it
+- Never blame the reader, if someone doesn't understand the documentation, that is a problem with the learning resources
+- Adopt a system like [Guru](https://www.getguru.com/) to automatically invalidate documents which haven't been reviewed recently. 
+
+## Robust code
+
+Robust code, or sturdy code, is code which doesn't fall down when the situation changes. Usually when we first write a function we do so to solve the problem which is immediately in front of us. The problem with that is that the code can't be applied to new situations and so if the problem in front of us changes, we need to rewrite the function. There aren't hard and fast rules which govern what "robustness" is, and there are problems on either side. On the one hand you can have overly specific code which breaks whenever new situations are thrown at it but on the other you can succumb to speculative generality and build complex solution to solve problems that you'll never face. There are however a couple of good strategies that at least help with the problem: 
+
+1) **Write smaller, more modular functions.** Smaller functions tend to be more robust because they do less. If you have one lengthy script that pulls data, fits a model and generates output, then if any part of that process changes the whole thing breaks. By contrast separating that script into multiple smaller functions means that when one part of the pipeline breaks the failure is contained to a small area that's easy to identify and fix. This is also very helpful for debugging errors because when the system breaks it points you to the small function that failed rather than some unknown part of a larger script.  
+1) **Separate pure and impure functions** Pure functions are those that only communicate with the world through their inputs and their outputs. Kind of like factories with no windows. The great thing about them is that since you can be sure they aren't effecting the environment outside of the function you can look at its possible inputs and outputs and know exactly what the function does. Impure functions are necessary for things like saving data, querying a database, or requesting something from an API but they are always less robust because it's harder to reason about the side effects. Separating the pure and impure parts of a big function means pulling out all the bits can can be purified into their own function and have a second function which does the impure part. For instance you might have one function that prepares a dataset, and a second one that writes that dataset to disk, or a function that generates a SQL query and one that executes it. Instead of one giant impure function, you end up with one complex pure function, and one simple impure one. 
+
+1)  **Put up guard rails** It's a good idea to put up guardrails as part of your ongoing development process. So if you only expect an argument to be a character vector then have the function error if it's not getting that input. There's an [excellent talk](https://github.com/jennybc/code-smells-and-feels) by Jenny Bryan about some ways of accomplishing this but the basic point is that you should protect future users from error right from the start of writing your function. 
+
+Robustness very much follows from documentation and testing. Usually if a function is difficult to document, then it needs to be refactored or split up to make its purpose clearer. Similarly pure functions are easier to test so ensuring that your code is well tested will push you to split functions up into pure and impure sub functions. 
+
+### How to fix this
+- Organizationally, allocate time for continual code maintenance and refactoring. Regularly pruning and weeding a code base produces compounding productivity returns and will pay off in the long run
+- Do not accept people saying they do not have time to write robust code. Once you get into the habit writing robust code is actually quicker than writing fragile code both in the short run and especially in the long run
+- Articulate best practices and point to examples of what you want your code base to look like. 
+
+## Social Interaction
+
+It's all well and good for an organization to say that it wants to avoid or pay down technical debt, but it's difficult to get a group of people to do the work to fix things. I think that fundamentally this kind of bad technical debt is more of a social problem than a technical one because people relate to a solution as an individual exercise rather than a contribution to a group project. 
+
+Basically speaking all of the principles in this article are about making it easier for future people to understand, maintain and improve your code. The very best evidence you have about what kinds of problems future people will have with your work are to look at the problems that _current_ people have with it. We all get myopic about the way we solve a particular problem, and so need other people's feedback to understand conner cases and fix misunderstanding. 
+
+The best way to solicit this feedback is to try to be egoless about your own solutions and kind about other people's solutions. The [Art of Giving Code Reviews](http://www.alexandra-hill.com/2018/06/25/the-art-of-giving-and-receiving-code-reviews/) by Alexandra Hill is an excellent piece about this process  I recommend that everyone reads it. But the upshot is that talking about code is a conflict-prone area and it's important to be intentional about improving the trust between members of a team and reducing conflict which arises when you review code. Personally I try to relate with code I write as a draft piece, and think of the code review process as basically sending a first draft to an editor. There's going to be lots of typos, poor language, and sloppy writing and it's impossible to resolve those things alone. Similarly when providing feedback I try to remind myself that whatever I'm looking at is the very best work that an intelligent person could do under the circumstances, and to always include compliments alongside areas for improvement. Another excellent practice is to be inquisitive "I'm not following this, can you say more about why you did it this way?" instead of declarative "I can't understand this, please do it this other way". This helps avoid conflict as well as fostering an educational opportunity, when someone explains why they did something you might learn that it's a great way to do it or they may be better able to see the problems with that approach. 
+
+### How to fix this
+- Foster emotional safety on development teams
+- Commit to ongoing education and collaboration
+- Do code reviews
+- Use linters, auto-stylers, and automated checks to automate low value code work
+
+## Conclusion
+There's [an argument](https://www.helpscout.com/blog/technical-debt/) that the technical debt I describe in this article isn't really debt at all but simply shitty coding practice. While I think that's true to a large degree, it's much easier to improve things by saying "let's pay off some technical debt" than by saying "let's fix your shitty coding practices". Whatever you call it, it's a bad state for your code to be in and you should start fixing it as soon as possible. 
