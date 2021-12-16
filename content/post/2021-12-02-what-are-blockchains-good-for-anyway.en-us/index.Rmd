@@ -2,7 +2,7 @@
 title: What's the blockchain good for anyway?
 author: Gordon Shotwell
 date: '2021-12-02'
-slug: what-are-blockchains-good-for-anyway.en-us
+slug: what-are-blockchains-good-for
 categories: []
 tags: []
 keywords:
