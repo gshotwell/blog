@@ -18,7 +18,7 @@ My first symptoms were numbness in my feet which I thought were caused by tight 
 I remember the feeling of swimming as though I were wrapped in a cotton sheet, I remember falling down because I didn't have any proprioception in my feet, and I remember switching to slip on shoes because I had trouble tying laces.
 
 By all rights I should've been terrified when the Covid-19 pandemic started.
-After all, I'm one of those vulnerable, immune-suppressed people that we're all supposed to shield from illness, but I've actually found that I've had a more stable emotional experience than most of the people I know.
+After all, I'm one of those vulnerable, immune-suppressed people that we're all supposed to shield from illness, but over the last two year's, I've found that I've had a more stable emotional experience than most of the people that I've interacted with.
 
 Pandemics are a kind of chronic illness on a societal level.
 For many people, Covid was the first experience of a health threat that persisted over a long period of time.
@@ -39,7 +39,7 @@ Your individual decisions let you pick which dice to roll, but they don't determ
 Virtuous people still get sick.
 
 What I've learned is that given all this, there's a really narrow spectrum of things that are worth worrying about.
-If something has a big enough effect to change my decisions, and I'm fairly certain that that effect is real, I will look into it, but otherwise I just ignore it.
+If something has a big enough effect to change my decisions, and I'm fairly certain that that effect is real, I will look into it, but otherwise I don't pay attention to it.
 This means that I ignore all studies on animal models (not certain enough) and all papers about how MS patients do over the course of their lives (doesn't change my decisions).
 This is important because worrying about illness costs me something.
 It increases stress, damages my relationships, and reduces my happiness, and over the course of a lifetime these costs really add up.
@@ -49,7 +49,7 @@ This is an important lesson as we move into the endemic phase of Covid.
 Whenever there's a new Covid variant there's a period of several months where we don't really know anything about the variant, but everyone is still freaking out about it.
 All of the information at that point falls outside of the constructive worry spectrum.
 If you don't really know whether a variant is different enough to change your decisions, there's no point in really worrying about it.
-As a result, the resilient thing to do is to just ignore it and trust that you can come back in a month or two and not really miss anything.
+As a result, the resilient thing to do is to just not worry about it and trust that you can come back in a month or two and not really miss anything.
 
 # Things are never going back to how they were 
 
@@ -111,7 +111,8 @@ Many people have spent two years in daily anxiety about Covid.
 This is not anyone's fault, but it's also not healthy.
 For example, when omicron was first discovered in South Africa, a lot of my friends immediately started bracing for the worst-case scenario.
 Even though they were vaccinated, they started doing less and worrying more.
-Looking back on it, they probably aren't any better prepared now than they would've been if they had ignored the variant, and all they succeeded in doing was adding a lot of stress to their lives.
+Looking back on it, they probably aren't any better prepared now than they would've been if they had spent less time thinking about the variant.
+All that they succeeded in doing was adding a lot of stress to their lives.
 Similarly, living in fear of contracting Covid probably makes your Covid outcomes worse.
 Stress and anxiety suppresses immune function, and can prevent people from getting the rest that they need to fully recover.
 
