@@ -6,6 +6,7 @@ theme: hugo-tranquilpeak-theme
 disqusShortname: hugo-tranquilpeak-theme
 paginate: 7
 canonifyurls: yes
+googleAnalytics: "UA-98228149-1"
 permalinks:
   posts: /:year/:month/:slug/
 taxonomies:
@@ -74,7 +75,6 @@ menu:
 params:
   autoThumbnailImage: yes
   clearReading: yes
-  googleAnalytics: UA-98228149-1
   comment:
     disqus:
       enable: no
