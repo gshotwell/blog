@@ -74,7 +74,7 @@ menu:
 params:
   autoThumbnailImage: yes
   clearReading: yes
-  googleAnalytics = UA-98228149-1
+  googleAnalytics: UA-98228149-1
   comment:
     disqus:
       enable: no
