@@ -24,7 +24,7 @@ Pandemics are a kind of chronic illness on a societal level.
 For many people, Covid was the first experience of a health threat that persisted over a long period of time.
 Dealing with the experience of a chronic illness has taught me some lessons which I've found applicable to Covid, and I wanted to share these lessons in case they're helpful.
 
-# You're not in control of your health 
+# You're not in control of your health
 
 We're all basically puritans about health.
 We want to believe that if we live righteously, do all the right things and avoid all of the wrong things, we'll avoid all the horrors of serious illness.
@@ -49,9 +49,9 @@ This is an important lesson as we move into the endemic phase of Covid.
 Whenever there's a new Covid variant there's a period of several months where we don't really know anything about the variant, but everyone is still freaking out about it.
 All of the information at that point falls outside of the constructive worry spectrum.
 If you don't really know whether a variant is different enough to change your decisions, there's no point in really worrying about it.
-As a result, the resilient thing to do is to just not worry about it and trust that you can come back in a month or two and not really miss anything.
+As a result, the resilient thing to do is to just not worry about it and trust that you can come back to the news in a month or two and not really miss anything.
 
-# Things are never going back to how they were 
+# Things are never going back to how they were
 
 When you get a chronic illness, there's a long period where you deeply want things to go back to how they were before you had it.
 Being diagnosed with a serious illness is so abrupt and traumatic and it's hard to even understand what happened.
@@ -70,8 +70,9 @@ When you do this, it becomes easier to see that while your life is certainly dif
 You can learn to thrive in the reality you inhabit, but first you have to admit that it's reality.
 
 The Covid-19 pandemic is going to end, but that doesn't mean that Covid is going to go away, or that your life is going to go back to what it was like in 2019.
-Many governments have shopped the idea that "vaccines will give you your life back" as a way of convincing people to get vaccinated, and while perhaps a noble lie, it's still a lie.
-Since Covid is present in dozens of animal reservoirs, and much of the world is unvaccinated, we're going to have regular introductions of new Covid variants into human populations.
+Many governments have shopped the idea that "vaccines will give you your life back" as a way of convincing people to get vaccinated, and while it's true that vaccines prevent severe disease and death remarkably well, they will not magically make Covid disappear.
+Covid is present in dozens of animal reservoirs and much of the world remains unvaccinated.
+As a result, we should expect regular introductions of new Covid variants which may avoid preexisting immunity.
 Some of these will be mild, but some of them are going to cause severe disease and loss of life.
 
 The rest of your life is going to be lived in a world that experiences periodic Covid outbreaks, and you're going to have to figure out a way to live in that world.
