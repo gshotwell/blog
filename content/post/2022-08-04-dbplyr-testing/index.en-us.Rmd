@@ -15,9 +15,9 @@ keywords:
 
 # SQL generators are good actually
 
-Data science students are often told that the most important thing they can learn is how to use SQL.
+Data science students are often told that SQL is the most important tool to learn.
 This advice makes some sense given how ubiquitous SQL is in industry, but I think it's a bit overrated.
-I've been working as a data scientist for eight or years, and now am a product manager on a large data platform product, but I'm still not entirely sure I "know SQL" in any meaningful way.
+I've been working as a data scientist for eight or years, and now am a product manager on a large data platform product, but I'm still not entirely sure I really "know SQL" in any meaningful way.
 I can sort of read and write simple SQL statements, but I almost always use tools like `dbplyr` instead of writing SQL directly.
 Initially I thought this was a big gap in my knowledge base, and I felt that relying on SQL generators was a kind of crutch, but over time I've become convinced that this is a better way to work.
 
@@ -25,9 +25,9 @@ Initially I thought this was a big gap in my knowledge base, and I felt that rel
 
 The motivation for leaning SQL is that it will allow you to write effective queries.
 The idea is that if you know SQL very well you'll be able to express your ideas more quickly, and your queries will execute faster.
-The problem with this is that because different databases differ in the dialect of SQL that they use and the way in which they store the data, there's not really a general way to write effective SQL queries.
-A query which is optimal for a row-oriented database like Redshift will do poorly on a partitioned columnar database like Snowflake.
-Moreover how a specific database is set up will dramatically change which queries are optimal for that database.
+The problem with this is that because different databases differ in how they store data, and in which dialect of SQL they use, there's not really a general way to write effective SQL queries.
+A query which is optimal for a row-oriented database like Redshift may do poorly on a partitioned columnar database like Snowflake.
+Moreover how a specific database is set up will dramatically change query execution speed.
 
 This was driven home for me recently when I was writing wrapper functions for Socure's new data platform.
 I asked the engineers on the project for advice about how to query the database and they explained that it's not really possible to predict which query will run faster without testing it.
@@ -35,24 +35,25 @@ The reason for this is that modern databases do a lot of query parsing to optimi
 These parsers are quite complex which makes it hard to predict which types of queries will run most efficiently.
 
 Consider the advice to use common table expressions (CTEs) instead of subqueries in a SQL statement.
-This is usually good advice because it leads to more readable SQL code, but can lead to [600% higher costs](https://medium.com/@AtheonAnalytics/snowflake-query-optimiser-unoptimised-cf0223bdd136) when run against some databases.
+This is usually good advice because it leads to more readable SQL code, but it turns out that it can lead to [600% higher costs](https://medium.com/@AtheonAnalytics/snowflake-query-optimiser-unoptimised-cf0223bdd136) when run against some databases.
 There's no single set of best practices for writing SQL because what counts as good and bad SQL depends on which specific database you're querying.
 
 As a result of all of this most data engineers try have more or less abandoned modifying user behaviour.
-Instead of asking the user to send just the right SQL they modify the database to respond to the queries the user is actually sending.
+Instead of asking the user to send just the right SQL, they modify the database to respond to the queries the user is actually sending.
 For example if a query is running too slowly, they may set up some kind of view, or change how the data is partitioned to make the query fast.
 The idea is that the user should write a query which is understandable to them, and the database should take care of responding to that query in an efficient manner.
 
 # Writing dbplyr wrappers
 
-A big chunk of my job over the last few years has been writing database wrappers to perform common queries, and I try to use dbplyr for these functions as much as possible.
+A big chunk of my job over the last few years has been writing database wrappers to perform common queries, and whenever possible I try to use dbplyr for these functions.
 In general I have found that this approach has made it easier for me to write and maintain functions, and the queries that these functions generate are typically as or more performant than writing SQL directly.
 There are a few main reasons why I prefer this pattern.
 
 ### I have to write less code
 
 The main reason I like using dbplyr functions is that I can leverage the rest of the dbplyr ecosystem to write less code.
-For example let's say that we wanted to write a function to get the mean arrival time per airport.
+For example let's take a look at the `nycflights13` data and imagine that we wanted to write a function to get the mean arrival time per airport.
+Here are the dplyr and SQL functions I would write:
 
 ```{r}
 library("DBI")
@@ -82,7 +83,11 @@ For example maybe someone wants the function to allow you to filter by air time,
 
 ```{r}
 mean_dest_time_sql <- function(min_time, max_time, con = con) {
-  where_clause <- paste0('WHERE ("air_time" >= ', min_time, ') AND ("air_time" <= ', max_time, ')')
+  where_clause <- paste0('WHERE ("air_time" >= ', 
+                         min_time, 
+                         ') AND ("air_time" <= ', 
+                         max_time, 
+                         ')')
   
   qry <- paste0(c('SELECT "dest", AVG("arr_time") AS "mean_time"',
                   'FROM "flights"',
@@ -95,7 +100,8 @@ mean_dest_time_sql <- function(min_time, max_time, con = con) {
 }
 ```
 
-Writing functions like this is annoying because you spend a lot of time pasting queries together, but the bigger issue is that users will never stop asking for more additions and your function will gain a million arguments.
+Writing functions like this is annoying because you spend a lot of time pasting queries together, but the bigger issue is that users will never stop asking for functionality.
+Accommodating these requests will lead to a bloated, complex function with a lot of arguments.
 Using dbplyr relives us of this complication by letting the user to pass any filter they want to our wrapper function.
 
 ```{r, eval = FALSE}
@@ -123,9 +129,9 @@ Writing dbplyr functions lets you leverage all of the dbplyr infrastructure whic
 
 ### Composable database wrappers 
 
-The second main reason to use dplyr is that it lets you write composable SQL function.
+The second main reason to use dbplyr is that it lets you write composable SQL functions.
 One of the great things about dbplyr is that it is smart enough to generate adequate SQL regardless of the order in which you call the function.
-For example putting the filter and mutate in different places will generate different SQL, but both queries will return the same data.
+For example putting the filter and mutate in different places will generate different SQL, but both queries will work.
 
 ```{r}
 my_tbl |> 
@@ -157,6 +163,7 @@ They can stack it with other dplyr verbs in an arbitrary order, or even use it o
 SQL is generally speaking not composable.
 You can't write small fragments of queries and have them stack together in a predictable fashion and have them work.
 As a result when you write wrappers around query construction you end up trying to build a comprehensive function that limits the user to the things that you had in mind when you wrote it.
+Additionally you can't easily share fragments across functions which means that you end up with repetitive code.
 
 ### **Backend-agnostic functions**
 
@@ -166,8 +173,8 @@ Functions built around dbplyr will tend to work on these datasets without modifi
 
 # Testing dbplyr functions
 
-I've been writing dbplyr wrappers for some time, but I've only recently come up with a testing pattern which makes me happy.
-There are three main things that I want when testing database functions:
+I've been writing dbplyr wrappers for some time, but I've only recently come up with a testing pattern which I really.
+There are four main things that I want when testing database functions:
 
 1.  Tests should run without access to the actual database
 
@@ -181,8 +188,7 @@ Previously I would test database functions with [dittodb](https://dittodb.jonkea
 This accomplished goals 1-3, but over time I found the upkeep difficult.
 Because dittodb mocks the particular query you end up with a lot of mocks, and you need to regenerate them whenever the function changes.
 
-My new approach is to record a mock of the whole database and store that as an on-disk [duckdb database](https://duckdb.org/).
-This means that I can test many functions using the same mocked data, and the data is easier to understand.
+My new approach is to record a mock of a few records from the whole database and store that as an on-disk [duckdb database](https://duckdb.org/).
 In the test files I point my functions to the new database and run two types of tests:
 
 1.  Test that the function generates the expected SQL using the
@@ -191,7 +197,7 @@ In the test files I point my functions to the new database and run two types of 
 
 For example I would test that the `by_day` function produced the right output with a test like this:
 
-```{r, "by_day output test"}
+```{r, "by_day output test", eval = FALSE}
 library(testthat)
 test_that("by_day function genrates the right output", {
   day_counts <- tbl(mock_con, "flights") |> 
@@ -208,7 +214,7 @@ test_that("by_day function genrates the right output", {
 ```
 
 This gives future R developers a clear understanding of what this functions is supposed to do, which lets them make changes with the confidence that they won't change the user expectations.
-But I also want to generate SQL so that I can use it to commmunicate with the people who maintain the database itself.
+But I also want to generate SQL so that I can use it to communicate with the people who maintain the database.
 
 ```{r, "by_day SQL expectation", eval=FALSE}
 test_that("by_day function genrates the right SQL", {
@@ -221,7 +227,7 @@ test_that("by_day function genrates the right SQL", {
 })
 ```
 
-When you run the test suite for the first time this will generate the expected SQL query which will be used to test the function in the future:
+When you run the test suite for the first time this will generate the expected SQL query which is used to test the function in the future:
 
     Code
       show_query(count(by_day(tbl(mock_con, "flights"))))
@@ -234,9 +240,9 @@ When you run the test suite for the first time this will generate the expected S
       ) "q01"
       GROUP BY "date"
 
-This is an extremely useful test-fixture for two reasons.
+This is an extremely useful test fixture for two reasons.
 First it gives you a something which can be easily shared with the database team.
-For example if you noticed odd results when running the query against the actual database you can send them the specific query which no longer produces the expected output.
+For example if you noticed odd results when running the query against the actual database you can send them the specific query which no longer produces the expected output along with the output that it used to produce.
 You can even share this fixture with the database team to use in their tests.
 Secondly, it lets you lock down the expected query.
 This is useful if you do find out that some types of queries run better on your particular database and want to ensure that future developers don't introduce bad query patterns.
@@ -245,3 +251,4 @@ This is useful if you do find out that some types of queries run better on your 
 
 No programming framework is totally comprehensive and there are plenty of times where it's important to move past dbplyr and optimize the actual SQL that your functions generate.
 In general though I've found that starting with dbplyr saves me time and energy, and produces a better experience for the people who use my functions.
+Nine out of ten times dbplyr writes better SQL than I do.
