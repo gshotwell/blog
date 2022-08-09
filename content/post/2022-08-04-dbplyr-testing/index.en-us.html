@@ -1,0 +1,41 @@
+---
+title: Testing dbplyr packages
+author: Gordon Shotwell
+date: '2022-08-04'
+slug: dbplyr-testing
+categories:
+  - R
+  - Data Science
+tags:
+  - tag1
+  - tag2
+keywords:
+  - tech
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="sql-generators-are-good-actually" class="section level1">
+<h1>SQL generators are good actually</h1>
+<p>Data science students are often told that the most important thing they can learn is how to use SQL.
+This advice makes some sense given how ubiquitous SQL is in industry, but I think it’s a bit overrated.
+I’ve been working as a data scientist for eight or years, and now am a product manager on a large data platform product, but I’m still not entirely sure I “know SQL” in any meaningful way.
+I can sort of read and write simple SQL statements, but I almost always use tools like <code>dbplyr</code> instead of writing SQL directly.
+Initially I thought this was a big gap in my knowledge base, and I felt that relying on SQL generators was a kind of crutch, but over time I’ve become convinced that this is a better way to work.</p>
+<div id="sql-is-database-specific" class="section level3">
+<h3>SQL is database specific</h3>
+<p>The motivation for leaning SQL is that it will allow you to write effective queries.
+The idea is that if you know SQL very well you’ll be able to express your ideas more quickly, and your queries will execute faster.
+The problem with this is that because different databases differ in the dialect of SQL that they use and the way in which they store the data, there’s not really a general way to write effective SQL queries.
+A query which is optimal for a row-oriented database like Redshift will do poorly on a partitioned columnar database like Snowflake.
+Moreover how a specific database is set up will dramatically change which queries are optimal for that database.</p>
+<p>This was driven home for me recently when I was writing wrapper functions for Socure’s new data platform.
+I asked the engineers on the project for advice about how to query the database and they explained that it’s not really possible to predict which query will run faster without testing it.
+The reason for this is that modern databases do what’s called query parsing to optimize the query which is sent by the user into something that can run efficiently on the database.
+These parsers are quite complex which makes it hard to predict which types of queries will run most efficiently.</p>
+<p>As a result of all of this most data engineers try to modify the database to respond to common user queries instead of trying to get the users to send just the right SQL.
+For example if a query is running too slowly, they may set up some kind of view, or change how the data is partitioned to make the query fast.
+The idea is that the user should write a query which is understandable to them, and the database should take care of responding to that query in an efficient manner.</p>
+</div>
+</div>
