@@ -249,6 +249,6 @@ This is useful if you do find out that some types of queries run better on your 
 
 # Conclusion
 
-No programming framework is totally comprehensive and there are plenty of times where it's important to move past dbplyr and optimize the actual SQL that your functions generate.
+No programming framework is comprehensive and there are plenty of times where it's important to move past dbplyr and optimize the actual SQL that your functions generate.
 In general though I've found that starting with dbplyr saves me time and energy, and produces a better experience for the people who use my functions.
 Nine out of ten times dbplyr writes better SQL than I do.
