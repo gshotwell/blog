@@ -41,7 +41,7 @@ There's no single set of best practices for writing SQL because what counts as g
 As a result of all of this most data engineers try have more or less abandoned modifying user behaviour.
 Instead of asking the user to send just the right SQL, they modify the database to respond to the queries the user is actually sending.
 For example if a query is running too slowly, they may set up some kind of view, or change how the data is partitioned to make the query fast.
-The idea is that the user should write a query which is understandable to them, and the database should take care of responding to that query in an efficient manner.
+The idea is that the user should write a query which is understandable to them, and the database should take care of
 
 # Writing dbplyr wrappers
 
@@ -55,14 +55,11 @@ The main reason I like using dbplyr functions is that I can leverage the rest of
 For example let's take a look at the `nycflights13` data and imagine that we wanted to write a function to get the mean arrival time per airport.
 Here are the dplyr and SQL functions I would write:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library("DBI")
 library("dplyr")
 library("duckdb")
 con <- dbConnect(duckdb::duckdb(dbdir = "flights.duckdb", read_only = TRUE))
-
-on.exit(DBI::dbDisconnect(con))
-
 
 mean_dest_time_dbplyr <- function(con = con) {
   tbl(con, "flights") |>
@@ -125,7 +122,7 @@ my_tbl |>
   mean_dest_time_dbplyr() 
 ```
 
-Writing dbplyr functions lets you leverage all of the dbplyr infrastructure which means that you have less code to maintain and less education to do.
+This pattern lets you leverage all of the dbplyr infrastructure which means that you have less code to maintain and less education to do.
 
 ### Composable database wrappers 
 
@@ -133,13 +130,13 @@ The second main reason to use dbplyr is that it lets you write composable SQL fu
 One of the great things about dbplyr is that it is smart enough to generate adequate SQL regardless of the order in which you call the function.
 For example putting the filter and mutate in different places will generate different SQL, but both queries will work.
 
-```{r}
-my_tbl |> 
+```{r, composable sql}
+ tbl(con, "flights")  |> 
   filter(month == 1) |> 
   mutate(long_flight = ifelse(air_time > 100, "long", "short")) |> 
   show_query()
 
-my_tbl |> 
+ tbl(con, "flights")  |> 
   mutate(long_flight = ifelse(air_time > 100, "long", "short")) |> 
   filter(month == 1) |> 
   show_query()
@@ -161,8 +158,8 @@ Since this function can be stacked along with other dbplyr functions it gives th
 They can stack it with other dplyr verbs in an arbitrary order, or even use it on an entirely different table, and everything will still work.
 
 SQL is generally speaking not composable.
-You can't write small fragments of queries and have them stack together in a predictable fashion and have them work.
-As a result when you write wrappers around query construction you end up trying to build a comprehensive function that limits the user to the things that you had in mind when you wrote it.
+You can't write small fragments of queries and easily insert them into other queries and so your wrapper tends to need to do more work. 
+When you write wrappers with SQL query construction you end up trying to build a comprehensive function that limits the user to the things that you had in mind when you wrote it.
 Additionally you can't easily share fragments across functions which means that you end up with repetitive code.
 
 ### **Backend-agnostic functions**
@@ -191,9 +188,9 @@ Because dittodb mocks the particular query you end up with a lot of mocks, and y
 My new approach is to record a mock of a few records from the whole database and store that as an on-disk [duckdb database](https://duckdb.org/).
 In the test files I point my functions to the new database and run two types of tests:
 
-1.  Test that the function generates the expected SQL using the
+1.  Test that the function produces the right output
 
-2.  Test that the function produces the right output
+2. Test that the function generates the expected SQL
 
 For example I would test that the `by_day` function produced the right output with a test like this:
 
@@ -213,8 +210,8 @@ test_that("by_day function genrates the right output", {
 })
 ```
 
-This gives future R developers a clear understanding of what this functions is supposed to do, which lets them make changes with the confidence that they won't change the user expectations.
-But I also want to generate SQL so that I can use it to communicate with the people who maintain the database.
+This gives future developers a clear understanding of what this functions is supposed to do, which lets them make changes with the confidence that they won't violate the user expectations.
+I also want to generate SQL so that I can use it to communicate with the people who maintain the database.
 
 ```{r, "by_day SQL expectation", eval=FALSE}
 test_that("by_day function genrates the right SQL", {
@@ -242,7 +239,7 @@ When you run the test suite for the first time this will generate the expected S
 
 This is an extremely useful test fixture for two reasons.
 First it gives you a something which can be easily shared with the database team.
-For example if you noticed odd results when running the query against the actual database you can send them the specific query which no longer produces the expected output along with the output that it used to produce.
+For example if you noticed odd results when running the query against the actual database you can send them the specific query which used to work, but now fails.
 You can even share this fixture with the database team to use in their tests.
 Secondly, it lets you lock down the expected query.
 This is useful if you do find out that some types of queries run better on your particular database and want to ensure that future developers don't introduce bad query patterns.
