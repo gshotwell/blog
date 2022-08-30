@@ -1,0 +1,21 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/2022-08-04-dbplyr-testing/index.en-us.html",
+      "/posts/2022-01-11-ms-covid/index.html",
+      "/posts/2021-12-02-what-are-blockchains-good-for-anyway.en-us/index.en-us.html",
+      "/posts/2021-09-07-why-the-economist-s-excess-death-model-is-misleading/index.html",
+      "/posts/2020-11-21-how-to-make-good-decisions-from-bad-data/index.html",
+      "/posts/2020-10-23-taking-vitamin-d-back-from-the-racists/index.html",
+      "/posts/2020-06-21-masks-and-vitamin-d/index.html",
+      "/posts/2020-05-23-race-and-covid-19/index.html",
+      "/posts/2020-05-03-vitamin-d-and-covid-19/index.html",
+      "/posts/2019-12-30-why-i-use-r/index.html",
+      "/posts/2019-04-19-technical-debt-for-data-scientists/index.html",
+      "/posts/2018-05-01-model-testing/index.html",
+      "/posts/2017-08-29-learning-data-science/index.html",
+      "/posts/2017-02-02-r-for-excel-users/index.html"
+    ]
+  }
+]

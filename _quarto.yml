@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Gordon Shotwell"
+  twitter-card: true
+  google-analytics: "UA-98228149-1"
+  navbar:
+    right:
+      - blog.qmd
+      - text: Presentations
+        menu: 
+          - text: "Technical Debt is a Social Problem"
+            href: presentations/tech-debt.qmd
+          - text: "Building secure systems"
+            href: presentations/secure-systems.qmd
+      - icon: github
+        href: https://github.com/GShotwell
+      - icon: twitter
+        href: https://twitter.com/GShotwell
+  search: 
+    location: navbar
+    type: overlay
+format:
+  html:
+    theme: sandstone
+    css: styles.css
+
+
+
