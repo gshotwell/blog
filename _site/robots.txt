@@ -1,0 +1,1 @@
+Sitemap: https://shotwell.ca/sitemap.xml

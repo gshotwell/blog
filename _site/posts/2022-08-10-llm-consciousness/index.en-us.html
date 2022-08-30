@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="R package build">
+<meta name="dcterms.date" content="2022-08-10">
+<meta name="keywords" content="tech">
+
+<title>Gordon Shotwell - Language models will never be conscious</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script type="text/javascript">
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-98228149-1', 'auto');
+
+ga('send', {
+  hitType: 'pageview',
+  'anonymizeIp': true,
+});
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Gordon Shotwell - Language models will never be conscious">
+<meta name="twitter:description" content="Many engineers who work in deep learning are worried about machines gaining consciousness.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Gordon Shotwell</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-presentations" role="button" data-bs-toggle="dropdown" aria-expanded="false">Presentations</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-presentations">    
+        <li>
+    <a class="dropdown-item" href="../../presentations/tech-debt.html">
+ <span class="dropdown-text">Technical Debt is a Social Problem</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentations/secure-systems.html">
+ <span class="dropdown-text">Building secure systems</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/GShotwell"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/GShotwell"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Language models will never be conscious</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Data Science</div>
+                <div class="quarto-category">philosophy</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>R package build </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 10, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>Many engineers who work in deep learning are worried about machines gaining consciousness. Over the last ten years there’s been an explosion in tools which use deep learning to solve problems which were previously only the domain of human beings, and this has led many people to believe that it’s just a matter of time before these systems gain consciousness. The worry is that if we’re not super careful consciousness will just accidentally emerge from these networks and we will enter a kind of feedback loop where the machine intelligence will take over our society to make itself smarter. This is a genuine worry for people, it’s caused people to quit their jobs, and fund think tanks dedicated to the subject, but I think it’s completely misplaced and based on a bad theory of consciousness.</p>
+<section id="what-do-you-mean-by-consciousness" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-you-mean-by-consciousness">What do you mean by consciousness?</h2>
+<p>Most of the people worried about machine consciousness are computer programmers, and as far as I can tell they do not have a very thoughtful articulation of their theory of mind. Somehow they’re profoundly worried about accidentally creating machine consciousness without really articulating what it means for someone or something to be conscious. I think most of these commentators kind of implicitly believe a theory of mind called the <a href="https://en.wikipedia.org/wiki/Type_physicalism">mind-brain identity theory</a>, which holds that mental states are reducible to a particular organisation of the brian. Under this theory, what it means to desire or belive something is to have your brain exist in a particular functional state. In the same way that a physical object <em>really is</em> just a bunch of atoms organized in a particular state, your mind <em>really is</em> just a bunch of neurons organized in a particular state.</p>
+<p>This theory of mind implies that machine consciousness is possible. After all if all that’s required for consciousness is a funtional organization of neurons, then if you replicate those relationships in a computer program you’ll have replicated that consciousness. Unfortunately, the mind-brain identity theory is wrong because it doesn’t account for the body.</p>
+</section>
+<section id="a-short-introduction-to-cognitive-embodiment" class="level2">
+<h2 class="anchored" data-anchor-id="a-short-introduction-to-cognitive-embodiment">A short introduction to cognitive embodiment</h2>
+<p>Cognitive embodiment is that the body and mind are irreducibly interdependent on one another. In other words part of what it means to be conscious is to be situated in a particular physical state, and it’s nonsensical to describe conscious divorced from that physical state.</p>
+<p>Before getting into some of the reasons why this theory of mind is true, it’s worth spending a moment to understand what embodiment and preconception. <a href="https://en.wikipedia.org/wiki/Proprioception">Propreoception</a> is sense of your body’s orientation in space. If you close your eyes and move your hand you have an awareness of your hand’s new position even if you didn’t touch anything. Similarly, you have a pre-conceptual understanding of the physical limits of your body. You know, for example, that your left leg is a part of “you” in a sense in which your hair or cloths are not. This awareness is ever-present in our lives, and all of out thoughts and actions take place against this backdrop. An embodied consciousness is one which exists with that kind of physical awareness.</p>
+</section>
+<section id="why-the-body-is-a-precondition-for-consciousness" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-body-is-a-precondition-for-consciousness">Why the body is a precondition for consciousness</h2>
+<p>Cognitive embodiment is probably the oldest theory of mind, as it’s an essential part of the the basis of the <a href="https://en.wikipedia.org/wiki/Skandha">Buddhist account of consciousness</a>, but the clearest argument I’ve read in modern philosophy is <em>How the Body Shapes the Mind</em> by <a href="academia.edu/865282/Shaun_Gallagher_How_the_Body_Shapes_the_Mind">Shaun Gallagher</a>. I’m going to offer a brief sketch of the argument for embodiment, but if you’re interested in this subject I’d really recommend looking at the longer works.</p>
+<section id="phenomenological-intuition" class="level3">
+<h3 class="anchored" data-anchor-id="phenomenological-intuition">Phenomenological intuition</h3>
+<p>The basic intuition of embodiment is that when you look at your own conscious thoughts, or consider other conscious beings you see that they’re all irreducibly embodied. Every thought, feeling, or desire you have exists in relationship to your body, and it’s impossible to separate the mental parts of that experience from the physical ones. For example the experience of riding a roller coaster has mental and physical components, and it’s really impossible to figure out where the mental part ends and the physical one begins. If your heart didn’t race in response to your adrenal gland releasing adrenalin it wouldn’t be the same experience. Similarly, if you didn’t have the conscious knowledge that the roller coaster was safe, the sensory experience of being on the roller coaster would be different.</p>
+<p>Most people are confident that the brain is the organ that generates consciousness, but it’s hard to even answer the question of how to separate the brain from the body. If you think that the electro-chemical signals that make up the brain are consciousness why shouldn’t you include the electro-chemical signals in the brain stem? If you include those why not the rest of the nervous system? If the nervous system counts as mind why not the limbic system which produces so many psychoactive hormones? All of these lines seem arbitrary which suggests that the body and mind are a single thing. We conceptually refer to the ‘physical’ and ‘mental’ parts of experience just like we can conceptually differentiate between electricity and magnetism. In reality they’re expressions of a single underlying process.</p>
+</section>
+<section id="development-of-higher-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="development-of-higher-thinking">Development of higher thinking</h3>
+<p>The second major argument for cognitive embodiment is that embodied consciousness <em>precedes</em> what we think of as higher order thinking. Children start developing higher order thinking around the age of three or four. Around this age they start to form long-term memories, express thoughts in complex abstract sentences, and begin to understand numbers. I’m not sure that the typical four-year-old would be able to pass a Turing test, but they’re definitely able to do some relatively difficult tasks. However they have a self long before they’re able to do any of these things. Very young infants are able to distinguish between self and other, they direct and shape their environment, and as parent will tell you they have clear and obvious desires. All of these things are possible because the embodied understanding of the self – who and where you are in the world – develops much earlier than higher-order cognitive abilities.</p>
+<p>The fact that consciousness precedes conceptual thought is one of the main reasons that humans are so much more efficient at learning complex concepts than neural networks. For example the GPT-3 language model does a pretty good job in understanding text, but building it used a vast supply of energy. Training the model required billions of training examples, <a href="https://blog.scaleway.com/doing-ai-without-breaking-the-bank-yours-or-the-planets/#:~:text=In%20a%20traditional%20data%20center,MWh%20x%201.5%20%3D%201404%20MWh.">1.5 gigawatts of electricity</a>, and the dedicated work of many scientists. By contrast the average five year old learns a much wider variety of skills with very few examples, a regular supply of apple slices and buttered noodles, and the attention of a few distracted adults. Children can learn so efficiently because they have a self <em>before</em> they start learning. This allows them to self-reflect on what they understand and what they don’t understand and to challenge their environment to fill in the missing pieces.</p>
+<p>The fact that embodied consciousness precedes conceptual ability should at least make you think that embodiment is requirement for consciousness. Every example of a conscious being you can think of is embodied, and in every case that consciousness started before they were able to work in complex concepts.</p>
+</section>
+</section>
+<section id="consciousness-is-logically-dependent-on-embodiment" class="level2">
+<h2 class="anchored" data-anchor-id="consciousness-is-logically-dependent-on-embodiment">Consciousness is logically dependent on embodiment</h2>
+<p>The final argument for cognitive embodiment is that consciousness is logically dependent on embodiment. Embodiment is a logical precondition for consciousness because it defines the limits of the self and it grounds our spatial perception.</p>
+<p>Most of our thoughts and beliefs rely in some form on an intuition about the self. When we say “I’m angry” or “I believe” we’re assuming a definition of the self. Those thoughts really don’t make any sense without some kind of axiomatic, intuitive understanding of out own being. Very few of our thoughts and emotions make sense without this understanding.</p>
+<p>Embodiment defines this pre-existing sense of self and so is necessary for consciousness. Whenever someone expresses a conscious thought they are implicitly referencing their own embodiment. When I say that the sky is blue, I’m relying on an implicit embodied understanding of the limits of the self.</p>
+<p>AI systems do not have a body and so can’t devleop this type of self awareness. For example consider a large language model like <a href="https://openai.com/blog/dall-e/">DALLE-2</a> which can generate realistic artwork from text imputs. On the one hand DALLE-2 <em>looks</em> conscious because it can do some of the tasks that we associate with consciousness, but since it has no embodied awareness it’s hard to understand how a program like DALLE-2 would develop self awareness. How would DALLE-2 differentiate between self and other? Is the training data part of its being? What about the prompts which are fed in by humans?g</p>
+<p>Similarly imagine if you replicated the computations of DALLE-2 by asking a billion people to perform the underlying arithmetic using pen and paper. While this would faithfully replicate the behaviour of the computer program, it’s clearly more of an economy or social organization than it is a consciousness. We’re surrounded by complex systems like this which solve incredibly complex problems without developing consciousness. Economies, ecological systems, and social networks all solve complex problems much better than individual human beings, but they don’t have selves because there’s nothing to define that self.</p>
+<p>At this point someone who worries about conscious machines might say “I’m not worried about machines developing human consciousness, I’m worried about them developing a vast diffuse machine consciousness.” I think people who hold this worry have really exited the real of science or philosophy and have started doing a kind of theology. They look at a complex process and see a god or a demon. Words like “consciousness”, “intelligence”, and “self” are all <a href="https://plato.stanford.edu/entries/rigid-designators/">rigid designators</a> which refer to human-like mental experiences. Redefining those words to include vague problem-solving organizations is a kind of definitional trick.</p>
+</section>
+<section id="robots-are-not-embodied" class="level1">
+<h1>Robots are not embodied</h1>
+<p>Robots are the main way that so called AI systems can directly interact with the physical world, so it might be natural to think that robots will eventually develop embodiment and the foundation for consciousness. Robots, however are not and will never be embodied.</p>
+<p>There are few strategies for an entity to navigate the physical world. Humans and all other self-replicating conscious organisms use embodiment. Our pre-conceptual experience of our body defines both <em>what</em> we are and <em>where</em> we are in space, and this lets us define our motivations and figure out how to accomplish them physically. Our actions in physical world are self-contained, we use intrinsic reference points to get around in the world instead of relying on external reference points. This is a big part of why human beings are such good generalists. You can pick up a human being and drop them into a totally different environment and they’ll do just fine.</p>
+<p>Robots on the other hand rely on external reference points to navigate the physical world. Your Roomba doesn’t need an embodied understanding of itself because it has programmers to define its capacities, the base station to ground its perceptual space, and a user to tell it what to do. The cost of this is that the robot is a terrible generalist, if you give it a novel problem or an environment that’s outside of its specification it will tend to fall down. All of our current robotics projects are designed in this way, because we design robots to accomplish a narrow band of tasks and its easier to do that with extrinsic reference points.</p>
+<p>While this is an argument that our <em>current</em> robots are not embodied and therefore not conscious, why am I confident that they will <em>never</em> gain that capacity? The reason is economic more than scientific. The value of robots is that they can displace human workers at specific tasks, and so there’s not a lot of value in an embodied generalist robot.</p>
+<p>For example, imagine that you’re Jeff Bezos and you’re being asked to invest in two robotics projects. One costs a billion dollars and uses established techniques to create a hundred models of specialist robots to replace human warehouse workers while the other costs a hundred billion dollars and relies on speculative technology to develop an embodied generalist robot. Why would you ever invest in the embodied model when the group of cheap specialists will cost less and perform better? The only thing you get out of developing an embodied machine is a robot which might have self-awareness and a will of its own, which are bad things from Amazon’s perspective.</p>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>The proliferation of increasingly capable statistical systems is and will continue to be profoundly disruptive, but that disruption is more like prior innovations like the railroad or the internet. It’s right to worry about AI because like those other systems it has the potential to entrench systems of power, oppress marginalized groups, and fail catastrophically. We should not, however, worry about a large language model or other AI system accidentally gaining consciousness.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
