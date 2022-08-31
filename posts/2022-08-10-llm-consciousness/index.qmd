@@ -1,0 +1,152 @@
+---
+title: Large language models will never be conscious
+author: Gordon Shotwell
+image: images/alison-wang-mou0S7ViElQ-unsplash.jpg
+twitter-card:
+  image:images/alison-wang-mou0S7ViElQ-unsplash.jpg
+date: '2022-08-10'
+slug: machine-consciousness
+categories:
+  - Data Science
+  - philosophy
+---
+
+## People are genuinely worried about conscious AI
+
+Many engineers who work in deep learning are worried about machines gaining consciousness.
+Over the last ten years there's been an explosion in tools which use deep learning to solve problems which were previously only the domain of human beings, and this has led many people to believe that it's just a matter of time before these systems gain consciousness.
+The worry is that if we're not super careful, consciousness will just accidentally emerge from these systems and we will enter a kind of feedback loop where machine intelligence will take over our society.
+This is a genuine worry for people; it's caused people to [lose their jobs](https://www.theguardian.com/technology/2022/jun/12/google-engineer-ai-bot-sentient-blake-lemoine), and almost [half of AI researchers](https://80000hours.org/problem-profiles/artificial-intelligence/#experts-are-concerned) believe there's a real chance that AI will cause humans to become extinct.
+I think that this worry arises from a bad theory of consciousness, and that consciousness is not possible in our current AI systems.
+
+## What do you mean by consciousness?
+
+Most of the people worried about machine consciousness are computer programmers, and as far as I can tell they do not have a very thoughtful articulation of their theory of mind.
+Somehow they're profoundly worried about accidentally creating machine consciousness without really articulating what it means for someone or something to be conscious.
+I think most of these commentators kind of implicitly believe the [mind-brain identity theory](https://en.wikipedia.org/wiki/Type_physicalism), which holds that mental states are reducible to a particular organisation of the brain.
+Under this theory, what it means to desire or believe something is to have your brain exist in a particular functional state.
+In the same way that a physical object really is just a bunch of atoms organized in a particular way, your mind really is just a bunch of neurons organized in a particular functional state.
+
+This theory of mind implies that machine consciousness is possible.
+After all if all that's required for consciousness is a functional organization of neurons, then you should be able to replicate that organization in another medium.
+As a result you should be to create a thought in a virtual brain by replicating the functional organization of a physical brain.
+However, this theory of mind is wrong because it doesn't account for the body.
+
+## A short introduction to cognitive embodiment
+
+Cognitive embodiment is the theory that the body and mind are irreducibly interdependent on one another.
+In other words part of what it means to be conscious is to be situated in a particular physical body, and it's nonsensical to describe consciousness divorced from that body.
+
+Before getting into some of the reasons why this theory of mind is compelling, it's worth spending a moment to understand what embodiment and preconception is.
+ [Proprioception](https://en.wikipedia.org/wiki/Proprioception) is the sense of your body's orientation in space.
+If you close your eyes and move your hand you have an awareness of your hand's new position even if you didn't touch anything.
+Similarly, you have a pre-conceptual understanding of the physical limits of your body.
+You know, for example, that your left leg is a part of "you" in a sense in which your hair or clothes are not.
+This awareness is ever-present in our lives, and all of our thoughts and actions take place against this backdrop.
+An embodied consciousness is one which exists with that kind of physical awareness.
+
+## **Why the body is a precondition for consciousness**
+
+Cognitive embodiment is probably the oldest theory of mind, as it's the basis of the [Buddhist account of consciousness](https://en.wikipedia.org/wiki/Skandha), but the clearest argument I've read in modern philosophy is How the Body Shapes the Mind by Shaun Gallagher.
+I'm going to offer a brief sketch of the argument for embodiment, but if you're interested in this subject I'd really recommend reading that book.
+
+### Phenomenological intuition
+
+The basic intuition of embodiment is that when you look at your own conscious thoughts, or consider other conscious beings, you see that they're all embodied.
+Every thought, feeling, or desire you have exists in relationship to your body, and it's impossible to separate the mental parts of that experience from the physical ones.
+Take, for example, the experience of riding a roller coaster.
+This experience has mental and physical components, but it's really impossible to figure out where the mental part ends and the physical one begins.
+If your heart didn't race in response to your adrenal gland releasing adrenalin it wouldn't be the same experience.
+Similarly, if you didn't have the conscious knowledge that the roller coaster was safe, the sensory experience of being on the roller coaster would be different.
+It's possible to draw lines between the the physical and mental parts of the experience, but these lines are all pretty arbitrary.
+
+Most people are confident that the brain is the organ that generates consciousness, but it's hard to even answer the question of how to separate the brain from the body.
+If you think that the electro-chemical signals that make up the brain are consciousness, why shouldn't you include the electro-chemical signals in the brain stem?
+If you include those, why not the rest of the nervous system?
+If the nervous system counts as mind, why not the limbic system which produces so many psychoactive hormones?
+All of these lines seem arbitrary, which suggests that the body and mind are a single thing.
+We conceptually refer to the 'physical' and 'mental' parts of experience just like we can conceptually differentiate between electricity and magnetism.
+In reality they're expressions of a single underlying process.
+
+### Development of higher thinking
+
+The second major argument for cognitive embodiment is that embodied consciousness precedes what we think of as higher-order thinking.
+Children start developing higher-order thinking around the age of three or four.
+Around this age they start to form long-term memories, express abstract thoughts using complex sentences, and begin to understand numbers.
+However, children have a self long before they're able to do any of these things.
+Very young infants are able to distinguish between self and other, they direct and shape their environment, and any parent will tell you they have clear and obvious desires.
+All of these things are possible because the embodied understanding of the self -- who and where you are in the world -- develops much earlier than higher-order cognitive abilities.
+
+The fact that consciousness precedes conceptual thought is one of the main reasons that humans are so much more efficient at learning complex concepts than neural networks.
+For example the GPT-3 language model does a pretty good job in understanding text, but building it used a vast supply of energy.
+Training the model required billions of training examples, [1.5 gigawatts of electricity](https://blog.scaleway.com/doing-ai-without-breaking-the-bank-yours-or-the-planets/#:~:text=In%20a%20traditional%20data%20center,MWh%20x%201.5%20%3D%201404%20MWh.), and the dedicated work of many scientists.
+By contrast, the average five year old learns a much wider variety of skills with just a few examples, the attention of a few distracted adults, and a regular supply of apple slices and buttered noodles.
+Children can engage in this self-directed learning because they have a self before they start learning.
+This allows them to self-reflect on what they understand and what they don't understand and to challenge their environment to fill in the missing pieces.
+Neural networks can't do that because they are computer programs, not embodied beings.
+
+The fact that embodied consciousness precedes conceptual ability should make you think that embodiment is requirement for consciousness.
+Every example of a conscious being you can think of is embodied, and in every case that embodiment came first.
+
+## **Consciousness is logically dependent on embodiment**
+
+The final argument for cognitive embodiment is that consciousness is logically dependent on embodiment because it delineates self and other.
+
+Most of our thoughts and beliefs rely in some form on an intuition about the self.
+When we say, "I'm angry," or "I believe," we're assuming a definition of the self because those thoughts really don't make any sense if you don't know what the word "I" refers to.
+This intuition of the self can't be deduced from other thoughts because they also rely on some way of delineating self and other.
+Embodiment defines this pre-existing sense of self and so is necessary for consciousness.
+What we mean when we say the word "I" is the set of things which are encompassed by embodiment.
+
+AI systems do not have a body and so can't develop this type of self awareness.
+For example consider a large language model like [DALL-E](https://openai.com/blog/dall-e/) which can generate realistic artwork from text inputs.
+On the one hand DALL-E looks conscious because it can do some of the tasks that we associate with consciousness, but since it has no embodied awareness it's hard to understand how a program like DALL-E would understand itself.
+How would DALLE-2 differentiate between self and other?
+Is the training data part of its being?
+What about the prompts which are fed in by humans?
+Since the system has no body it can't distinguish between "self" and "non-self" and so it's hard to understand how it could want or decide something.
+There's literally no "it" there.
+
+Similarly imagine if you replicated the computations of DALLE-2 by asking a billion people to perform the underlying arithmetic using pen and paper.
+While this would faithfully replicate the behavior of the computer program, it's clearly more of an economy or social organization than it is a consciousness.
+We're surrounded by complex systems like this which solve incredibly complex problems without developing consciousness.
+Economies, ecological systems, and social networks all solve complex problems much better than individual human beings, but they don't have selves because there's nothing to define that self.
+
+At this point, someone who worries about machine consciousness might say, "I'm not worried about machines developing human consciousness, I'm worried about them developing a vast, diffuse machine consciousness." I think people who hold this view have exited the realm of science or philosophy and have started doing a kind of theology.
+They look at a complex process that they don't quite understand and see a god or a demon.
+Words like "consciousness," "intelligence," and "self" are all [rigid designators](https://plato.stanford.edu/entries/rigid-designators/) which refer to human-like mental experiences, and redefining those words to include vague problem-solving organizations is a kind of definitional trick.
+Moreover, the specific AI dangers that people reference are all intuitions about embodied consciousness, and it's hard to see how they apply to a disembodied one.
+How would something without an embodied sense of self "want" or "decide" something?
+
+## Robots are not embodied
+
+Robots are the main way that AI systems interact with the physical world, so it might be natural to think that we may end up with a kind of embodied conscious robot.
+Robots however are not embodied and the economics of robotics ensures that they never will be.
+
+There are few strategies for an entity to navigate the physical world.
+Humans and all other self-replicating organisms use embodiment.
+Our pre-conceptual experience of our body defines both what we are and where we are in space, and this lets us define our motivations and figure out how to accomplish them physically.
+We use intrinsic reference points to situate ourselves get around in the world instead of relying on external reference points.
+This is a big part of why human are such good generalists.
+You can pick up a human being and drop them into a totally different environment and they'll be able to orient themselves in space and navigate the world just fine.
+
+Robots, on the other hand, rely on external reference points to navigate the physical world.
+Your Roomba doesn't need an embodied understanding of itself because it has programmers to define its capacities, the base station to orient itself in space, and a user to tell it what to do.
+The cost of this is that the robot is a terrible generalist.
+If you give it a novel problem or an environment that's outside of its specification it will tend to fail.
+All of our current robotics projects are designed in this way, because it's much more cost-effective to build a robot which excels at a specific task using lots of extrinsic support than to try to build an embodied generalist.
+
+While this is an argument that our current robots are not embodied and therefore not conscious, why am I confident that they will never gain that capacity?
+The reason is money.
+The value of robots is that they can displace human workers at specific tasks, and it's hard to see why a single generalist robot would generate more value than many specialized ones.
+
+For example, imagine that you're Jeff Bezos and you're being asked to invest in two robotics projects.
+One costs a billion dollars and uses established techniques to create a hundred models of specialist robots to replace human warehouse workers while the other costs a hundred billion dollars and relies on speculative technology to develop an embodied generalist robot.
+Why would you ever invest in the embodied model when the group of cheap specialists will cost less and perform better?
+The only thing you get out of developing an embodied machine is a robot which might have self-awareness and a will of its own, which are bad things from Amazon's perspective.
+
+## Conclusion
+
+The proliferation of increasingly capable statistical systems is and will continue to be profoundly disruptive, but that disruption is more like prior innovations like the railroad or the internet.
+It's right to worry about AI because like those other systems it has the potential to entrench systems of power, oppress marginalized groups, and fail catastrophically.
+We should not, however, worry about a large language model or other AI system accidentally gaining consciousness.
