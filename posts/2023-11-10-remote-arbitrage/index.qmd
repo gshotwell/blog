@@ -1,5 +1,5 @@
 ---
-title: Canada's Untapped Talent: The Remote Hiring Opportunity You're Missing
+title: "Canada's untapped talent: the remote hiring opportunity you're missing"
 author: Gordon Shotwell
 image: imgs/maple-leaf.jpg
 twitter-card:
@@ -69,7 +69,8 @@ ggplot(df, aes(x = salary, fill = type, color = type, group = type)) +
   geom_vline(xintercept = quantile(df$salary, probs = 0.95)) +
   labs(x = "Salary", y = "Count", title = "Canadian salary distribution") +
   scale_x_continuous(labels = NULL) +
-  scale_y_continuous(labels = NULL)
+  scale_y_continuous(labels = NULL) +
+  annotate("text", x = quantile(df$salary, probs = 0.95), y = Inf, label = "salary estimate", vjust = 2, hjust = 1)
 ```
 
 

@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+    - "*.qmd"
+    - "!archived"
 
 website:
   title: "Gordon Shotwell"
@@ -7,7 +10,7 @@ website:
   google-analytics: "UA-98228149-1"
   navbar:
     right:
-      - blog.qmd
+      - about.qmd
       - text: Presentations
         menu: 
           - text: "Technical Debt is a Social Problem"
