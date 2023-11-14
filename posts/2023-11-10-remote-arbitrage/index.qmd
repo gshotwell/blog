@@ -54,6 +54,7 @@ When a company targets the 90% percentile of the global salary range, they will 
 
 ```{r}
 #| echo: false
+#| warning: false
 library(ggplot2)
 
 df1 = tibble::tibble(type = "Local workers",
@@ -66,11 +67,11 @@ df = dplyr::bind_rows(df1, df2)
 ggplot(df, aes(x = salary, fill = type, color = type, group = type)) +
   geom_histogram() +
   theme_minimal() + 
-  geom_vline(xintercept = quantile(df$salary, probs = 0.95)) +
+  geom_vline(xintercept = quantile(df$salary, probs = 0.9)) +
   labs(x = "Salary", y = "Count", title = "Canadian salary distribution") +
   scale_x_continuous(labels = NULL) +
   scale_y_continuous(labels = NULL) +
-  annotate("text", x = quantile(df$salary, probs = 0.95), y = Inf, label = "salary estimate", vjust = 2, hjust = 1)
+  annotate("text", x = quantile(df$salary, probs = 0.9), y = 76, label = "Salary Estimate", vjust = 2, hjust = 0.5, angle=90)
 ```
 
 
