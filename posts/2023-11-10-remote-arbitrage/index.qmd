@@ -10,8 +10,7 @@ categories:
   - Economics
 ---
 
-My first data job was at a clinical trial company called DGI Clinical in Halifax. 
-I was a data scientist and made $45,000 a year which was a competitive salary in 2015. 
+My first data job was as a data scientist at a clinical trial company in Halifax in 2015.
 I didn’t love the job and when I started looking for my next role, I discovered a remote-first company called Upworthy which was hiring for a  data analyst position. 
 I ended up getting the job, and to my delight the salary was more than double what I was making. 
 
@@ -50,7 +49,8 @@ This creates a kind of drag on how quickly salaries will rise because most firms
 
 The bigger issue though is that Canadian salaries are bimodal. 
 There's a large group of people who work for local companies and don't make that much money, and a smaller group of remote workers who make significantly more. 
-When a company targets the 90% percentile of the global salary range, they will end up with target which low relative to the set of remote workers.
+When a company targets the 90% percentile of the global salary range, they will end up with a target salary which low relative to the set of remote workers.
+Here's an example of what that distribution might look like, note that while this data is made up it is roughly in line with wages in a place like Nova Scotia. 
 
 ```{r}
 #| echo: false
@@ -68,7 +68,10 @@ ggplot(df, aes(x = salary, fill = type, color = type, group = type)) +
   geom_histogram() +
   theme_minimal() + 
   geom_vline(xintercept = quantile(df$salary, probs = 0.9)) +
-  labs(x = "Salary", y = "Count", title = "Canadian salary distribution") +
+  labs(x = "Salary", 
+       y = "Count", 
+       title = "Canadian salary distribution", 
+       subtitle = "Data is made up") +
   scale_x_continuous(labels = NULL) +
   scale_y_continuous(labels = NULL) +
   annotate("text", x = quantile(df$salary, probs = 0.9), y = 76, label = "Salary Estimate", vjust = 2, hjust = 0.5, angle=90)
@@ -76,7 +79,7 @@ ggplot(df, aes(x = salary, fill = type, color = type, group = type)) +
 
 
 This supposedly data-driven HR approach has never made sense to me because companies should worry more about profit and productivity than they do about matching a local labour market. 
-If you can profitably hire someone at some salary you should do so even if that salary if higher than their local market. 
+If you can profitably hire someone at some salary you should do so even if that salary is higher than their local market. 
 If Canadians really do demand lower wages, then shouldn't you freeze US hiring and only hire Canadians? 
 
 ### Cheaper offshoring opportunities
@@ -85,7 +88,7 @@ One of the problems with Canadian hiring is that people implicitly think of it a
 When you think about it this way it doesn't make a lot of sense because there are much cheaper geographies than Canada. 
 Instead of hiring a Canadian for 70% of what an American makes, why not hire someone from Poland, India, or Brazil for much less than that?
 
-What this analysis misses is that it's a lot easier to integrate remote Canadian workers than workers from less developed countries. 
+What this analysis misses is that it's a lot easier to integrate remote Canadian workers than workers from lower income countries. 
 I've worked with many off-shore colleagues, and while it's often wonderful it involves a lot of work. 
 There are often time-zone, language, or cultural communication problems which all require work to overcome. 
 None of these issues are deal-breakers exactly, but it requires investment to set up an off-shore team for success. 
@@ -96,7 +99,7 @@ This means that Canadians are substitutes for Americans in ways that other count
 In the realm of remote work, distinguishing between a Vancouverite and a Seattleite, a Torontonian and a Chicagoan, or a Nova Scotian and a Mainer, is pretty much impossible.
 Similarly, the two countries have very similar legal systems, and you never have to worry about a Canadian getting a Visa to attend a company meetup. 
 
-This isn't to say that nearshoring or offshoring is a bad idea, or that those workers are worse than Canadians, but just that they're fundamentally different concepts. 
+This isn't to say that near-shoring or off-shoring is a bad idea, or that those workers are worse than Canadians, but just that they're fundamentally different concepts. 
 You can hire Canadians without making any real changes to how your company is organized because they will fit right in to your existing teams. 
 
 ### Information disparities
@@ -126,5 +129,5 @@ Finally, in the unlikely event that the exchange rate really spikes, you can alw
 # So what's going on?
 
 I'm generally a believer in markets, and so the fact that there is such a large and persistent gap in real earnings suggests that there's something about this labour market that I don't understand. 
-If you have any ideas about what's going on, or if you're company has a unique approach to cross-border hiring, I'd love to hear from you. 
+If you have any ideas about what's going on, or if your company has a unique approach to cross-border hiring, I'd love to hear from you. 
 If you can't think of any explanations for this apparent market failure, maybe you should consider hiring more Canadians. 
