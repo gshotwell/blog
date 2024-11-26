@@ -4,9 +4,8 @@ image: profile.jpg
 about:
   template: trestles
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/gshotwell
+    - text: "{{< iconify simple-icons bluesky >}} Bluesky"
+      href: https://bsky.app/profile/shotwell.ca
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/gshotwell/

@@ -19,11 +19,9 @@ website:
             href: presentations/tech-debt.qmd
           - text: "Building secure systems"
             href: presentations/secure-systems.qmd
-      - icon: github
+      - text: "{{< iconify simple-icons github >}}"
         href: https://github.com/GShotwell
-      - icon: twitter
-        href: https://bsky.app/profile/shotwell.ca
-      - icon: flower2
+      - text: "{{< iconify simple-icons bluesky >}}"
         href: https://bsky.app/profile/shotwell.ca
   search: 
     location: navbar

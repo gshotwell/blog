@@ -5,6 +5,7 @@ class BlueskyCommentsSection extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     this.visibleCount = 3
     this.thread = null
+    this.hiddenReplies = null
     this.error = null
   }
 
@@ -38,6 +39,9 @@ class BlueskyCommentsSection extends HTMLElement {
     try {
       const thread = await this.fetchThread(uri)
       this.thread = thread
+      if ('post' in thread && 'threadgate' in thread.post && thread.post.threadgate) {
+        this.hiddenReplies = thread.post.threadgate?.record?.hiddenReplies
+      }
       this.render()
     } catch (err) {
       this.renderError('Error loading comments')
@@ -86,20 +90,11 @@ class BlueskyCommentsSection extends HTMLElement {
       return
     }
 
-    // Filter out replies that only contain 📌
-    const filteredReplies = this.thread.replies.filter(reply => {
-      const text = reply.post.record?.text || ''
-      return text.trim() !== '📌'
-    })
-
-    if (!filteredReplies) {
+    const sortedReplies = this.#filterSortReplies(this.thread.replies)
+    if (!sortedReplies || sortedReplies.length === 0) {
       this.renderError('No comments found')
       return
     }
-
-    const sortedReplies = filteredReplies.sort(
-      (a, b) => (b.post.likeCount ?? 0) - (a.post.likeCount ?? 0)
-    )
 
     const comments = document.createElement('comments')
     comments.innerHTML = `
@@ -137,6 +132,35 @@ class BlueskyCommentsSection extends HTMLElement {
     }
   }
 
+  #filterSortReplies (replies) {
+    // Filter out blocked/not found replies
+    // and replies that only contain 📌
+    const filteredReplies = replies.filter(reply => {
+      if (this.hiddenReplies && this.hiddenReplies.includes(reply.post.uri)) {
+        return false
+      }
+      if ('blocked' in reply && reply.blocked) {
+        return false
+      }
+      if ('notFound' in reply && reply.notFound) {
+        return false
+      }
+
+      const text = reply.post.record?.text || ''
+      return text.trim() !== '📌'
+    })
+
+    if (!filteredReplies) {
+      return []
+    }
+
+    const sortedReplies = filteredReplies.sort(
+      (a, b) => (b.post.likeCount ?? 0) - (a.post.likeCount ?? 0)
+    )
+
+    return sortedReplies
+  }
+
   escapeHTML (htmlString) {
     return htmlString
       .replace(/&/g, '&amp;') // Escape &
@@ -171,9 +195,7 @@ class BlueskyCommentsSection extends HTMLElement {
       const repliesContainer = document.createElement('div')
       repliesContainer.classList.add('replies-container')
 
-      reply.replies
-        .sort((a, b) => (b.post.likeCount ?? 0) - (a.post.likeCount ?? 0))
-        .filter(p => (p.post.record?.text || '').trim() !== '📌')
+      this.#filterSortReplies(reply.replies)
         .forEach((childReply) => {
           repliesContainer.appendChild(this.createCommentElement(childReply))
         })
