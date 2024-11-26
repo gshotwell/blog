@@ -6,7 +6,7 @@ format: html
 
 This talk was delivered at [rstudio::conf(2020)](https://www.rstudio.com/conference/).
 
-{{< youtube =Hk3m_mLDzpY >}}
+{{< youtube Hk3m_mLDzpY >}}
 
 Technical debt is a big problem for the R community.
 Even though R has excellent support for testing, documentation and packaging code it has the reputation that it is not suitable for production applications because data scientists don't pay enough attention to technical debt within their codebases.

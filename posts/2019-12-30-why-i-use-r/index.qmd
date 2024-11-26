@@ -61,9 +61,6 @@ NSE reminds me of a niche and dangerous power tool:
 it shouldn't be the first thing you reach for, and it's very dangerous if you don't know what you're doing, 
 but it allows you to solve problems that would  be otherwise  unsolvable. 
 
-```{r, echo = FALSE}
-blogdown::shortcode("youtube", "ox93snKVuaM")
-```
 
 There are three main ways that I use NSE: 
 
@@ -167,10 +164,6 @@ I started programming on a Saturday morning during law school.
 In hindsight this was a very important morning for me because in many ways it shaped the course of my career for the next ten years. 
 I probably had about 20 minutes to become interested and excited about the project, since I had lots of homework to do and programming wasn't something that was on any of my to-do lists at the time. 
 The resource I started with was "R Twotorials," which taught you how to use R in two minute lessons.
-
-```{r}
-blogdown::shortcode("youtube", "5DZkQjPyzjs")
-```
 
 R let me get up and running, installing packages, filtering data, and printing plots in under 20 minutes, which meant that I stayed interested in the language and eventually started using it professionally. 
 I had actually started to learn Python at around the same time but just found it too difficult. 

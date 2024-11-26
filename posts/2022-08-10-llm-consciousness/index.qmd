@@ -150,3 +150,7 @@ The only thing you get out of developing an embodied machine is a robot which mi
 The proliferation of increasingly capable statistical systems is and will continue to be profoundly disruptive, but that disruption is more like prior innovations like the railroad or the internet.
 It's right to worry about AI because like those other systems it has the potential to entrench systems of power, oppress marginalized groups, and fail catastrophically.
 We should not, however, worry about a large language model or other AI system accidentally gaining consciousness.
+
+## Comments
+
+{{< bluesky-comments https://bsky.app/profile/shotwell.ca/post/3lbuasktj6k2t >}}

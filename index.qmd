@@ -4,9 +4,9 @@ image: profile.jpg
 about:
   template: trestles
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/gshotwell
+    - icon: bluesky
+      text: BlueSky
+      href: https://bsky.app/profile/shotwell.ca
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/gshotwell/
@@ -15,7 +15,7 @@ about:
       href: https://github.com/GShotwell
 ---
 
-Hi, my name is Gordon and I'm a data scientist and product manager at [Socure](https://www.socure.com/).
+Hi, my name is Gordon and I'm a data scientist  at [EvenUp](https://www.evenuplaw.com/).
 
 My main professional focus has been helping teams of data scientists build better software.
 By implementing software development best practices I believe that data scientists can build more reliable and accurate statistical products.

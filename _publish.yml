@@ -1,4 +1,4 @@
 - source: project
   netlify:
     - id: 0dee00bd-78c4-4db3-a5ce-2f1b969d9e86
-      url: 'https://blog.shotwell.ca'
+      url: https://blog.shotwell.ca
