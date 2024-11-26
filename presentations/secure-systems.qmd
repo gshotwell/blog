@@ -1,10 +1,11 @@
 ---
 title: Building secure systems
-Author: Mark Sellors
 format: html
 ---
 
 {{< youtube UnLpB4IDpZU >}}
+
+{{< video https://www.youtube.com/watch?v=UnLpB4IDpZU&t=1s >}}
 
 One of the main challenges of doing data science is getting access to the data in the first place. Data scientists need to be able to look at data in detail to do their work effectively, but that necessarily creates data security and data governance problems for the organization and its clients. In this presentation, we go through the social and technical processes that can create a secure data analytics environment and set your team up for success.
 
