@@ -1,19 +1,12 @@
 ---
 title: ""
-image: profile.jpg
-about:
-  template: trestles
-  links:
-    - icon: bluesky
-      text: BlueSky
-      href: https://bsky.app/profile/shotwell.ca
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/gshotwell/
-    - icon: github
-      text: Github
-      href: https://github.com/GShotwell
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
 ---
-
-Hi, my name is Gordon and I'm a data scientist  at [EvenUp](https://www.evenuplaw.com/).
-
