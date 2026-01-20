@@ -53,6 +53,6 @@ Some good questions you can ask about confirmation are:
 - Are you better able to invest in evaluation data than other firms?
 
 
-##Conclusion
+## Conclusion
 
 All of this should probably make you a bit gloomy about many AI startups because they don’t own the context and they can’t confirm results. I have found that this framework has been an arrow against misfortune and has helped me cut through the hype and see whether a particular project is actually durable. 
