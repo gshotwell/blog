@@ -1,0 +1,57 @@
+---
+title: "Context and Confirmation"
+author: Gordon Shotwell
+date: '2026-01-20'
+image: imgs/national-gallery.jpg
+twitter-card:
+  imgs/national-gallery.jpg
+slug: context-confirmation
+categories:
+  - AI
+---
+
+Product development is now a two front war
+
+One of the tricky things about developing software in the cloud computing era was figuring out a product which was appealing enough to attract users, but not appealing enough to attract competition from cloud providers. It was common to identify a market and build a great product only to get run over by Amazon, Microsoft or Google.
+
+AI has this problem much worse for two main reasons. First, the foundation models are so general and are advancing so quickly that it’s very hard to stay ahead of them. There are many things which looked like great businesses in 2024 which are trivial to accomplish today, and many AI projects have been made irrelevant by these advancements.
+
+The second reason is that AI has made it very easy for your customers to replace your product with a custom solution. It’s easier than ever to develop software, and so there’s a danger that your users will figure out a good-enough solution and replace your tool with something that they build and maintain.  This opens up another front in product development. Not only do you have to compete with the model suppliers, but you also have to compete with your users. 
+
+Given all of this, how do you know whether you have an AI use-case that can last? I think there are two main questions that you should ask to evaluate AI products: 
+1) Do you own the context?
+2) Can you confirm the results?
+
+If you’re looking for a job in AI, investing in a startup or even evaluating an internal tool, these are the two things you should focus on to figure out whether the project is worth your time.
+
+Context
+
+One of the best businesses to be in before AI was the data aggregation business. How this worked was you found a group of people who all had pieces of a bigger dataset which weren’t that useful individually, but were valuable when combined. My old company Socure was a great example of this type of business. Lots of different firms have information about fraud, but when you aggregate all that information in one place you end up with a much more valuable product. The idea behind data aggregation is that with a bigger, more diverse dataset you can fit a better model because you’re not overfitting on one piece of that data. The aggregate model tends to beat the firm-specific ones the problems were fairly general.
+
+AI products are not really like that because the end user wants something which is tailored to their specific use case. A programmer wants the AI to use their preferred libraries, a lawyer wants it to write just the way they do, and a doctor wants it to focus on their speciality. The main value that AI products provide is adding this special context to the foundation model to get it to behave the way the user wants it to behave. 
+
+Most of the time we focus on how to use the context when we should be focusing on who owns it. For example there are lots of debates about when you should use RAG, tool calling, or fine tuning to add context to the model, but not that much about who ultimately controls the context. Ultimately if you do not own the context your product will be replaced by someone who does. 
+
+A good example of this is Cursor. I started using Cursor when I was working on a niche open source project, and its main value to me was that it could focus LLM calls in my particular programming environment. Cursor provided value because it was able to add context to the foundation model call and generate a better result than the model alone. However, since Cursor never owned this context they were vulnerable to competition. As a user I can switch to a different tool, or build my own solution and take my context with me. Since Cursor’s business model is basically charging a markup over calls to the foundation model API they were always going to have a tough time competing against these other solutions. This is exactly what happened with Claude code. Anthropic can create a tool which does a better job working with user context, but without needing to markup the LLM calls.
+
+Confirmation
+
+One way of thinking about AI companies is that they're in the business of getting big model performance at small model prices. You can always get exceptional performance from a  top-of-the line LLM, but it’s really hard to build businesses around that performance because the model is scarce. For example today you might get really good performance on a task by using Claude Opus 4.5, but if you tried to build a business around it you’d run into two problems. First the model is expensive enough that your margins would be very poor, but more importantly the rate limits on the model will be too low to support a scaling business. If your product is successful you’ll end up  hitting those rate limits and need to downgrade to a cheaper model with more generous limits. 
+
+This is what is usually happening when you notice that your AI product has gotten really stupid all of the sudden. It’s not usually that the core model has degraded, but that there’s enough traffic that someone has hit a rate limit somewhere and rerouted queries to a less performant model.
+
+The solution is to find ways to use cheap, abundant models to do the job of the big scarce model. For this work you need to have a process for quantifying the performance of the model and you need to be able to measure that performance easily and often.
+
+The competitive question here is again whether you are better at evaluating model performance in your domain than the foundation labs or your customers. If so, you have a durable way of adding value by confirming that model A is just as good as model B. If not, you’re likely going to be replaced. 
+
+Some good questions you can ask about confirmation are:
+
+Do the domain experts work for your company?
+Do you have fast, automated ways of collecting evaluation data?
+Do you have the best understanding of what correctness means in this domain?
+Are you better able to invest in evaluation data than other firms?
+
+
+Conclusion
+
+All of this should probably make you a bit gloomy about many AI startups because they don’t own the context and they can’t confirm results. I have found that this framework has been an arrow against misfortune and has helped me cut through the hype and see whether a particular project is actually durable. 
