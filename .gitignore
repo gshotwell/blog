@@ -9,3 +9,4 @@ content/.DS_Store
 /public
 /.quarto/
 /_site/
+**/*.quarto_ipynb
