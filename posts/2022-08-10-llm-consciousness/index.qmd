@@ -3,7 +3,7 @@ title: Large language models will never be conscious
 author: Gordon Shotwell
 image: images/alison-wang-mou0S7ViElQ-unsplash.jpg
 twitter-card:
-  image:images/alison-wang-mou0S7ViElQ-unsplash.jpg
+  image: images/alison-wang-mou0S7ViElQ-unsplash.jpg
 date: '2022-08-10'
 slug: machine-consciousness
 categories:

@@ -4,7 +4,7 @@ author: Gordon Shotwell
 date: '2026-01-20'
 image: imgs/national-gallery.jpg
 twitter-card:
-  imgs/national-gallery.jpg
+  image: imgs/national-gallery.jpg
 slug: context-confirmation
 categories:
   - AI

@@ -1,0 +1,52 @@
+---
+title: "No-Knead Bread"
+description: "A crusty, open-crumb loaf baked in a Dutch oven, with about five minutes of actual work."
+date: 2026-11-15
+categories: [bread, baking]
+servings: "1 loaf"
+active-time: "15 min"
+total-time: "14–20 hr"
+source: "Adapted from Jim Lahey"
+---
+
+**Serves** {{< meta servings >}} · **Active** {{< meta active-time >}} · **Total** {{< meta total-time >}}
+
+A long, slow rise does the work that kneading normally would, and baking in a
+preheated covered pot traps steam for a crackly crust. Mix it the night before
+and bake it the next afternoon.
+
+## Ingredients
+
+- 400 g (3 cups) bread flour, plus more for dusting
+- 8 g (1½ tsp) kosher salt
+- 1 g (¼ tsp) instant yeast
+- 300 ml (1¼ cups) cool water
+
+## Method
+
+1. Stir the flour, salt, and yeast together in a large bowl. Add the water and
+   mix with a spoon until no dry flour remains. The dough will be shaggy and
+   sticky.
+2. Cover and leave at room temperature for 12–18 hours, until the surface is
+   dotted with bubbles and the dough has more than doubled.
+3. Turn the dough onto a well-floured counter. Fold the edges into the middle a
+   few times to form a rough ball, then flip it seam-side down onto a floured
+   tea towel or piece of parchment.
+4. Cover and let rise for 1–2 hours, until it holds a fingerprint that springs
+   back slowly.
+5. About 45 minutes before baking, put a lidded Dutch oven in the oven and heat
+   to 230 °C (450 °F).
+6. Carefully tip the dough into the hot pot, seam-side up. Cover and bake for
+   30 minutes.
+7. Remove the lid and bake another 15–20 minutes, until the crust is deep brown
+   and the loaf sounds hollow when tapped underneath.
+8. Cool on a rack for at least 1 hour before cutting.
+
+## Notes
+
+- Parchment makes the transfer into the hot pot much less nerve-racking: lower
+  the dough in by the paper and leave it there.
+- Swap up to 100 g of the flour for whole wheat; add an extra tablespoon of
+  water if you do.
+- In a cold kitchen the first rise can take the full 18 hours or more. Go by
+  the bubbles, not the clock.

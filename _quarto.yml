@@ -10,10 +10,13 @@ website:
   open-graph: true
   google-analytics: "UA-98228149-1"
   site-url: "https://shotwell.ca/"
+  description: "Gordon Shotwell's blog about software, data science, AI, and the occasional recipe."
+  llms-txt: true
   navbar:
     right:
       - blog.qmd
-      - recipes.qmd
+      - text: Recipes
+        href: recipes/index.qmd
       - about.qmd
       - text: Presentations
         menu: 

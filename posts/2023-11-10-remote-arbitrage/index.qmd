@@ -3,7 +3,7 @@ title: "Canada's untapped talent: the remote hiring opportunity you're missing"
 author: Gordon Shotwell
 image: imgs/maple-leaf.jpg
 twitter-card:
-  image:imgs/maple-leaf.jpg
+  image: imgs/maple-leaf.jpg
 date: '2023-11-10'
 slug: remote-arbitrage
 categories:

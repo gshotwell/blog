@@ -1,7 +1,10 @@
 ---
 title: ""
+pagetitle: "Gordon Shotwell"
 listing:
-  contents: posts
+  contents:
+    - posts
+    - "!posts/2026-03-01-job-history/**"
   sort: "date desc"
   type: default
   categories: true
