@@ -31,7 +31,7 @@ image: photo.jpg                   # optional
 
 Check existing categories first (`grep -h -A3 categories recipes/*/index.qmd`) and reuse
 them. Current conventions: course or type (`bread`, `soup`, `dinner`,
-`dessert`, `breakfast`, `sauce`) plus at most one technique or dietary tag
+`dessert`, `breakfast`, `sauce`, `side`) plus at most one technique or dietary tag
 (`baking`, `vegetarian`).
 
 ## Body

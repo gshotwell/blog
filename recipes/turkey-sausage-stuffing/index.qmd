@@ -1,0 +1,61 @@
+---
+title: "Turkey Sausage and Sage Stuffing"
+description: "Bread stuffing with turkey sausage, apple, and sage, baked covered and then crisped in a cast-iron skillet."
+date: 2026-11-15
+categories: [side]
+servings: "11 as a side"
+active-time: "45 min"
+total-time: "2 hr 30 min"
+---
+
+**Serves** {{< meta servings >}} · **Active** {{< meta active-time >}} · **Total** {{< meta total-time >}}
+
+Made for Thanksgiving in a 26 cm (10¼ in) cast-iron skillet. It bakes covered
+until the centre is hot, then uncovered at high heat to crisp the top. It can
+be assembled in the morning and baked later.
+
+## Ingredients
+
+- 400 g sturdy country loaf or sourdough, cut into 2 cm cubes
+- 320 g (0.7 lb) turkey sausage, out of the casing
+- 55 g (4 tbsp) unsalted butter, plus more for the skillet
+- 210 g (1 large) onion, diced
+- 120 g (2 stalks) celery, diced
+- 90 g (½) tart apple, diced (optional)
+- 2 garlic cloves, minced
+- 9 g (¼ cup) chopped fresh sage
+- 3 g (1 tbsp) fresh thyme leaves
+- 9 g (⅓ cup) chopped parsley
+- 520 g (2¼ cups) warm chicken stock
+- 2 eggs
+- ½ tsp kosher salt, divided
+- ½ tsp black pepper
+
+## Method
+
+1. Spread the bread on a sheet pan and dry at 300 °F until crisp all the way
+   through, about 35 min.
+2. Brown the sausage in the skillet over medium-high, breaking it up, until
+   well coloured, about 8 min. Move it to a large bowl. Leave any fat in the
+   pan.
+3. Add the butter, onion, celery, apple, and half the salt. Cook until soft
+   with browned edges, about 10 min.
+4. Add the garlic, sage, and thyme for the last minute. Deglaze with a splash
+   of the stock.
+5. Add the vegetables, bread, parsley, the rest of the salt, and the pepper to
+   the bowl with the sausage.
+6. Whisk the eggs into the rest of the stock. Pour over the bread mixture, toss,
+   and rest 10 min. A handful should hold together and feel damp with no liquid
+   pooling in the bowl. If it's dry, add stock 50 g (3 tbsp) at a time.
+7. Wipe out the skillet and butter it. Pack the stuffing in loosely; it will
+   mound above the rim. Dot the top with butter.
+8. Cover with foil and bake at 375 °F until the centre reads 165 °F, 40–45 min.
+9. Uncover, raise the oven to 425 °F, and bake until the top is deep golden,
+   about 15 min.
+
+## Notes
+
+- To make ahead, cover the packed skillet and refrigerate after step 7. A cold
+  skillet adds 5–10 min to the covered bake.
+- Sausage and boxed stock are both salty. Taste the cooked vegetables before
+  adding more salt.

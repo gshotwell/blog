@@ -1,0 +1,58 @@
+---
+title: "Chicken Tagine with Preserved Lemon and Olives"
+description: "Bone-in chicken legs cooked with no added liquid in a Vermicular Musui-Kamado; the onions and chicken make the sauce."
+date: 2026-11-15
+categories: [dinner]
+servings: "3"
+active-time: "30 min"
+total-time: "2 hr"
+---
+
+**Serves** {{< meta servings >}} · **Active** {{< meta active-time >}} · **Total** {{< meta total-time >}}
+
+Written for a Vermicular Musui-Kamado. No water goes in: once the lid is on,
+the onions release enough liquid to braise the chicken. Half the preserved
+lemon cooks with the onions and half goes in at the end.
+
+## Ingredients
+
+- 3 bone-in, skin-on chicken legs (about 1 kg)
+- 9 g (2 tsp) kosher salt
+- 2 tbsp tagine spice blend, divided
+- 14 g (1 tbsp) olive oil
+- 400 g (2 medium) onions, half coarsely grated, half thickly sliced
+- 4 garlic cloves, smashed
+- 10 g fresh ginger, sliced into coins
+- 1 preserved lemon, rind slivered, divided (or zest of 1 lemon and 15 g
+  (1 tbsp) lemon juice)
+- 100 g (⅔ cup) green olives
+- 15 g (½ cup) chopped cilantro and parsley
+
+## Method
+
+1. Rub the chicken with the salt and 1 tbsp of the spice blend. Refrigerate
+   uncovered for at least 1 hr.
+2. Heat the oil in the Musui on Medium until it shows Grill OK. Brown the legs
+   skin-side down until deep golden, 5–6 min, in two batches if they crowd.
+   Brown the skin side only. Set aside.
+3. Pour off all but about 1 tbsp of fat. Stir in the rest of the spice blend
+   for 30 seconds, then turn the heat off.
+4. Add the onions, garlic, ginger, and half the preserved lemon, and scrape up
+   the browned bits. Lay the legs skin-up on top. Don't add water.
+5. Lid on, Medium, until steam escapes steadily from the lid, 5–8 min. Switch
+   to Low for 35 min.
+6. Probe the thigh next to the bone. It's done at 185–195 °F. If it's under,
+   give it 10 more min on Low.
+7. Add the olives and the rest of the preserved lemon. Rest with the lid on and
+   the heat off for 10 min.
+8. Lift out the chicken. If the sauce is thin, reduce it on Medium with the lid
+   off until it coats a spoon, 3–5 min. Taste for salt.
+9. Return the chicken and top with the herbs.
+
+## Notes
+
+- Many tagine blends contain salt. If salt is near the top of the label, use
+  half the salt.
+- Sweet version: skip the lemon and olives. Add 100 g (⅔ cup) dried apricots
+  or prunes and a cinnamon stick with the onions, and finish with 1 tsp honey
+  and toasted almonds.
