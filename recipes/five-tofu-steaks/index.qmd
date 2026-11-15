@@ -1,39 +1,59 @@
 ---
 title: "Five Tofu Steaks"
-author: Gordon Shotwell
-date: '2026-10-25'
-slug: five-tofu-steaks
-categories:
-  - vegetarian
+description: "Salt-boiled tofu marinated in sake and mirin, pan-fried, and topped with a fried scallion sauce."
+date: 2026-10-25
+categories: [dinner, vegetarian]
+servings: "12 pieces"
+active-time: "30 min"
+total-time: "1 hr 30 min"
 ---
+
+**Serves** {{< meta servings >}} · **Active** {{< meta active-time >}} · **Total** {{< meta total-time >}}
+
+Boiling the tofu in salted water seasons it and firms the outside so it holds
+together in the pan. The green onion whites are fried in the oil first, then
+chopped into the sauce.
 
 ## Ingredients
 
-- 1 block firm tofu, cut into 12 pieces
-- 4 cups water (about 950 g)
-- 1 Tbsp salt (about 18 g)
-- Green onions — white parts for frying, green parts finely chopped for topping
-- Avocado oil, for frying
-- Sesame seeds, to finish
+- 950 g (4 cups) water
+- 18 g (1 tbsp) table salt
+- 1 block (350–450 g) firm tofu, cut into 12 slabs
 
-### Marinade
+**For the marinade**
 
-- 2 Tbsp sake (about 30 ml)
-- 1 Tbsp mirin (about 15 ml)
-- 1 Tbsp rice vinegar (about 15 ml)
-- 1 Tbsp soy sauce (about 15 ml)
+- 30 g (2 tbsp) sake
+- 18 g (1 tbsp) mirin
+- 15 g (1 tbsp) rice vinegar
+- 18 g (1 tbsp) soy sauce
 
-### Scallion sauce
+**To fry**
 
-- 1 Tbsp soy sauce (about 15 ml)
-- 1 Tbsp rice vinegar (about 15 ml)
+- 1 bunch green onions, whites and greens separated, greens thinly sliced
+- 40 g (3 tbsp) avocado oil
+
+**For the sauce**
+
+- 18 g (1 tbsp) soy sauce
+- 15 g (1 tbsp) rice vinegar
 - 1 tsp chili crisp
+
+**To finish**
+
+- 1 tsp sesame seeds
 
 ## Method
 
-1. Bring the 4 cups of water with the 1 Tbsp salt to a boil. Add the tofu pieces and boil for 5 minutes. Drain.
-2. Mix the marinade: sake, mirin, rice vinegar, soy sauce. Marinate the drained tofu for about an hour.
-3. When the tofu is marinated, fry the white parts of the green onions whole in avocado oil until golden to dark brown. Remove them from the pan.
-4. Add a little more oil to the pan and fry the tofu steaks until golden brown on both sides. Remove.
-5. Chop up the cooked green onion whites and put them in a small bowl with 1 Tbsp soy sauce, 1 Tbsp rice vinegar, and 1 tsp chili crisp; mix together.
-6. Spoon the scallion sauce over the tofu steaks. Top with sesame seeds and the finely chopped green parts of the green onion.
+1. Bring the water and salt to a boil. Add the tofu and boil for 5 min. Drain.
+2. Mix the sake, mirin, rice vinegar, and soy sauce in a shallow dish. Add the
+   tofu in one layer and marinate for 1 hr, turning once halfway.
+3. Lift the tofu out of the marinade and pat it dry.
+4. Heat 2 tbsp of the oil in a skillet over medium heat. Fry the green onion
+   whites whole, turning, until golden to dark brown, 3–5 min. Move them to a
+   cutting board.
+5. Add the rest of the oil and turn the heat to medium-high. Fry the tofu until
+   golden brown on both sides, 3–4 min per side. Move to a plate.
+6. Chop the fried onion whites. Stir them into the soy sauce, rice vinegar, and
+   chili crisp in a small bowl.
+7. Spoon the sauce over the tofu. Top with the sesame seeds and sliced green
+   onion tops.

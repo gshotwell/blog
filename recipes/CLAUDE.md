@@ -62,16 +62,29 @@ anything unusual about the method. No life story, no "nothing beats…".
 
 ## Style rules
 
-- **Weights first, volumes in parentheses** for anything baked or where
-  precision matters: `500 g (4 cups) flour`. Small amounts can be volume only:
-  `1 tsp cumin`. Liquids in ml with cups in parentheses.
-- **Celsius first, Fahrenheit in parentheses**: `230 °C (450 °F)`.
+- **Grams first, volume in parentheses**, for every ingredient that can be
+  weighed, liquids included: `500 g (4 cups) flour`, `300 g (1¼ cups) water`,
+  `18 g (1 tbsp) soy sauce`. Amounts under about 5 g can be volume only:
+  `1 tsp cumin`. Things bought by count stay as counts: `2 eggs`, `1 onion`.
+  No ml.
+- **Fahrenheit only**, for oven and probe temperatures: `450 °F`, `165 °F`.
+  Stovetop heat as low / medium / medium-high / high.
 - Ingredients are listed in the order they're used. Group with bold
   sub-labels (`**For the sauce**`) only when there are distinct components.
 - Prep goes in the ingredient line: `1 onion, finely diced`.
 - Steps are imperative and short. Give doneness cues ("until the edges are
   deep brown and it smells nutty, about 4 min").
-- Canadian spelling. Plain, direct tone; see `../gordon-style-guide.md`.
+- Canadian spelling. Plain, direct tone.
+- Write like a cookbook, not a blog. Cut anything that isn't an instruction,
+  a quantity, a doneness cue, or a reason for an unusual step. In particular:
+  - No selling or praise: "perfect", "delicious", "easy", "simply", "just",
+    "game-changer", "elevate", "nothing beats", "the secret is", "the key is".
+  - No aphorisms or closing flourishes ("go by the bubbles, not the clock",
+    "trust the process").
+  - No telling the reader how they'll feel ("nerve-racking", "you'll love").
+  - No exclamation points, rhetorical questions, or em-dash asides.
+  - Abbreviate units the same way everywhere: `g`, `tsp`, `tbsp`, `cup`,
+    `min`, `hr`.
 - Don't invent claims about Gordon's experience. If the notes don't say how
   he serves it or what he changed, leave it out.
 - Test it renders: `quarto render recipes/<slug>/index.qmd`.
