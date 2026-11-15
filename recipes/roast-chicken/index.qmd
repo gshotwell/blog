@@ -1,0 +1,35 @@
+---
+title: "Roast Chicken"
+description: "Dry-brined whole chicken started breast-down in a hot cast iron skillet, with the legs finished on their own."
+date: 2026-11-15
+categories: [dinner]
+servings: "4"
+active-time: "15 min"
+total-time: "14 hr"
+---
+
+**Serves** {{< meta servings >}} · **Active** {{< meta active-time >}} · **Total** {{< meta total-time >}}
+
+The chicken is salted a day ahead and roasted upside down in a preheated cast
+iron skillet. Breast and legs are done at different temperatures, so the legs
+come off when the breast is ready and go back in on their own.
+
+## Ingredients
+
+- 1 whole chicken
+- Kosher salt
+- Olive oil
+
+## Method
+
+1. Salt the chicken thoroughly all over and inside the cavity. Refrigerate for
+   at least 12 hr.
+2. Put a cast iron skillet in the oven and preheat to 425 °F.
+3. Take the chicken out of the fridge and rub it with a little olive oil.
+4. Set the chicken breast side down in the hot skillet. Roast for 15 min.
+5. Lower the oven to 375 °F. Roast until the thickest part of the breast reads
+   160–165 °F.
+6. Take the chicken out of the oven. Cut off the legs and return them to the
+   skillet in the oven.
+7. Roast the legs until the thigh reads 180–190 °F.
+8. Serve.
