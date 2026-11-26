@@ -1,0 +1,33 @@
+---
+title: "Reverse Sear Steak"
+description: "Dry-brined steak cooked low in the oven to temperature, then seared hard in cast iron."
+date: 2026-11-26
+categories: [dinner]
+servings: "1 steak"
+active-time: "15 min"
+total-time: "13 hr"
+---
+
+**Serves** {{< meta servings >}} · **Active** {{< meta active-time >}} · **Total** {{< meta total-time >}}
+
+The steak is salted a day ahead and left uncovered in the fridge, then brought
+up to temperature in a low oven before searing. Cooking it through first means
+the sear only has to build a crust.
+
+## Ingredients
+
+- 1 steak
+- Kosher salt
+- Avocado oil or another high-smoke-point oil
+- Flaky salt, to finish
+
+## Method
+
+1. Salt the steak heavily on all sides. Set it on a wire rack over a tray and
+   refrigerate, uncovered, for 12–24 hr.
+2. Preheat the oven to 290 °F.
+3. Put the steak, still on the rack, in the oven. Cook until the centre reads
+   130 °F, about 30 min.
+4. Take the steak out. Heat a cast iron skillet over high heat until very hot.
+5. Add a thin layer of oil. Sear the steak on both sides until well crusted.
+6. Rest the steak, then slice it and sprinkle with flaky salt.
